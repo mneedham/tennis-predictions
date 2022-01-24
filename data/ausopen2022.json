@@ -1,0 +1,38 @@
+{
+    "Men's Singles": {
+        "4th Round": [
+            {"player1": "Sonego", "actualPlayer1": "Kecmanovic", "player2": "Bublik", "actualPlayer2": "Monfils"},
+            {"player1": "Norrie", "actualPlayer1": "Carreno Busta", "player2": "Alcaraz", "actualPlayer2": "Berrettini"},
+            {"player1": "Zverev", "actualPlayer1": "Zverev", "player2": "Shapovalov", "actualPlayer2": "Shapovalov"},
+            {"player1": "Hurkacz", "actualPlayer1": "Mannarino", "player2": "Nadal", "actualPlayer2": "Nadal"},
+            {"player1": "De Minaur", "actualPlayer1": "De Minaur", "player2": "Sinner", "actualPlayer2": "Sinner"},
+            {"player1": "Fritz", "actualPlayer1": "Fritz", "player2": "Tsitsipas", "actualPlayer2": "Tsitsipas"},
+            {"player1": "Rublev", "actualPlayer1": "Cilic", "player2": "Auger-Aliassime", "actualPlayer2": "Auger-Aliassime"},
+            {"player1": "Schwartzman", "actualPlayer1": "Cressy", "player2": "Medvedev", "actualPlayer2": "Medvedev"}
+        ],
+        "Quarter Finals": [
+            {"player1": "Sonego", "actualPlayer1": "Monfils", "player2": "Alcaraz", "actualPlayer2": "Berrettini"},
+            {"player1": "Zverev", "actualPlayer1": "Shapovalov", "player2": "Nadal", "actualPlayer2": "Nadal"},
+            {"player1": "Sinner", "actualPlayer1": "Sinner", "player2": "Tsitsipas", "actualPlayer2": "Tsitsipas"},
+            {"player1": "Rublev", "actualPlayer1": "Auger-Aliassime", "player2": "Medvedev", "actualPlayer2": "Medvedev"}
+        ]
+    },
+    "Women's Singles": {
+        "4th Round": [
+            {"player1": "Barty", "actualPlayer1": "Barty", "player2": "Osaka", "actualPlayer2": "Anisimova"},
+            {"player1": "Jabeur", "actualPlayer1": "Pegula", "player2": "Sakkari", "actualPlayer2": "Sakkari"},
+            {"player1": "Krejcikova", "actualPlayer1": "Krejcikova", "player2": "Svitolina", "actualPlayer2": "Azarenka"},
+            {"player1": "Gauff", "actualPlayer1": "Keys", "player2": "Badosa", "actualPlayer2": "Badosa"},
+            {"player1": "Kontaveit", "actualPlayer1": "Collins", "player2": "Rybakina", "actualPlayer2": "Mertens"},
+            {"player1": "Raducanu", "actualPlayer1": "Halep", "player2": "Muguruza", "actualPlayer2": "Cornet"},
+            {"player1": "Swiatek", "actualPlayer1": "Swiatek", "player2": "Kvitova", "actualPlayer2": "Cirstea"},
+            {"player1": "Fernandez", "actualPlayer1": "Kanepi", "player2": "Sabalenka", "actualPlayer2": "Sabalenka"}
+        ],
+        "Quarter Finals": [
+            {"player1": "Barty", "actualPlayer1": "Barty", "player2": "Sakkari", "actualPlayer2": "Pegula"},
+            {"player1": "Krejcikova", "actualPlayer1": "Krejcikova", "player2": "Badosa", "actualPlayer2": "Keys"},
+            {"player1": "Rybakina", "actualPlayer1": "Collins", "player2": "Muguruza", "actualPlayer2": "Cornet"},
+            {"player1": "Swiatek", "actualPlayer1": "Swiatek", "player2": "Sabalenka", "actualPlayer2": "Kanepi"}
+        ]
+    }
+}
