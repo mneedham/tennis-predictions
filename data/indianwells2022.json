@@ -1,0 +1,61 @@
+{
+   "tournament": "Indian Wells 2022",
+    "events": {
+      "Men's Singles": {
+            "4th Round": [
+                {"player1": "Medvedev", "actualPlayer1": "?", "player2": "Alcaraz", "actualPlayer2": "?"},
+                {"player1": "Norrie", "actualPlayer1": "?", "player2": "Tsitsipas", "actualPlayer2": "?"},
+                {"player1": "Nadal", "actualPlayer1": "?", "player2": "Shapovalov", "actualPlayer2": "?"},
+                {"player1": "Sinner", "actualPlayer1": "?", "player2": "Ruud", "actualPlayer2": "?"},
+                {"player1": "Berrettini", "actualPlayer1": "?", "player2": "Auger-Aliassime", "actualPlayer2": "?"},
+                {"player1": "Fritz", "actualPlayer1": "?", "player2": "Zverev", "actualPlayer2": "?"},
+                {"player1": "Rublev", "actualPlayer1": "?", "player2": "Hurkacz", "actualPlayer2": "?"},
+                {"player1": "Schwartzman", "actualPlayer1": "?", "player2": "Djokovic", "actualPlayer2": "?"}
+            ],
+            "Quarter Finals": [
+                {"player1": "Medvedev", "actualPlayer1": "?", "player2": "Tsitsipas", "actualPlayer2": "?"},
+                {"player1": "Nadal", "actualPlayer1": "?", "player2": "Sinner", "actualPlayer2": "?"},
+                {"player1": "Auger-Aliassime", "actualPlayer1": "?", "player2": "Zverev", "actualPlayer2": "?"},
+                {"player1": "Rublev", "actualPlayer1": "?", "player2": "Djokovic", "actualPlayer2": "?"}
+            ],
+            "Semi Finals": [
+                {"player1": "Medvedev", "actualPlayer1": "?", "player2": "Nadal", "actualPlayer2": "?"},
+                {"player1": "Auger-Aliassime", "actualPlayer1": "?", "player2": "Rublev", "actualPlayer2": "?"}
+            ],
+            "Final": [
+                {"player1": "Nadal", "actualPlayer1": "?", "player2": "Auger-Aliassime", "actualPlayer2": "?"}
+            ],
+            "Champion": [
+                {"player1": "Nadal", "actualPlayer1": "?"}
+            ]
+        },
+        "Women's Singles": {
+            "4th Round": [
+                {"player1": "Cornet", "actualPlayer1": "?", "player2": "Halep", "actualPlayer2": "?"},
+                {"player1": "Raducanu", "actualPlayer1": "?", "player2": "Pliskova", "actualPlayer2": "?"},
+                {"player1": "Swiatek", "actualPlayer1": "?", "player2": "Kasatkina", "actualPlayer2": "?"},
+                {"player1": "Svitolina", "actualPlayer1": "?", "player2": "Keys", "actualPlayer2": "?"},
+                {"player1": "Badosa", "actualPlayer1": "?", "player2": "Fernandez", "actualPlayer2": "?"},
+                {"player1": "Osaka", "actualPlayer1": "?", "player2": "Kontaveit", "actualPlayer2": "?"},
+                {"player1": "Kvitova", "actualPlayer1": "?", "player2": "Jabeur", "actualPlayer2": "?"},
+                {"player1": "Rybakina", "actualPlayer1": "?", "player2": "Sabalenka", "actualPlayer2": "?"}
+            ],
+            "Quarter Finals": [
+                {"player1": "Halep", "actualPlayer1": "?", "player2": "Pliskova", "actualPlayer2": "?"},
+                {"player1": "Swiatek", "actualPlayer1": "?", "player2": "Keys", "actualPlayer2": "?"},
+                {"player1": "Badosa", "actualPlayer1": "?", "player2": "Osaka", "actualPlayer2": "?"},
+                {"player1": "Jabeur", "actualPlayer1": "?", "player2": "Sabalenka", "actualPlayer2": "?"}
+            ],
+            "Semi Finals": [
+                {"player1": "Halep", "actualPlayer1": "?", "player2": "Swiatek", "actualPlayer2": "?"},
+                {"player1": "Badosa", "actualPlayer1": "?", "player2": "Sabalenka", "actualPlayer2": "?"}
+            ],
+            "Final": [
+                {"player1": "Swiatek", "actualPlayer1": "?", "player2": "Badosa", "actualPlayer2": "?"}
+            ],
+            "Champion": [
+                {"player1": "Swiatek", "actualPlayer1": "?"}
+            ]
+        }
+    }
+}
