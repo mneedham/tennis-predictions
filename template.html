@@ -81,23 +81,23 @@ height: 40px;
           <tr>
               
               {% if item.player2 is not defined %}
-              <td colspan="2" class="{% if item.player1 == item.actualPlayer1 %}correct {% else %} incorrect{% endif %}">
-                {% if item.player1 == item.actualPlayer1 %}
+              <td colspan="2" class="{% if item.player1 == item.actualPlayer1 %}correct {%elif item.actualPlayer1 == '?' %}none  {% else %} incorrect{% endif %}">
+                {% if item.player1 == item.actualPlayer1 or item.actualPlayer1 == '?' %}
                  {{item.player1}}
                 {% else %}
                     <strike>{{item.player1}}</strike> <br />{{item.actualPlayer1}}
                 {% endif %}
               </td>
               {% else %}
-              <td width="50%" class="{% if item.player1 == item.actualPlayer1 %}correct {% else %} incorrect{% endif %}">
-                  {% if item.player1 == item.actualPlayer1 %}
+              <td width="50%" class="{% if item.player1 == item.actualPlayer1 %}correct {%elif item.actualPlayer1 == '?' %}none {% else %} incorrect{% endif %}">
+                  {% if item.player1 == item.actualPlayer1 or item.actualPlayer1 == '?' %}
                    {{item.player1}}
                   {% else %}
                       <strike>{{item.player1}}</strike> <br />{{item.actualPlayer1}}
                   {% endif %}
               </td>
-              <td width="50%" class="{% if item.player2 == item.actualPlayer2 %}correct {% else %} incorrect{% endif %}">
-                  {% if item.player2 == item.actualPlayer2 %}
+              <td width="50%" class="{% if item.player2 == item.actualPlayer2 %}correct {%elif item.actualPlayer2 == '?' %}none {% else %} incorrect{% endif %}">
+                  {% if item.player2 == item.actualPlayer2 or item.actualPlayer2 == '?' %}
                    {{item.player2}}
                   {% else %}
                       <strike>{{item.player2}}</strike> <br />{{item.actualPlayer2}}
