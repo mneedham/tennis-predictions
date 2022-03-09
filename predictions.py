@@ -2,7 +2,7 @@ from jinja2 import Template
 import csv
 import json
 
-tournament_name = "ausopen2022"
+tournament_name = "indianwells2022"
 
 with open("template.html", "r") as template_file, \
      open(f"output/{tournament_name}.html", "w") as predictions_output_file, \
