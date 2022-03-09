@@ -15,6 +15,16 @@
             {"player1": "Zverev", "actualPlayer1": "Shapovalov", "player2": "Nadal", "actualPlayer2": "Nadal"},
             {"player1": "Sinner", "actualPlayer1": "Sinner", "player2": "Tsitsipas", "actualPlayer2": "Tsitsipas"},
             {"player1": "Rublev", "actualPlayer1": "Auger-Aliassime", "player2": "Medvedev", "actualPlayer2": "Medvedev"}
+        ],
+        "Semi Finals": [
+            {"player1": "Alcaraz", "actualPlayer1": "Berrettini", "player2": "Zverev", "actualPlayer2": "Nadal"},
+            {"player1": "Sinner", "actualPlayer1": "Tsitsipas", "player2": "Medvedev", "actualPlayer2": "Medvedev"}
+        ],
+        "Final": [
+            {"player1": "Zverev", "actualPlayer1": "Nadal", "player2": "Medvedev", "actualPlayer2": "Medvedev"}
+        ],
+        "Champion": [
+            {"player1": "Medvedev", "actualPlayer1": "Nadal"}
         ]
     },
     "Women's Singles": {
@@ -33,6 +43,16 @@
             {"player1": "Krejcikova", "actualPlayer1": "Krejcikova", "player2": "Badosa", "actualPlayer2": "Keys"},
             {"player1": "Rybakina", "actualPlayer1": "Collins", "player2": "Muguruza", "actualPlayer2": "Cornet"},
             {"player1": "Swiatek", "actualPlayer1": "Swiatek", "player2": "Sabalenka", "actualPlayer2": "Kanepi"}
+        ],
+        "Semi Finals": [
+            {"player1": "Barty", "actualPlayer1": "Barty", "player2": "Badosa", "actualPlayer2": "Keys"},
+            {"player1": "Rybakina", "actualPlayer1": "Collins", "player2": "Swiatek", "actualPlayer2": "Swiatek"}
+        ],
+        "Final": [
+            {"player1": "Barty", "actualPlayer1": "Barty", "player2": "Swiatek", "actualPlayer2": "Collins"}
+        ],
+        "Champion": [
+            {"player1": "Barty", "actualPlayer1": "Barty"}
         ]
     }
 }

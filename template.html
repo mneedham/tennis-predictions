@@ -67,18 +67,28 @@ height: 40px;
 <h1>{{ tournament }} Predictions</h1>
 
 <div class="row">
-  {% for key, value in predictions.items() %}
+  {% for event_name, events in predictions.items() %}
   <div class="column">
-    <h2>{{ key }}</h2>
+    <h2>{{ event_name }}</h2>
     
-    {% for key2, value2 in value.items() %}
+    {% for round, matches in events.items() %}
     <table id="players">
       <tr>
-        <th colspan="2">{{ key2 }}</th>
+        <th colspan="2">{{ round }}</th>
       </tr>
 
-      {% for item in value2 %}
+      {% for item in matches %}
           <tr>
+              
+              {% if item.player2 is not defined %}
+              <td colspan="2" class="{% if item.player1 == item.actualPlayer1 %}correct {% else %} incorrect{% endif %}">
+                {% if item.player1 == item.actualPlayer1 %}
+                 {{item.player1}}
+                {% else %}
+                    <strike>{{item.player1}}</strike> <br />{{item.actualPlayer1}}
+                {% endif %}
+              </td>
+              {% else %}
               <td width="50%" class="{% if item.player1 == item.actualPlayer1 %}correct {% else %} incorrect{% endif %}">
                   {% if item.player1 == item.actualPlayer1 %}
                    {{item.player1}}
@@ -93,6 +103,7 @@ height: 40px;
                       <strike>{{item.player2}}</strike> <br />{{item.actualPlayer2}}
                   {% endif %}
               </td>
+              {% endif %}
           </tr>
       {% endfor %}
 
