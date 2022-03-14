@@ -71,6 +71,8 @@ height: 40px;
 
 <h1>{{ tournament }} Predictions</h1>
 
+<p>Generated at {{ now}}</p>
+
 <div class="row">
   {% for event_name, events in predictions.items() %}
   <div class="column">

@@ -1,6 +1,9 @@
 from jinja2 import Template
 import csv
 import json
+import datetime
+
+now = datetime.datetime.utcnow()
 
 tournaments = ["ausopen2022", "indianwells2022"]
 
@@ -14,6 +17,7 @@ for tournament_name in tournaments:
         template = Template(template_file.read())
         output = template.render(
             tournament=predictions["tournament"], 
-            predictions=predictions["events"]
+            predictions=predictions["events"],
+            now=now
         )
         predictions_output_file.write(output)
