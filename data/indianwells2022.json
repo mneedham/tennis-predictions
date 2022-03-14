@@ -3,7 +3,7 @@
     "events": {
       "Men's Singles": {
             "4th Round": [
-                {"player1": "Medvedev", "actualPlayer1": "?", "player2": "Alcaraz", "actualPlayer2": "?"},
+                {"player1": "Medvedev", "actualPlayer1": "Monfils", "player2": "Alcaraz", "actualPlayer2": "Alcaraz"},
                 {"player1": "Norrie", "actualPlayer1": "?", "player2": "Tsitsipas", "actualPlayer2": "?"},
                 {"player1": "Nadal", "actualPlayer1": "?", "player2": "Shapovalov", "actualPlayer2": "?"},
                 {"player1": "Sinner", "actualPlayer1": "?", "player2": "Ruud", "actualPlayer2": "?"},
@@ -36,8 +36,8 @@
                 {"player1": "Swiatek", "actualPlayer1": "Swiatek", "player2": "Kasatkina", "actualPlayer2": "Kerber"},
                 {"player1": "Svitolina", "actualPlayer1": "Dart", "player2": "Keys", "actualPlayer2": "Keys"},
                 {"player1": "Badosa", "actualPlayer1": "?", "player2": "Fernandez", "actualPlayer2": "?"},
-                {"player1": "Osaka", "actualPlayer1": "?", "player2": "Kontaveit", "actualPlayer2": "?"},
-                {"player1": "Kvitova", "actualPlayer1": "?", "player2": "Jabeur", "actualPlayer2": "?"},
+                {"player1": "Osaka", "actualPlayer1": "Kudermetova", "player2": "Kontaveit", "actualPlayer2": "Vondrousova"},
+                {"player1": "Kvitova", "actualPlayer1": "Sakkari", "player2": "Jabeur", "actualPlayer2": "Saville"},
                 {"player1": "Rybakina", "actualPlayer1": "?", "player2": "Sabalenka", "actualPlayer2": "?"}
             ],
             "Quarter Finals": [
