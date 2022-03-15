@@ -1,0 +1,8 @@
+# My tennis predictions
+
+[source, bash]
+----
+python predictions.py
+----
+
+Generates HTML files in the `output` directory.
