@@ -8,7 +8,7 @@
                 {"player1": "Nadal", "actualPlayer1": "Nadal", "player2": "Shapovalov", "actualPlayer2": "Opelka"},
                 {"player1": "Sinner", "actualPlayer1": "Sinner", "player2": "Ruud", "actualPlayer2": "Kyrgios"},
                 {"player1": "Berrettini", "actualPlayer1": "Berrettini", "player2": "Auger-Aliassime", "actualPlayer2": "Kecmanovic"},
-                {"player1": "Fritz", "actualPlayer1": "?", "player2": "Zverev", "actualPlayer2": "?"},
+                {"player1": "Fritz", "actualPlayer1": "?", "player2": "Zverev", "actualPlayer2": "de Minaur"},
                 {"player1": "Rublev", "actualPlayer1": "?", "player2": "Hurkacz", "actualPlayer2": "?"},
                 {"player1": "Schwartzman", "actualPlayer1": "?", "player2": "Bublik", "actualPlayer2": "?"}
             ],
