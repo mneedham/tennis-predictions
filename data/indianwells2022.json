@@ -42,7 +42,7 @@
             ],
             "Quarter Finals": [
                 {"player1": "Halep", "actualPlayer1": "Halep", "player2": "Pliskova", "actualPlayer2": "Martic"},
-                {"player1": "Swiatek", "actualPlayer1": "?", "player2": "Keys", "actualPlayer2": "?"},
+                {"player1": "Swiatek", "actualPlayer1": "Swiatek", "player2": "Keys", "actualPlayer2": "?"},
                 {"player1": "Badosa", "actualPlayer1": "?", "player2": "Osaka", "actualPlayer2": "?"},
                 {"player1": "Jabeur", "actualPlayer1": "?", "player2": "Sabalenka", "actualPlayer2": "?"}
             ],
