@@ -6,3 +6,5 @@ python predictions.py
 ----
 
 Generates HTML files in the `output` directory.
+
+Gets automatically deployed to https://pedantic-kilby-bc3a7d.netlify.app/
