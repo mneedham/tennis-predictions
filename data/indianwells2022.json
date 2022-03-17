@@ -13,10 +13,10 @@
                 {"player1": "Schwartzman", "actualPlayer1": "Isner", "player2": "Bublik", "actualPlayer2": "Dimitrov"}
             ],
             "Quarter Finals": [
-                {"player1": "Medvedev", "actualPlayer1": "?", "player2": "Tsitsipas", "actualPlayer2": "?"},
-                {"player1": "Nadal", "actualPlayer1": "?", "player2": "Sinner", "actualPlayer2": "Kyrgios"},
+                {"player1": "Medvedev", "actualPlayer1": "Alcaraz", "player2": "Tsitsipas", "actualPlayer2": "?"},
+                {"player1": "Nadal", "actualPlayer1": "Nadal", "player2": "Sinner", "actualPlayer2": "Kyrgios"},
                 {"player1": "Auger-Aliassime", "actualPlayer1": "Kecmanovic", "player2": "Zverev", "actualPlayer2": "Fritz"},
-                {"player1": "Rublev", "actualPlayer1": "?", "player2": "Schwartzman", "actualPlayer2": "?"}
+                {"player1": "Rublev", "actualPlayer1": "Rublev", "player2": "Schwartzman", "actualPlayer2": "Dimitrov"}
             ],
             "Semi Finals": [
                 {"player1": "Medvedev", "actualPlayer1": "?", "player2": "Nadal", "actualPlayer2": "?"},
@@ -47,7 +47,7 @@
                 {"player1": "Jabeur", "actualPlayer1": "Sakkari", "player2": "Sabalenka", "actualPlayer2": "Rybakina"}
             ],
             "Semi Finals": [
-                {"player1": "Halep", "actualPlayer1": "?", "player2": "Swiatek", "actualPlayer2": "?"},
+                {"player1": "Halep", "actualPlayer1": "Halep", "player2": "Swiatek", "actualPlayer2": "Swiatek"},
                 {"player1": "Badosa", "actualPlayer1": "?", "player2": "Sabalenka", "actualPlayer2": "?"}
             ],
             "Final": [
