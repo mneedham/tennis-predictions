@@ -20,7 +20,7 @@
             ],
             "Semi Finals": [
                 {"player1": "Medvedev", "actualPlayer1": "Alcaraz", "player2": "Nadal", "actualPlayer2": "Nadal"},
-                {"player1": "Auger-Aliassime", "actualPlayer1": "?", "player2": "Rublev", "actualPlayer2": "Rublev"}
+                {"player1": "Auger-Aliassime", "actualPlayer1": "Fritz", "player2": "Rublev", "actualPlayer2": "Rublev"}
             ],
             "Final": [
                 {"player1": "Nadal", "actualPlayer1": "?", "player2": "Auger-Aliassime", "actualPlayer2": "?"}
@@ -51,7 +51,7 @@
                 {"player1": "Badosa", "actualPlayer1": "Badosa", "player2": "Sabalenka", "actualPlayer2": "Sakkari"}
             ],
             "Final": [
-                {"player1": "Swiatek", "actualPlayer1": "?", "player2": "Badosa", "actualPlayer2": "?"}
+                {"player1": "Swiatek", "actualPlayer1": "Swiatek", "player2": "Badosa", "actualPlayer2": "?"}
             ],
             "Champion": [
                 {"player1": "Swiatek", "actualPlayer1": "?"}
