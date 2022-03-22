@@ -1,0 +1,61 @@
+{
+   "tournament": "Miami Open 2022",
+    "events": {
+      "Men's Singles": {
+            "4th Round": [
+                {"player1": "?", "actualPlayer1", "player2": "?", "actualPlayer2": "?"},
+                {"player1": "?", "actualPlayer1", "player2": "?", "actualPlayer2": "?"},
+                {"player1": "?", "actualPlayer1", "player2": "?", "actualPlayer2": "?"},
+                {"player1": "?", "actualPlayer1", "player2": "?", "actualPlayer2": "?"},
+                {"player1": "?", "actualPlayer1", "player2": "?", "actualPlayer2": "?"},
+                {"player1": "?", "actualPlayer1", "player2": "?", "actualPlayer2": "?"},
+                {"player1": "?", "actualPlayer1", "player2": "?", "actualPlayer2": "?"},
+                {"player1": "?", "actualPlayer1", "player2": "?", "actualPlayer2": "?"}
+            ],
+            "Quarter Finals": [
+                {"player1": "?", "actualPlayer1", "player2": "?", "actualPlayer2": "?"},
+                {"player1": "?", "actualPlayer1", "player2": "?", "actualPlayer2": "?"},
+                {"player1": "?", "actualPlayer1", "player2": "?", "actualPlayer2": "?"},
+                {"player1": "?", "actualPlayer1", "player2": "?", "actualPlayer2": "?"}
+            ],
+            "Semi Finals": [
+                {"player1": "?", "actualPlayer1", "player2": "?", "actualPlayer2": "?"},
+                {"player1": "?", "actualPlayer1", "player2": "?", "actualPlayer2": "?"}
+            ],
+            "Final": [
+                {"player1": "?", "actualPlayer1", "player2": "?", "actualPlayer2": "?"}
+            ],
+            "Champion": [
+                {"player1": "?", "actualPlayer1": "?"}
+            ]
+        },
+        "Women's Singles": {
+            "4th Round": [
+                {"player1": "?", "actualPlayer1", "player2": "?", "actualPlayer2": "?"},
+                {"player1": "?", "actualPlayer1", "player2": "?", "actualPlayer2": "?"},
+                {"player1": "?", "actualPlayer1", "player2": "?", "actualPlayer2": "?"},
+                {"player1": "?", "actualPlayer1", "player2": "?", "actualPlayer2": "?"},
+                {"player1": "?", "actualPlayer1", "player2": "?", "actualPlayer2": "?"},
+                {"player1": "?", "actualPlayer1", "player2": "?", "actualPlayer2": "?"},
+                {"player1": "?", "actualPlayer1", "player2": "?", "actualPlayer2": "?"},
+                {"player1": "?", "actualPlayer1", "player2": "?", "actualPlayer2": "?"}
+            ],
+            "Quarter Finals": [
+                {"player1": "?", "actualPlayer1", "player2": "?", "actualPlayer2": "?"},
+                {"player1": "?", "actualPlayer1", "player2": "?", "actualPlayer2": "?"},
+                {"player1": "?", "actualPlayer1", "player2": "?", "actualPlayer2": "?"},
+                {"player1": "?", "actualPlayer1", "player2": "?", "actualPlayer2": "?"}
+            ],
+            "Semi Finals": [
+                {"player1": "?", "actualPlayer1", "player2": "?", "actualPlayer2": "?"},
+                {"player1": "?", "actualPlayer1", "player2": "?", "actualPlayer2": "?"}
+            ],
+            "Final": [
+                {"player1": "?", "actualPlayer1", "player2": "?", "actualPlayer2": "?"}
+            ],
+            "Champion": [
+                {"player1": "?", "actualPlayer1": "?"}
+            ]
+        }
+    }
+}
