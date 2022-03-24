@@ -32,7 +32,7 @@
         "Women's Singles": {
             "4th Round": [
                 {"player1": "Sabalenka", "actualPlayer1": "?", "player2": "Watson", "actualPlayer2": "?"},
-                {"player1": "Halep", "actualPlayer1": "?", "player2": "Giorgi", "actualPlayer2": "?"},
+                {"player1": "Raducanu" "actualPlayer1": "?", "player2": "Giorgi", "actualPlayer2": "?"},
                 {"player1": "Kontaveit", "actualPlayer1": "?", "player2": "Fernandez", "actualPlayer2": "?"},
                 {"player1": "Collins", "actualPlayer1": "?", "player2": "Kanepi", "actualPlayer2": "?"},
                 {"player1": "Badosa", "actualPlayer1": "?", "player2": "Azarenka", "actualPlayer2": "?"},
@@ -41,13 +41,13 @@
                 {"player1": "Tauson", "actualPlayer1": "?", "player2": "Swiatek", "actualPlayer2": "?"}
             ],
             "Quarter Finals": [
-                {"player1": "Sabalenka", "actualPlayer1": "?", "player2": "Halep", "actualPlayer2": "?"},
+                {"player1": "Sabalenka", "actualPlayer1": "?", "player2": "Raducanu", "actualPlayer2": "?"},
                 {"player1": "Kontaveit", "actualPlayer1": "?", "player2": "Collins", "actualPlayer2": "?"},
                 {"player1": "Badosa", "actualPlayer1": "?", "player2": "Sakkari", "actualPlayer2": "?"},
                 {"player1": "Ostapenko", "actualPlayer1": "?", "player2": "Swiatek", "actualPlayer2": "?"}
             ],
             "Semi Finals": [
-                {"player1": "Halep", "actualPlayer1": "?", "player2": "Kontaveit", "actualPlayer2": "?"},
+                {"player1": "Sabalenka", "actualPlayer1": "?", "player2": "Kontaveit", "actualPlayer2": "?"},
                 {"player1": "Badosa", "actualPlayer1": "?", "player2": "Swiatek", "actualPlayer2": "?"}
             ],
             "Final": [
