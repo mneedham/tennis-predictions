@@ -33,8 +33,8 @@
             "4th Round": [
                 {"player1": "Sabalenka", "actualPlayer1": "Sasnovich", "player2": "Watson", "actualPlayer2": "Bencic"},
                 {"player1": "Raducanu", "actualPlayer1": "Saville", "player2": "Pliskova", "actualPlayer2": "Bronzetti"},
-                {"player1": "Kontaveit", "actualPlayer1": "?", "player2": "Fernandez", "actualPlayer2": "Osaka"},
-                {"player1": "Collins", "actualPlayer1": "Collins", "player2": "Kanepi", "actualPlayer2": "?"},
+                {"player1": "Kontaveit", "actualPlayer1": "Riske", "player2": "Fernandez", "actualPlayer2": "Osaka"},
+                {"player1": "Collins", "actualPlayer1": "Collins", "player2": "Kanepi", "actualPlayer2": "Jabeur"},
                 {"player1": "Badosa", "actualPlayer1": "?", "player2": "Azarenka", "actualPlayer2": "?"},
                 {"player1": "Rybakina", "actualPlayer1": "?", "player2": "Sakkari", "actualPlayer2": "?"},
                 {"player1": "Kvitova", "actualPlayer1": "?", "player2": "Ostapenko", "actualPlayer2": "?"},
