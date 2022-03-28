@@ -18,6 +18,7 @@ for tournament_name in tournaments:
         output = template.render(
             tournament=predictions["tournament"], 
             predictions=predictions["events"],
+            tournament_name=tournament_name,
             now=now
         )
         predictions_output_file.write(output)
