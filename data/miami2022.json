@@ -44,7 +44,7 @@
                 {"player1": "Sabalenka", "actualPlayer1": "?", "player2": "Raducanu", "actualPlayer2": "Saville"},
                 {"player1": "Kontaveit", "actualPlayer1": "Osaka", "player2": "Collins", "actualPlayer2": "Collins"},
                 {"player1": "Badosa", "actualPlayer1": "?", "player2": "Sakkari", "actualPlayer2": "?"},
-                {"player1": "Ostapenko", "actualPlayer1": "?", "player2": "Swiatek", "actualPlayer2": "?"}
+                {"player1": "Ostapenko", "actualPlayer1": "?", "player2": "Swiatek", "actualPlayer2": "Swiatek"}
             ],
             "Semi Finals": [
                 {"player1": "Sabalenka", "actualPlayer1": "?", "player2": "Kontaveit", "actualPlayer2": "?"},
