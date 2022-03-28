@@ -4,7 +4,7 @@
       "Men's Singles": {
             "4th Round": [
                 {"player1": "Medvedev", "actualPlayer1": "Medvedev", "player2": "Brooksby", "actualPlayer2": "Brooksby"},
-                {"player1": "Harris", "actualPlayer1": "?", "player2": "Hurkacz", "actualPlayer2": "Hurkacz"},
+                {"player1": "Harris", "actualPlayer1": "Harris", "player2": "Hurkacz", "actualPlayer2": "Hurkacz"},
                 {"player1": "Di Minaur", "actualPlayer1": "?", "player2": "Alcaraz", "actualPlayer2": "Alcaraz"},
                 {"player1": "Fritz", "actualPlayer1": "?", "player2": "Korda", "actualPlayer2": "?"},
                 {"player1": "Kyrgios", "actualPlayer1": "Kyrgios", "player2": "Sinner", "actualPlayer2": "Sinner"},
