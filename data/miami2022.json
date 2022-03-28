@@ -7,10 +7,10 @@
                 {"player1": "Harris", "actualPlayer1": "?", "player2": "Hurkacz", "actualPlayer2": "?"},
                 {"player1": "Di Minaur", "actualPlayer1": "?", "player2": "Alcaraz", "actualPlayer2": "?"},
                 {"player1": "Fritz", "actualPlayer1": "?", "player2": "Korda", "actualPlayer2": "?"},
-                {"player1": "Kyrgios", "actualPlayer1": "Kyrgios", "player2": "Sinner", "actualPlayer2": "?"},
-                {"player1": "Opelka", "actualPlayer1": "?", "player2": "Nakashima", "actualPlayer2": "Tiafoe"},
+                {"player1": "Kyrgios", "actualPlayer1": "Kyrgios", "player2": "Sinner", "actualPlayer2": "Sinner"},
+                {"player1": "Opelka", "actualPlayer1": "Cerundolo", "player2": "Nakashima", "actualPlayer2": "Tiafoe"},
                 {"player1": "Ruud", "actualPlayer1": "Ruud", "player2": "Norrie", "actualPlayer2": "Norrie"},
-                {"player1": "Schwartzman", "actualPlayer1": "?", "player2": "Dimitrov", "actualPlayer2": "?"}
+                {"player1": "Schwartzman", "actualPlayer1": "Kokkinakis", "player2": "Dimitrov", "actualPlayer2": "Zverev"}
             ],
             "Quarter Finals": [
                 {"player1": "Medvedev", "actualPlayer1": "?", "player2": "Hurkacz", "actualPlayer2": "?"},
@@ -37,8 +37,8 @@
                 {"player1": "Collins", "actualPlayer1": "Collins", "player2": "Kanepi", "actualPlayer2": "Jabeur"},
                 {"player1": "Badosa", "actualPlayer1": "Badosa", "player2": "Azarenka", "actualPlayer2": "Fruhvirtova"},
                 {"player1": "Rybakina", "actualPlayer1": "Pegula", "player2": "Sakkari", "actualPlayer2": "Kalinina"},
-                {"player1": "Kvitova", "actualPlayer1": "?", "player2": "Ostapenko", "actualPlayer2": "Kudermetova"},
-                {"player1": "Tauson", "actualPlayer1": "Gauff", "player2": "Swiatek", "actualPlayer2": "?"}
+                {"player1": "Kvitova", "actualPlayer1": "Kvitova", "player2": "Ostapenko", "actualPlayer2": "Kudermetova"},
+                {"player1": "Tauson", "actualPlayer1": "Gauff", "player2": "Swiatek", "actualPlayer2": "Swiatek"}
             ],
             "Quarter Finals": [
                 {"player1": "Sabalenka", "actualPlayer1": "?", "player2": "Raducanu", "actualPlayer2": "?"},
