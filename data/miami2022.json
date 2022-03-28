@@ -3,7 +3,7 @@
     "events": {
       "Men's Singles": {
             "4th Round": [
-                {"player1": "Medvedev", "actualPlayer1": "?", "player2": "Brooksby", "actualPlayer2": "?"},
+                {"player1": "Medvedev", "actualPlayer1": "Medvedev", "player2": "Brooksby", "actualPlayer2": "Brooksby"},
                 {"player1": "Harris", "actualPlayer1": "?", "player2": "Hurkacz", "actualPlayer2": "?"},
                 {"player1": "Di Minaur", "actualPlayer1": "?", "player2": "Alcaraz", "actualPlayer2": "?"},
                 {"player1": "Fritz", "actualPlayer1": "?", "player2": "Korda", "actualPlayer2": "?"},
@@ -41,8 +41,8 @@
                 {"player1": "Tauson", "actualPlayer1": "Gauff", "player2": "Swiatek", "actualPlayer2": "Swiatek"}
             ],
             "Quarter Finals": [
-                {"player1": "Sabalenka", "actualPlayer1": "?", "player2": "Raducanu", "actualPlayer2": "?"},
-                {"player1": "Kontaveit", "actualPlayer1": "?", "player2": "Collins", "actualPlayer2": "?"},
+                {"player1": "Sabalenka", "actualPlayer1": "?", "player2": "Raducanu", "actualPlayer2": "Saville"},
+                {"player1": "Kontaveit", "actualPlayer1": "?", "player2": "Collins", "actualPlayer2": "Collins"},
                 {"player1": "Badosa", "actualPlayer1": "?", "player2": "Sakkari", "actualPlayer2": "?"},
                 {"player1": "Ostapenko", "actualPlayer1": "?", "player2": "Swiatek", "actualPlayer2": "?"}
             ],
