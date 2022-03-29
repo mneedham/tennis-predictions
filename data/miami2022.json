@@ -15,7 +15,7 @@
             "Quarter Finals": [
                 {"player1": "Medvedev", "actualPlayer1": "Medvedev", "player2": "Hurkacz", "actualPlayer2": "?"},
                 {"player1": "Alcaraz", "actualPlayer1": "?", "player2": "Fritz", "actualPlayer2": "?"},
-                {"player1": "Sinner", "actualPlayer1": "Sinner", "player2": "Opelka", "actualPlayer2": "?"},
+                {"player1": "Sinner", "actualPlayer1": "Sinner", "player2": "Opelka", "actualPlayer2": "Cerundolo"},
                 {"player1": "Norrie", "actualPlayer1": "Ruud", "player2": "Dimitrov", "actualPlayer2": "Zverev"}
             ],
             "Semi Finals": [
@@ -47,7 +47,7 @@
                 {"player1": "Ostapenko", "actualPlayer1": "Kvitova", "player2": "Swiatek", "actualPlayer2": "Swiatek"}
             ],
             "Semi Finals": [
-                {"player1": "Sabalenka", "actualPlayer1": "?", "player2": "Kontaveit", "actualPlayer2": "?"},
+                {"player1": "Sabalenka", "actualPlayer1": "Bencic", "player2": "Kontaveit", "actualPlayer2": "?"},
                 {"player1": "Badosa", "actualPlayer1": "?", "player2": "Swiatek", "actualPlayer2": "?"}
             ],
             "Final": [
