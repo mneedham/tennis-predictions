@@ -19,7 +19,7 @@
                 {"player1": "Norrie", "actualPlayer1": "Ruud", "player2": "Dimitrov", "actualPlayer2": "Zverev"}
             ],
             "Semi Finals": [
-                {"player1": "Medvedev", "actualPlayer1": "Hurkacz", "player2": "Alcaraz", "actualPlayer2": "?"},
+                {"player1": "Medvedev", "actualPlayer1": "Hurkacz", "player2": "Alcaraz", "actualPlayer2": "Alcaraz"},
                 {"player1": "Sinner", "actualPlayer1": "Cerundolo", "player2": "Norrie", "actualPlayer2": "Ruud"}
             ],
             "Final": [
@@ -51,7 +51,7 @@
                 {"player1": "Badosa", "actualPlayer1": "Pegula", "player2": "Swiatek", "actualPlayer2": "Swiatek"}
             ],
             "Final": [
-                {"player1": "Kontaveit", "actualPlayer1": "?", "player2": "Badosa", "actualPlayer2": "?"}
+                {"player1": "Kontaveit", "actualPlayer1": "Osaka", "player2": "Badosa", "actualPlayer2": "?"}
             ],
             "Champion": [
                 {"player1": "Badosa", "actualPlayer1": "?"}
