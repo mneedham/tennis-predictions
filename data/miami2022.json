@@ -23,7 +23,7 @@
                 {"player1": "Sinner", "actualPlayer1": "Cerundolo", "player2": "Norrie", "actualPlayer2": "Ruud"}
             ],
             "Final": [
-                {"player1": "Alcaraz", "actualPlayer1": "?", "player2": "Sinner", "actualPlayer2": "?"}
+                {"player1": "Alcaraz", "actualPlayer1": "Alcaraz", "player2": "Sinner", "actualPlayer2": "Ruud"}
             ],
             "Champion": [
                 {"player1": "Alcaraz", "actualPlayer1": "?"}
@@ -54,7 +54,7 @@
                 {"player1": "Kontaveit", "actualPlayer1": "Osaka", "player2": "Badosa", "actualPlayer2": "Swiatek"}
             ],
             "Champion": [
-                {"player1": "Badosa", "actualPlayer1": "?"}
+                {"player1": "Badosa", "actualPlayer1": "Swiatek"}
             ]
         }
     }
