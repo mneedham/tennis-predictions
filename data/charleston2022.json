@@ -3,7 +3,7 @@
     "events": {
         "Women's Singles": {
             "4th Round": [
-                {"player1": "Sabalenka", "actualPlayer1": "?", "player2": "Anisimova", "actualPlayer2": "Anisimova"},
+                {"player1": "Sabalenka", "actualPlayer1": "Sabalenka", "player2": "Anisimova", "actualPlayer2": "Anisimova"},
                 {"player1": "Vandeweghe", "actualPlayer1": "Vandeweghe", "player2": "Pegula", "actualPlayer2": "Pegula"},
                 {"player1": "Jabueur", "actualPlayer1": "?", "player2": "Tomljanovic", "actualPlayer2": "?"},
                 {"player1": "Cornet", "actualPlayer1": "Cornet", "player2": "Rybakina", "actualPlayer2": "Kalinina"},
