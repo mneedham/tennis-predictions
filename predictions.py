@@ -5,7 +5,7 @@ import datetime
 
 now = datetime.datetime.utcnow()
 
-tournaments = ["ausopen2022", "indianwells2022", "miami2022", "charleston2022", "miamiopen2022"]
+tournaments = ["ausopen2022", "indianwells2022", "miami2022", "charleston2022", "montecarlo2022"]
 
 for tournament_name in tournaments:
     with open("template.html", "r") as template_file, \
