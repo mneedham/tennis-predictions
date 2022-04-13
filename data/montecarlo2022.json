@@ -7,10 +7,10 @@
                 {"player1": "Fritz", "actualPlayer1": "Fritz", "player2": "Alcaraz", "actualPlayer2": "Korda"},
                 {"player1": "Ruud", "actualPlayer1": "Ruud", "player2": "Krajinovic", "actualPlayer2": "Dimitrov"},
                 {"player1": "Hurkacz", "actualPlayer1": "Hurkacz", "player2": "Norrie", "actualPlayer2": "Ramos-Vinolas"},
-                {"player1": "Musetti", "actualPlayer1": "?", "player2": "Harris", "actualPlayer2": "?"},
+                {"player1": "Musetti", "actualPlayer1": "?", "player2": "Harris", "actualPlayer2": "Schwartzman"},
                 {"player1": "Sonego", "actualPlayer1": "Djere", "player2": "Tsitsipas", "actualPlayer2": "Tsitsipas"},
                 {"player1": "Rublev", "actualPlayer1": "?", "player2": "Sinner", "actualPlayer2": "?"},
-                {"player1": "Carreno Busta", "actualPlayer1": "?", "player2": "Zverev", "actualPlayer2": "?"}
+                {"player1": "Carreno Busta", "actualPlayer1": "Carreno Busta", "player2": "Zverev", "actualPlayer2": "?"}
             ],
             "Quarter Finals": [
                 {"player1": "Djokovic", "actualPlayer1": "?", "player2": "Alcaraz", "actualPlayer2": "?"},
