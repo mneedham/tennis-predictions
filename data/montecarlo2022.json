@@ -16,7 +16,7 @@
                 {"player1": "Djokovic", "actualPlayer1": "?", "player2": "Alcaraz", "actualPlayer2": "Fritz"},
                 {"player1": "Ruud", "actualPlayer1": "Dimitrov", "player2": "Hurkacz", "actualPlayer2": "?"},
                 {"player1": "Harris", "actualPlayer1": "Schwartzman", "player2": "Tsitsipas", "actualPlayer2": "Tsitsipas"},
-                {"player1": "Rublev", "actualPlayer1": "?", "player2": "Carreno Busta", "actualPlayer2": "?"}
+                {"player1": "Rublev", "actualPlayer1": "?", "player2": "Carreno Busta", "actualPlayer2": "Zverev"}
             ],
             "Semi Finals": [
                 {"player1": "Alcaraz", "actualPlayer1": "?", "player2": "Ruud", "actualPlayer2": "?"},
