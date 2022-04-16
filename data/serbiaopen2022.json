@@ -1,0 +1,23 @@
+{
+   "tournament": "Serbia Open 2022",
+    "events": {
+      "Men's Singles": {
+            "Quarter Finals": [
+                {"player1": "Djokovic", "actualPlayer1": "?", "player2": "Kecmanovic", "actualPlayer2": "?"},
+                {"player1": "Khachanov", "actualPlayer1": "?", "player2": "Goffin", "actualPlayer2": "?"},
+                {"player1": "Fognini", "actualPlayer1": "?", "player2": "Karatsev", "actualPlayer2": "?"},
+                {"player1": "Rune", "actualPlayer1": "?", "player2": "Rublev", "actualPlayer2": "?"}
+            ],
+            "Semi Finals": [
+                {"player1": "Kecmanovic", "actualPlayer1": "?", "player2": "Goffin", "actualPlayer2": "?"},
+                {"player1": "Karatsev", "actualPlayer1": "?", "player2": "Rublev", "actualPlayer2": "?"}
+            ],
+            "Final": [
+                {"player1": "Kecmanovic", "actualPlayer1": "?", "player2": "Rublev", "actualPlayer2": "?"}
+            ],
+            "Champion": [
+                {"player1": "Kecmanovic", "actualPlayer1": "?"}
+            ]
+        }    
+    }
+}
