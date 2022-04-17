@@ -1,0 +1,23 @@
+{
+   "tournament": "Porsche Tennis Grand Prix 2022",
+    "events": {
+      "Men's Singles": {
+            "Quarter Finals": [
+                {"player1": "Swiatek", "actualPlayer1": "?", "player2": "Giorgi", "actualPlayer2": "?"},
+                {"player1": "Sakkari", "actualPlayer1": "?", "player2": "Kvitova", "actualPlayer2": "?"},
+                {"player1": "Kontaveit", "actualPlayer1": "?", "player2": "Andreescu", "actualPlayer2": "?"},
+                {"player1": "Gauff", "actualPlayer1": "?", "player2": "Badosa", "actualPlayer2": "?"}
+            ],
+            "Semi Finals": [
+                {"player1": "Swiatek", "actualPlayer1": "?", "player2": "Sakkari", "actualPlayer2": "?"},
+                {"player1": "Kontaveit", "actualPlayer1": "?", "player2": "Badosa", "actualPlayer2": "?"}
+            ],
+            "Final": [
+                {"player1": "Swiatek", "actualPlayer1": "?", "player2": "Badosa", "actualPlayer2": "?"}
+            ],
+            "Champion": [
+                {"player1": "Swiatek", "actualPlayer1": "?"}
+            ]
+        }    
+    }
+}
