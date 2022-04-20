@@ -4,9 +4,9 @@
       "Men's Singles": {
             "4th Round": [
                 {"player1": "Tsitsipas", "actualPlayer1": "?", "player2": "Dimitrov", "actualPlayer2": "?"},
-                {"player1": "Munar", "actualPlayer1": "?", "player2": "Alcaraz", "actualPlayer2": "?"},
+                {"player1": "Munar", "actualPlayer1": "Munar", "player2": "Alcaraz", "actualPlayer2": "?"},
                 {"player1": "Norrie", "actualPlayer1": "Norrie", "player2": "Fucsovics", "actualPlayer2": "Fucsovics"},
-                {"player1": "De Minaur", "actualPlayer1": "?", "player2": "Ramos-Vinolas", "actualPlayer2": "?"},
+                {"player1": "De Minaur", "actualPlayer1": "De Minaur", "player2": "Ramos-Vinolas", "actualPlayer2": "Harris"},
                 {"player1": "Schwartzman", "actualPlayer1": "Schwartzman", "player2": "Musetti", "actualPlayer2": "Musetti"},
                 {"player1": "Davidovich Fokina", "actualPlayer1": "Tiafoe", "player2": "Korda", "actualPlayer2": "Auger-Aliassime"},
                 {"player1": "Carreno Busta", "actualPlayer1": "Carreno Busta", "player2": "Sonego", "actualPlayer2": "Sonego"},
