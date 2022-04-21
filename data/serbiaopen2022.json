@@ -4,8 +4,8 @@
       "Men's Singles": {
             "Quarter Finals": [
                 {"player1": "Djokovic", "actualPlayer1": "Djokovic", "player2": "Kecmanovic", "actualPlayer2": "Kecmanovic"},
-                {"player1": "Khachanov", "actualPlayer1": "Khachanov", "player2": "Goffin", "actualPlayer2": "?"},
-                {"player1": "Fognini", "actualPlayer1": "?", "player2": "Karatsev", "actualPlayer2": "?"},
+                {"player1": "Khachanov", "actualPlayer1": "Khachanov", "player2": "Goffin", "actualPlayer2": "Monteiro"},
+                {"player1": "Fognini", "actualPlayer1": "Fognini", "player2": "Karatsev", "actualPlayer2": "Otte"},
                 {"player1": "Rune", "actualPlayer1": "?", "player2": "Rublev", "actualPlayer2": "?"}
             ],
             "Semi Finals": [
