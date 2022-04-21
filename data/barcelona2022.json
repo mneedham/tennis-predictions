@@ -3,7 +3,7 @@
     "events": {
       "Men's Singles": {
             "4th Round": [
-                {"player1": "Tsitsipas", "actualPlayer1": "?", "player2": "Dimitrov", "actualPlayer2": "Dimitrov"},
+                {"player1": "Tsitsipas", "actualPlayer1": "Tsitsipas", "player2": "Dimitrov", "actualPlayer2": "Dimitrov"},
                 {"player1": "Munar", "actualPlayer1": "Munar", "player2": "Alcaraz", "actualPlayer2": "Alcaraz"},
                 {"player1": "Norrie", "actualPlayer1": "Norrie", "player2": "Fucsovics", "actualPlayer2": "Fucsovics"},
                 {"player1": "De Minaur", "actualPlayer1": "De Minaur", "player2": "Ramos-Vinolas", "actualPlayer2": "Harris"},
