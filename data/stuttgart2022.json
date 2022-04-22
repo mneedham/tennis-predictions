@@ -5,7 +5,7 @@
             "Quarter Finals": [
                 {"player1": "Swiatek", "actualPlayer1": "Swiatek", "player2": "Giorgi", "actualPlayer2": "Raducanu"},
                 {"player1": "Sakkari", "actualPlayer1": "Siegemund", "player2": "Kvitova", "actualPlayer2": "Samsonova"},
-                {"player1": "Kontaveit", "actualPlayer1": "?", "player2": "Andreescu", "actualPlayer2": "Sabalenka"},
+                {"player1": "Kontaveit", "actualPlayer1": "Kontaveit", "player2": "Andreescu", "actualPlayer2": "Sabalenka"},
                 {"player1": "Gauff", "actualPlayer1": "Jabeur", "player2": "Badosa", "actualPlayer2": "Badosa"}
             ],
             "Semi Finals": [
