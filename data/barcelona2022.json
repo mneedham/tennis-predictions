@@ -13,7 +13,7 @@
                 {"player1": "Ruusuvuori", "actualPlayer1": "Ruusuvuori", "player2": "Ruud", "actualPlayer2": "Ruud"}
             ],
             "Quarter Finals": [
-                {"player1": "Tsitsipas", "actualPlayer1": "?", "player2": "Alcaraz", "actualPlayer2": "Alcaraz"},
+                {"player1": "Tsitsipas", "actualPlayer1": "Tsitsipas", "player2": "Alcaraz", "actualPlayer2": "Alcaraz"},
                 {"player1": "Norrie", "actualPlayer1": "?", "player2": "Ramos-Vinolas", "actualPlayer2": "De Minaur"},
                 {"player1": "Schwartzman", "actualPlayer1": "Schwartzman", "player2": "Korda", "actualPlayer2": "Auger-Aliassime"},
                 {"player1": "Sonego", "actualPlayer1": "Carreno Busta", "player2": "Ruud", "actualPlayer2": "Ruud"}
