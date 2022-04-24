@@ -1,0 +1,24 @@
+{
+   "tournament": "BMW Open",
+    "events": {
+      "Men's Singles": {
+            "Quarter Finals": [
+                {"player1": "Zverev", "actualPlayer1": "?", "player2": "Evans", "actualPlayer2": "?"},
+                {"player1": "Otte", "actualPlayer1": "?", "player2": "Garin", "actualPlayer2": "?"},
+                {"player1": "Kecmanovic", "actualPlayer1": "?", "player2": "Basilashvili", "actualPlayer2": "?"},
+                {"player1": "Van De Zandschulp", "actualPlayer1": "?", "player2": "Ruud", "actualPlayer2": "?"}
+            ],
+            "Semi Finals": [
+                {"player1": "Zverev", "actualPlayer1": "?", "player2": "Garin", "actualPlayer2": "?"},
+                {"player1": "Kecmanovic", "actualPlayer1": "?", "player2": "Ruud", "actualPlayer2": "?"}
+            ],
+            "Final": [
+                {"player1": "Zverev", "actualPlayer1": "?", "player2": "Ruud", "actualPlayer2": "?"}
+            ],
+            "Champion": [
+                {"player1": "Ruud", "actualPlayer1": "?"}
+            ]
+        },
+       
+    }
+}
