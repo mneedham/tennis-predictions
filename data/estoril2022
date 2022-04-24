@@ -1,0 +1,23 @@
+{
+   "tournament": "Estoril 2022",
+    "events": {
+      "Men's Singles": {
+            "Quarter Finals": [
+                {"player1": "Auger-Aliassime", "actualPlayer1": "?", "player2": "Korda", "actualPlayer2": "?"},
+                {"player1": "Davidovich Fokina", "actualPlayer1": "?", "player2": "Tiafoe", "actualPlayer2": "?"},
+                {"player1": "Paul", "actualPlayer1": "?", "player2": "Baez", "actualPlayer2": "?"},
+                {"player1": "Kwon", "actualPlayer1": "?", "player2": "Schwartzman", "actualPlayer2": "?"}
+            ],
+            "Semi Finals": [
+                {"player1": "Korda", "actualPlayer1": "?", "player2": "Tiafoe", "actualPlayer2": "?"},
+                {"player1": "Baez", "actualPlayer1": "?", "player2": "Schwartzman", "actualPlayer2": "?"}
+            ],
+            "Final": [
+                {"player1": "Tiafoe", "actualPlayer1": "?", "player2": "Schwartzman", "actualPlayer2": "?"}
+            ],
+            "Champion": [
+                {"player1": Schwartzman", "actualPlayer1": "?"}
+            ]
+        }
+    }
+}
