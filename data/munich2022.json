@@ -3,9 +3,9 @@
     "events": {
       "Men's Singles": {
             "Quarter Finals": [
-                {"player1": "Zverev", "actualPlayer1": "?", "player2": "Evans", "actualPlayer2": "?"},
+                {"player1": "Zverev", "actualPlayer1": "Rune", "player2": "Evans", "actualPlayer2": "Ruusuvuori"},
                 {"player1": "Otte", "actualPlayer1": "?", "player2": "Garin", "actualPlayer2": "?"},
-                {"player1": "Kecmanovic", "actualPlayer1": "Kecmanovic", "player2": "Basilashvili", "actualPlayer2": "?"},
+                {"player1": "Kecmanovic", "actualPlayer1": "Kecmanovic", "player2": "Basilashvili", "actualPlayer2": "Basilashvili"},
                 {"player1": "Van De Zandschulp", "actualPlayer1": "?", "player2": "Ruud", "actualPlayer2": "?"}
             ],
             "Semi Finals": [
