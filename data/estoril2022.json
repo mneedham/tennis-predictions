@@ -3,7 +3,7 @@
     "events": {
       "Men's Singles": {
             "Quarter Finals": [
-                {"player1": "Auger-Aliassime", "actualPlayer1": "Auger-Aliassime", "player2": "Korda", "actualPlayer2": "?"},
+                {"player1": "Auger-Aliassime", "actualPlayer1": "Auger-Aliassime", "player2": "Korda", "actualPlayer2": "Korda"},
                 {"player1": "Davidovich Fokina", "actualPlayer1": "Davidovich Fokina", "player2": "Tiafoe", "actualPlayer2": "Tiafoe"},
                 {"player1": "Paul", "actualPlayer1": "Gasquet", "player2": "Baez", "actualPlayer2": "Baez"},
                 {"player1": "Kwon", "actualPlayer1": "Ramos-Vinolas", "player2": "Schwartzman", "actualPlayer2": "Verdasco"}
