@@ -9,8 +9,8 @@
                 {"player1": "Van De Zandschulp", "actualPlayer1": "Van De Zandschulp", "player2": "Ruud", "actualPlayer2": "Ruud"}
             ],
             "Semi Finals": [
-                {"player1": "Zverev", "actualPlayer1": "?", "player2": "Garin", "actualPlayer2": "?"},
-                {"player1": "Kecmanovic", "actualPlayer1": "Kecmanovic", "player2": "Ruud", "actualPlayer2": "?"}
+                {"player1": "Zverev", "actualPlayer1": "?", "player2": "Garin", "actualPlayer2": "Otte"},
+                {"player1": "Kecmanovic", "actualPlayer1": "Kecmanovic", "player2": "Ruud", "actualPlayer2": "Van De Zandschulp"}
             ],
             "Final": [
                 {"player1": "Zverev", "actualPlayer1": "?", "player2": "Ruud", "actualPlayer2": "?"}
