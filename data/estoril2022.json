@@ -9,8 +9,8 @@
                 {"player1": "Kwon", "actualPlayer1": "Ramos-Vinolas", "player2": "Schwartzman", "actualPlayer2": "Verdasco"}
             ],
             "Semi Finals": [
-                {"player1": "Korda", "actualPlayer1": "?", "player2": "Tiafoe", "actualPlayer2": "?"},
-                {"player1": "Baez", "actualPlayer1": "?", "player2": "Schwartzman", "actualPlayer2": "Ramos-Vinolas"}
+                {"player1": "Korda", "actualPlayer1": "?", "player2": "Tiafoe", "actualPlayer2": "Tiafoe"},
+                {"player1": "Baez", "actualPlayer1": "Baez", "player2": "Schwartzman", "actualPlayer2": "Ramos-Vinolas"}
             ],
             "Final": [
                 {"player1": "Tiafoe", "actualPlayer1": "?", "player2": "Schwartzman", "actualPlayer2": "?"}
