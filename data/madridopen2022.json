@@ -37,8 +37,8 @@
                 {"player1": "Kanepi", "actualPlayer1": "?", "player2": "Andreescu", "actualPlayer2": "?"},
                 {"player1": "Pliskova", "actualPlayer1": "Bouzkova", "player2": "Ostapenko", "actualPlayer2": "Alexandrova"},
                 {"player1": "Golubic", "actualPlayer1": "Azarenka", "player2": "Sabalenka", "actualPlayer2": "Anisimova"},
-                {"player1": "Jabeur", "actualPlayer1": "?", "player2": "Bencic", "actualPlayer2": "Bencic"},
-                {"player1": "Gauff", "actualPlayer1": "?", "player2": "Badosa", "actualPlayer2": "Halep"}
+                {"player1": "Jabeur", "actualPlayer1": "Jabeur", "player2": "Bencic", "actualPlayer2": "Bencic"},
+                {"player1": "Gauff", "actualPlayer1": "Gauff", "player2": "Badosa", "actualPlayer2": "Halep"}
             ],
             "Quarter Finals": [
                 {"player1": "Fernandez", "actualPlayer1": "?", "player2": "Raducanu", "actualPlayer2": "?"},
