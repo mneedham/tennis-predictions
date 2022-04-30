@@ -13,7 +13,7 @@
                 {"player1": "Baez", "actualPlayer1": "Baez", "player2": "Schwartzman", "actualPlayer2": "Ramos-Vinolas"}
             ],
             "Final": [
-                {"player1": "Tiafoe", "actualPlayer1": "?", "player2": "Schwartzman", "actualPlayer2": "Baez"}
+                {"player1": "Tiafoe", "actualPlayer1": "Tiafoe", "player2": "Schwartzman", "actualPlayer2": "Baez"}
             ],
             "Champion": [
                 {"player1": "Schwartzman", "actualPlayer1": "?"}
