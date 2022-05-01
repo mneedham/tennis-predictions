@@ -31,7 +31,7 @@
         },
         "Women's Singles": {
             "4th Round": [
-                {"player1": "Fernandez", "actualPlayer1": "Teichmann", "player2": "Rybakina", "actualPlayer2": "?"},
+                {"player1": "Fernandez", "actualPlayer1": "Teichmann", "player2": "Rybakina", "actualPlayer2": "Rybakina"},
                 {"player1": "Raducanu", "actualPlayer1": "Raducanu", "player2": "Stephens", "actualPlayer2": "Kalinina"},
                 {"player1": "Sakkari", "actualPlayer1": "?", "player2": "Osaka", "actualPlayer2": "?"},
                 {"player1": "Kanepi", "actualPlayer1": "Pegula", "player2": "Andreescu", "actualPlayer2": "Andreescu"},
