@@ -3,7 +3,7 @@
     "events": {
       "Men's Singles": {
             "4th Round": [
-                {"player1": "Djokovic", "actualPlayer1": "?", "player2": "Thiem", "actualPlayer2": "?"},
+                {"player1": "Djokovic", "actualPlayer1": "Djokovic", "player2": "Thiem", "actualPlayer2": "?"},
                 {"player1": "Hurkacz", "actualPlayer1": "?", "player2": "Ruud", "actualPlayer2": "?"},
                 {"player1": "Nadal", "actualPlayer1": "?", "player2": "Van De Zandschulp", "actualPlayer2": "?"},
                 {"player1": "Norrie", "actualPlayer1": "?", "player2": "Alcaraz", "actualPlayer2": "?"},
@@ -41,8 +41,8 @@
                 {"player1": "Gauff", "actualPlayer1": "Gauff", "player2": "Badosa", "actualPlayer2": "Halep"}
             ],
             "Quarter Finals": [
-                {"player1": "Fernandez", "actualPlayer1": "?", "player2": "Raducanu", "actualPlayer2": "?"},
-                {"player1": "Osaka", "actualPlayer1": "?", "player2": "Andreescu", "actualPlayer2": "?"},
+                {"player1": "Fernandez", "actualPlayer1": "Teichmann", "player2": "Raducanu", "actualPlayer2": "?"},
+                {"player1": "Osaka", "actualPlayer1": "Sorribes Tormo", "player2": "Andreescu", "actualPlayer2": "Pegula"},
                 {"player1": "Ostapenko", "actualPlayer1": "Alexandrova", "player2": "Sabalenka", "actualPlayer2": "Anisimova"},
                 {"player1": "Bencic", "actualPlayer1": "Jabeur", "player2": "Badosa", "actualPlayer2": "Halep"}
             ],
