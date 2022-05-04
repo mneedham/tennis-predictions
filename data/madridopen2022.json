@@ -3,10 +3,10 @@
     "events": {
       "Men's Singles": {
             "4th Round": [
-                {"player1": "Djokovic", "actualPlayer1": "Djokovic", "player2": "Thiem", "actualPlayer2": "?"},
+                {"player1": "Djokovic", "actualPlayer1": "Djokovic", "player2": "Thiem", "actualPlayer2": "Murray"},
                 {"player1": "Hurkacz", "actualPlayer1": "?", "player2": "Ruud", "actualPlayer2": "?"},
                 {"player1": "Nadal", "actualPlayer1": "?", "player2": "Van De Zandschulp", "actualPlayer2": "?"},
-                {"player1": "Norrie", "actualPlayer1": "?", "player2": "Alcaraz", "actualPlayer2": "?"},
+                {"player1": "Norrie", "actualPlayer1": "?", "player2": "Alcaraz", "actualPlayer2": "Alcaraz"},
                 {"player1": "Rublev", "actualPlayer1": "Rublev", "player2": "Bautista Agut", "actualPlayer2": "?"},
                 {"player1": "Schwartzman", "actualPlayer1": "?", "player2": "Tsitsipas", "actualPlayer2": "?"},
                 {"player1": "Tiafoe", "actualPlayer1": "?", "player2": "De Minaur", "actualPlayer2": "?"},
