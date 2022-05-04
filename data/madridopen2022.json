@@ -8,7 +8,7 @@
                 {"player1": "Nadal", "actualPlayer1": "Nadal", "player2": "Van De Zandschulp", "actualPlayer2": "Goffin"},
                 {"player1": "Norrie", "actualPlayer1": "Norrie", "player2": "Alcaraz", "actualPlayer2": "Alcaraz"},
                 {"player1": "Rublev", "actualPlayer1": "Rublev", "player2": "Bautista Agut", "actualPlayer2": "Evans"},
-                {"player1": "Schwartzman", "actualPlayer1": "Dimitrov", "player2": "Tsitsipas", "actualPlayer2": "?"},
+                {"player1": "Schwartzman", "actualPlayer1": "Dimitrov", "player2": "Tsitsipas", "actualPlayer2": "Tsitsipas"},
                 {"player1": "Tiafoe", "actualPlayer1": "Auger-Aliassime", "player2": "De Minaur", "actualPlayer2": "Sinner"},
                 {"player1": "Korda", "actualPlayer1": "Musetti", "player2": "Zverev", "actualPlayer2": "Zverev"}
             ],
