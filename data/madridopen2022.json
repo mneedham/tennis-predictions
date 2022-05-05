@@ -14,7 +14,7 @@
             ],
             "Quarter Finals": [
                 {"player1": "Djokovic", "actualPlayer1": "Djokovic", "player2": "Hurkacz", "actualPlayer2": "Hurkacz"},
-                {"player1": "Nadal", "actualPlayer1": "Nadal", "player2": "Alcaraz", "actualPlayer2": "?"},
+                {"player1": "Nadal", "actualPlayer1": "Nadal", "player2": "Alcaraz", "actualPlayer2": "Alcaraz"},
                 {"player1": "Rublev", "actualPlayer1": "Rublev", "player2": "Tsitsipas", "actualPlayer2": "Tsitsipas"},
                 {"player1": "Tiafoe", "actualPlayer1": "Auger-Aliassime", "player2": "Korda", "actualPlayer2": "Zverev"}
             ],
