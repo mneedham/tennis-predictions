@@ -20,13 +20,13 @@
             ],
             "Semi Finals": [
                 {"player1": "Hurkacz", "actualPlayer1": "Djokovic", "player2": "Nadal", "actualPlayer2": "Alcaraz"},
-                {"player1": "Tsitsipas", "actualPlayer1": "Tsitsipas", "player2": "Tiafoe", "actualPlayer2": "?"}
+                {"player1": "Tsitsipas", "actualPlayer1": "Tsitsipas", "player2": "Tiafoe", "actualPlayer2": "Zverev"}
             ],
             "Final": [
-                {"player1": "Nadal", "actualPlayer1": "?", "player2": "Tsitsipas", "actualPlayer2": "?"}
+                {"player1": "Nadal", "actualPlayer1": "Alcaraz", "player2": "Tsitsipas", "actualPlayer2": "Zverev"}
             ],
             "Champion": [
-                {"player1": "Tsitsipas", "actualPlayer1": "?"}
+                {"player1": "Tsitsipas", "actualPlayer1": "Alcaraz"}
             ]
         },
         "Women's Singles": {
@@ -54,7 +54,7 @@
                 {"player1": "Raducanu", "actualPlayer1": "Pegula", "player2": "Badosa", "actualPlayer2": "Jabeur"}
             ],
             "Champion": [
-                {"player1": "Badosa", "actualPlayer1": "?"}
+                {"player1": "Badosa", "actualPlayer1": "Jabeur"}
             ]
         }
     }
