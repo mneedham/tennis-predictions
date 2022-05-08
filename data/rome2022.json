@@ -9,21 +9,21 @@
                 {"player1": "Hurkacz", "actualPlayer1": "?", "player2": "Korda", "actualPlayer2": "?"},
                 {"player1": "Rublev", "actualPlayer1": "?", "player2": "Sinner", "actualPlayer2": "?"},
                 {"player1": "Carreno Busta", "actualPlayer1": "?", "player2": "Tsitsipas", "actualPlayer2": "?"},
-                {"player1": "Alcaraz", "actualPlayer1": "?", "player2": "Cilic", "actualPlayer2": "?"},
+                {"player1": "Garin", "actualPlayer1": "?", "player2": "Cilic", "actualPlayer2": "?"},
                 {"player1": "De Minaur", "actualPlayer1": "?", "player2": "Zverev", "actualPlayer2": "?"}
             ],
             "Quarter Finals": [
                 {"player1": "Djokovic", "actualPlayer1": "?", "player2": "Kecmanovic", "actualPlayer2": "?"},
                 {"player1": "Nadal", "actualPlayer1": "?", "player2": "Hurkacz", "actualPlayer2": "?"},
                 {"player1": "Sinner", "actualPlayer1": "?", "player2": "Tsitsipas", "actualPlayer2": "?"},
-                {"player1": "Alcaraz", "actualPlayer1": "?", "player2": "De Minaur", "actualPlayer2": "?"}
+                {"player1": "Cilic", "actualPlayer1": "?", "player2": "De Minaur", "actualPlayer2": "?"}
             ],
             "Semi Finals": [
                 {"player1": "Djokovic", "actualPlayer1": "?", "player2": "Nadal", "actualPlayer2": "?"},
-                {"player1": "Tsitsipas", "actualPlayer1": "?", "player2": "Alcaraz", "actualPlayer2": "?"}
+                {"player1": "Tsitsipas", "actualPlayer1": "?", "player2": "De Minaur", "actualPlayer2": "?"}
             ],
             "Final": [
-                {"player1": "Nadal", "actualPlayer1": "?", "player2": "Alcaraz", "actualPlayer2": "?"}
+                {"player1": "Nadal", "actualPlayer1": "?", "player2": "Tsitsipas", "actualPlayer2": "?"}
             ],
             "Champion": [
                 {"player1": "Nadal", "actualPlayer1": "?"}
