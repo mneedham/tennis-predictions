@@ -3,13 +3,13 @@
     "events": {
       "Men's Singles": {
             "4th Round": [
-                {"player1": "Djokovic", "actualPlayer1": "?", "player2": "Djere", "actualPlayer2": "?"},
-                {"player1": "Kecmanovic", "actualPlayer1": "?", "player2": "Davidovich Fokina", "actualPlayer2": "?"},
-                {"player1": "Nadal", "actualPlayer1": "?", "player2": "Evans", "actualPlayer2": "?"},
+                {"player1": "Djokovic", "actualPlayer1": "Djokovic", "player2": "Djere", "actualPlayer2": "?"},
+                {"player1": "Kecmanovic", "actualPlayer1": "?", "player2": "Davidovich Fokina", "actualPlayer2": "Auger-Aliassime"},
+                {"player1": "Nadal", "actualPlayer1": "?", "player2": "Evans", "actualPlayer2": "Shapovalov"},
                 {"player1": "Hurkacz", "actualPlayer1": "?", "player2": "Korda", "actualPlayer2": "?"},
-                {"player1": "Rublev", "actualPlayer1": "?", "player2": "Sinner", "actualPlayer2": "?"},
+                {"player1": "Rublev", "actualPlayer1": "Krainovic", "player2": "Sinner", "actualPlayer2": "?"},
                 {"player1": "Carreno Busta", "actualPlayer1": "?", "player2": "Tsitsipas", "actualPlayer2": "?"},
-                {"player1": "Garin", "actualPlayer1": "?", "player2": "Cilic", "actualPlayer2": "?"},
+                {"player1": "Garin", "actualPlayer1": "Garin", "player2": "Cilic", "actualPlayer2": "?"},
                 {"player1": "De Minaur", "actualPlayer1": "?", "player2": "Zverev", "actualPlayer2": "?"}
             ],
             "Quarter Finals": [
