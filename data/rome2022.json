@@ -1,62 +1,62 @@
 {
-   "tournament": "Rome Masters 2022",
-    "events": {
-      "Men's Singles": {
-            "4th Round": [
-                {"player1": "Djokovic", "actualPlayer1": "Djokovic", "player2": "Djere", "actualPlayer2": "Wawrinka"},
-                {"player1": "Kecmanovic", "actualPlayer1": "Giron", "player2": "Davidovich Fokina", "actualPlayer2": "Auger-Aliassime"},
-                {"player1": "Nadal", "actualPlayer1": "Nadal", "player2": "Evans", "actualPlayer2": "Shapovalov"},
-                {"player1": "Hurkacz", "actualPlayer1": "Brooksby", "player2": "Korda", "actualPlayer2": "Ruud"},
-                {"player1": "Rublev", "actualPlayer1": "Krajinovic", "player2": "Sinner", "actualPlayer2": "Sinner},
-                {"player1": "Carreno Busta", "actualPlayer1": "Khachanov", "player2": "Tsitsipas", "actualPlayer2": "Tsitsipas"},
-                {"player1": "Garin", "actualPlayer1": "Garin", "player2": "Cilic", "actualPlayer2": "Cilic"},
-                {"player1": "De Minaur", "actualPlayer1": "De Minaur", "player2": "Zverev", "actualPlayer2": "Zverev"}
-            ],
-            "Quarter Finals": [
-                {"player1": "Djokovic", "actualPlayer1": "?", "player2": "Kecmanovic", "actualPlayer2": "?"},
-                {"player1": "Nadal", "actualPlayer1": "?", "player2": "Hurkacz", "actualPlayer2": "?"},
-                {"player1": "Sinner", "actualPlayer1": "?", "player2": "Tsitsipas", "actualPlayer2": "?"},
-                {"player1": "Cilic", "actualPlayer1": "?", "player2": "De Minaur", "actualPlayer2": "?"}
-            ],
-            "Semi Finals": [
-                {"player1": "Djokovic", "actualPlayer1": "?", "player2": "Nadal", "actualPlayer2": "?"},
-                {"player1": "Tsitsipas", "actualPlayer1": "?", "player2": "De Minaur", "actualPlayer2": "?"}
-            ],
-            "Final": [
-                {"player1": "Nadal", "actualPlayer1": "?", "player2": "Tsitsipas", "actualPlayer2": "?"}
-            ],
-            "Champion": [
-                {"player1": "Nadal", "actualPlayer1": "?"}
-            ]
-        },
-        "Women's Singles": {
-            "4th Round": [
-                {"player1": "Swiatek", "actualPlayer1": "?", "player2": "Azarenka", "actualPlayer2": "?"},
-                {"player1": "Raducanu", "actualPlayer1": "?", "player2": "Muchova", "actualPlayer2": "?"},
-                {"player1": "Sabalenka", "actualPlayer1": "?", "player2": "Pegula", "actualPlayer2": "?"},
-                {"player1": "Bencic", "actualPlayer1": "?", "player2": "Halep", "actualPlayer2": "?"},
-                {"player1": "Muguruza", "actualPlayer1": "?", "player2": "Jabeur", "actualPlayer2": "?"},
-                {"player1": "Kostyuk", "actualPlayer1": "?", "player2": "Sakkari", "actualPlayer2": "?"},
-                {"player1": "Teichmann", "actualPlayer1": "?", "player2": "Rybakina", "actualPlayer2": "?"},
-                {"player1": "Fernandez", "actualPlayer1": "?", "player2": "Badosa", "actualPlayer2": "?"}
-            ],
-            "Quarter Finals": [
-                {"player1": "Swiatek", "actualPlayer1": "?", "player2": "Raducanu", "actualPlayer2": "?"},
-                {"player1": "Pegula", "actualPlayer1": "?", "player2": "Halep", "actualPlayer2": "?"},
-                {"player1": "Jabeur", "actualPlayer1": "?", "player2": "Sakkari", "actualPlayer2": "?"},
-                {"player1": "Rybakina", "actualPlayer1": "?", "player2": "Badosa", "actualPlayer2": "?"}
-            ],
-            "Semi Finals": [
-                {"player1": "Swiatek", "actualPlayer1": "?", "player2": "Halep", "actualPlayer2": "?"},
-                {"player1": "Jabeur", "actualPlayer1": "?", "player2": "Badosa", "actualPlayer2": "?"}
-            ],
-            "Final": [
-                {"player1": "Swiatek", "actualPlayer1": "?", "player2": "Jabeur", "actualPlayer2": "?"}
-            ],
-            "Champion": [
-                {"player1": "Swiatek", "actualPlayer1": "?"}
-            ]
-        }
-    }
-}
-            
+    "tournament": "Rome Masters 2022",
+     "events": {
+       "Men's Singles": {
+             "4th Round": [
+                 {"player1": "Djokovic", "actualPlayer1": "Djokovic", "player2": "Djere", "actualPlayer2": "Wawrinka"},
+                 {"player1": "Kecmanovic", "actualPlayer1": "Giron", "player2": "Davidovich Fokina", "actualPlayer2": "Auger-Aliassime"},
+                 {"player1": "Nadal", "actualPlayer1": "Nadal", "player2": "Evans", "actualPlayer2": "Shapovalov"},
+                 {"player1": "Hurkacz", "actualPlayer1": "Brooksby", "player2": "Korda", "actualPlayer2": "Ruud"},
+                 {"player1": "Rublev", "actualPlayer1": "Krajinovic", "player2": "Sinner", "actualPlayer2": "Sinner"},
+                 {"player1": "Carreno Busta", "actualPlayer1": "Khachanov", "player2": "Tsitsipas", "actualPlayer2": "Tsitsipas"},
+                 {"player1": "Garin", "actualPlayer1": "Garin", "player2": "Cilic", "actualPlayer2": "Cilic"},
+                 {"player1": "De Minaur", "actualPlayer1": "De Minaur", "player2": "Zverev", "actualPlayer2": "Zverev"}
+             ],
+             "Quarter Finals": [
+                 {"player1": "Djokovic", "actualPlayer1": "?", "player2": "Kecmanovic", "actualPlayer2": "?"},
+                 {"player1": "Nadal", "actualPlayer1": "?", "player2": "Hurkacz", "actualPlayer2": "?"},
+                 {"player1": "Sinner", "actualPlayer1": "?", "player2": "Tsitsipas", "actualPlayer2": "?"},
+                 {"player1": "Cilic", "actualPlayer1": "?", "player2": "De Minaur", "actualPlayer2": "?"}
+             ],
+             "Semi Finals": [
+                 {"player1": "Djokovic", "actualPlayer1": "?", "player2": "Nadal", "actualPlayer2": "?"},
+                 {"player1": "Tsitsipas", "actualPlayer1": "?", "player2": "De Minaur", "actualPlayer2": "?"}
+             ],
+             "Final": [
+                 {"player1": "Nadal", "actualPlayer1": "?", "player2": "Tsitsipas", "actualPlayer2": "?"}
+             ],
+             "Champion": [
+                 {"player1": "Nadal", "actualPlayer1": "?"}
+             ]
+         },
+         "Women's Singles": {
+             "4th Round": [
+                 {"player1": "Swiatek", "actualPlayer1": "Swiatek", "player2": "Azarenka", "actualPlayer2": "Azarenka"},
+                 {"player1": "Raducanu", "actualPlayer1": "Andreescu", "player2": "Muchova", "actualPlayer2": "Martic"},
+                 {"player1": "Sabalenka", "actualPlayer1": "Sabalenka", "player2": "Pegula", "actualPlayer2": "Pegula"},
+                 {"player1": "Bencic", "actualPlayer1": "Anisimova", "player2": "Halep", "actualPlayer2": "Collins"},
+                 {"player1": "Muguruza", "actualPlayer1": "Putintseva", "player2": "Jabeur", "actualPlayer2": "Jabeur"},
+                 {"player1": "Kostyuk", "actualPlayer1": "Gauff", "player2": "Sakkari", "actualPlayer2": "Sakkari"},
+                 {"player1": "Teichmann", "actualPlayer1": "Teichmann", "player2": "Rybakina", "actualPlayer2": "Rybakina"},
+                 {"player1": "Fernandez", "actualPlayer1": "Kastakina", "player2": "Badosa", "actualPlayer2": "Badosa"}
+             ],
+             "Quarter Finals": [
+                 {"player1": "Swiatek", "actualPlayer1": "?", "player2": "Raducanu", "actualPlayer2": "?"},
+                 {"player1": "Pegula", "actualPlayer1": "?", "player2": "Halep", "actualPlayer2": "?"},
+                 {"player1": "Jabeur", "actualPlayer1": "?", "player2": "Sakkari", "actualPlayer2": "?"},
+                 {"player1": "Rybakina", "actualPlayer1": "?", "player2": "Badosa", "actualPlayer2": "?"}
+             ],
+             "Semi Finals": [
+                 {"player1": "Swiatek", "actualPlayer1": "?", "player2": "Halep", "actualPlayer2": "?"},
+                 {"player1": "Jabeur", "actualPlayer1": "?", "player2": "Badosa", "actualPlayer2": "?"}
+             ],
+             "Final": [
+                 {"player1": "Swiatek", "actualPlayer1": "?", "player2": "Jabeur", "actualPlayer2": "?"}
+             ],
+             "Champion": [
+                 {"player1": "Swiatek", "actualPlayer1": "?"}
+             ]
+         }
+     }
+ }
+ 
