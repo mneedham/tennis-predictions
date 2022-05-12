@@ -13,10 +13,10 @@
                  {"player1": "De Minaur", "actualPlayer1": "De Minaur", "player2": "Zverev", "actualPlayer2": "Zverev"}
              ],
              "Quarter Finals": [
-                 {"player1": "Djokovic", "actualPlayer1": "?", "player2": "Kecmanovic", "actualPlayer2": "?"},
+                 {"player1": "Djokovic", "actualPlayer1": "?", "player2": "Kecmanovic", "actualPlayer2": "Auger-Aliassime"},
                  {"player1": "Nadal", "actualPlayer1": "?", "player2": "Hurkacz", "actualPlayer2": "?"},
-                 {"player1": "Sinner", "actualPlayer1": "?", "player2": "Tsitsipas", "actualPlayer2": "?"},
-                 {"player1": "Cilic", "actualPlayer1": "?", "player2": "De Minaur", "actualPlayer2": "?"}
+                 {"player1": "Sinner", "actualPlayer1": "Sinner", "player2": "Tsitsipas", "actualPlayer2": "Tsitsipas"},
+                 {"player1": "Cilic", "actualPlayer1": "?", "player2": "De Minaur", "actualPlayer2": "Zverev"}
              ],
              "Semi Finals": [
                  {"player1": "Djokovic", "actualPlayer1": "?", "player2": "Nadal", "actualPlayer2": "?"},
@@ -41,10 +41,10 @@
                  {"player1": "Fernandez", "actualPlayer1": "Kastakina", "player2": "Badosa", "actualPlayer2": "Badosa"}
              ],
              "Quarter Finals": [
-                 {"player1": "Swiatek", "actualPlayer1": "?", "player2": "Raducanu", "actualPlayer2": "?"},
-                 {"player1": "Pegula", "actualPlayer1": "Sabalenka", "player2": "Halep", "actualPlayer2": "?"},
+                 {"player1": "Swiatek", "actualPlayer1": "Swiatek", "player2": "Raducanu", "actualPlayer2": "Andreescu"},
+                 {"player1": "Pegula", "actualPlayer1": "Sabalenka", "player2": "Halep", "actualPlayer2": "Anisimova"},
                  {"player1": "Jabeur", "actualPlayer1": "?", "player2": "Sakkari", "actualPlayer2": "?"},
-                 {"player1": "Rybakina", "actualPlayer1": "?", "player2": "Badosa", "actualPlayer2": "?"}
+                 {"player1": "Rybakina", "actualPlayer1": "Teichmann", "player2": "Badosa", "actualPlayer2": "?"}
              ],
              "Semi Finals": [
                  {"player1": "Swiatek", "actualPlayer1": "?", "player2": "Halep", "actualPlayer2": "?"},
