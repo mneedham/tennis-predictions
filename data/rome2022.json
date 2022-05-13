@@ -38,13 +38,13 @@
                  {"player1": "Muguruza", "actualPlayer1": "Putintseva", "player2": "Jabeur", "actualPlayer2": "Jabeur"},
                  {"player1": "Kostyuk", "actualPlayer1": "Gauff", "player2": "Sakkari", "actualPlayer2": "Sakkari"},
                  {"player1": "Teichmann", "actualPlayer1": "Teichmann", "player2": "Rybakina", "actualPlayer2": "Rybakina"},
-                 {"player1": "Fernandez", "actualPlayer1": "Kastakina", "player2": "Badosa", "actualPlayer2": "Badosa"}
+                 {"player1": "Fernandez", "actualPlayer1": "Kasatkina", "player2": "Badosa", "actualPlayer2": "Badosa"}
              ],
              "Quarter Finals": [
                  {"player1": "Swiatek", "actualPlayer1": "Swiatek", "player2": "Raducanu", "actualPlayer2": "Andreescu"},
                  {"player1": "Pegula", "actualPlayer1": "Sabalenka", "player2": "Halep", "actualPlayer2": "Anisimova"},
                  {"player1": "Jabeur", "actualPlayer1": "Jabeur", "player2": "Sakkari", "actualPlayer2": "Sakkari"},
-                 {"player1": "Rybakina", "actualPlayer1": "Teichmann", "player2": "Badosa", "actualPlayer2": "?"}
+                 {"player1": "Rybakina", "actualPlayer1": "Teichmann", "player2": "Badosa", "actualPlayer2": "Kasatkina"}
              ],
              "Semi Finals": [
                  {"player1": "Swiatek", "actualPlayer1": "?", "player2": "Halep", "actualPlayer2": "?"},
