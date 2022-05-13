@@ -19,8 +19,8 @@
                  {"player1": "Cilic", "actualPlayer1": "Garin", "player2": "De Minaur", "actualPlayer2": "Zverev"}
              ],
              "Semi Finals": [
-                 {"player1": "Djokovic", "actualPlayer1": "?", "player2": "Nadal", "actualPlayer2": "?"},
-                 {"player1": "Tsitsipas", "actualPlayer1": "?", "player2": "De Minaur", "actualPlayer2": "?"}
+                 {"player1": "Djokovic", "actualPlayer1": "?", "player2": "Nadal", "actualPlayer2": "Ruud"},
+                 {"player1": "Tsitsipas", "actualPlayer1": "Tsitsipas", "player2": "De Minaur", "actualPlayer2": "Zverev"}
              ],
              "Final": [
                  {"player1": "Nadal", "actualPlayer1": "?", "player2": "Tsitsipas", "actualPlayer2": "?"}
@@ -47,7 +47,7 @@
                  {"player1": "Rybakina", "actualPlayer1": "Teichmann", "player2": "Badosa", "actualPlayer2": "Kasatkina"}
              ],
              "Semi Finals": [
-                 {"player1": "Swiatek", "actualPlayer1": "?", "player2": "Halep", "actualPlayer2": "?"},
+                 {"player1": "Swiatek", "actualPlayer1": "Swiatek", "player2": "Halep", "actualPlayer2": "Sabalenka"},
                  {"player1": "Jabeur", "actualPlayer1": "?", "player2": "Badosa", "actualPlayer2": "?"}
              ],
              "Final": [
