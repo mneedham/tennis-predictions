@@ -48,7 +48,7 @@
              ],
              "Semi Finals": [
                  {"player1": "Swiatek", "actualPlayer1": "Swiatek", "player2": "Halep", "actualPlayer2": "Sabalenka"},
-                 {"player1": "Jabeur", "actualPlayer1": "?", "player2": "Badosa", "actualPlayer2": "?"}
+                 {"player1": "Jabeur", "actualPlayer1": "Jabeur", "player2": "Badosa", "actualPlayer2": "Kasatkina"}
              ],
              "Final": [
                  {"player1": "Swiatek", "actualPlayer1": "?", "player2": "Jabeur", "actualPlayer2": "?"}
