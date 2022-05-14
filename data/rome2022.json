@@ -23,7 +23,7 @@
                  {"player1": "Tsitsipas", "actualPlayer1": "Tsitsipas", "player2": "De Minaur", "actualPlayer2": "Zverev"}
              ],
              "Final": [
-                 {"player1": "Nadal", "actualPlayer1": "?", "player2": "Tsitsipas", "actualPlayer2": "?"}
+                 {"player1": "Nadal", "actualPlayer1": "?", "player2": "Tsitsipas", "actualPlayer2": "Tsitsipas"}
              ],
              "Champion": [
                  {"player1": "Nadal", "actualPlayer1": "?"}
@@ -51,7 +51,7 @@
                  {"player1": "Jabeur", "actualPlayer1": "Jabeur", "player2": "Badosa", "actualPlayer2": "Kasatkina"}
              ],
              "Final": [
-                 {"player1": "Swiatek", "actualPlayer1": "?", "player2": "Jabeur", "actualPlayer2": "?"}
+                 {"player1": "Swiatek", "actualPlayer1": "Swiatek", "player2": "Jabeur", "actualPlayer2": "?"}
              ],
              "Champion": [
                  {"player1": "Swiatek", "actualPlayer1": "?"}
