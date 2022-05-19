@@ -26,7 +26,7 @@
                  {"player1": "Nadal", "actualPlayer1": "Djokovic", "player2": "Tsitsipas", "actualPlayer2": "Tsitsipas"}
              ],
              "Champion": [
-                 {"player1": "Nadal", "actualPlayer1": "?"}
+                 {"player1": "Nadal", "actualPlayer1": "Djokovic"}
              ]
          },
          "Women's Singles": {
@@ -54,7 +54,7 @@
                  {"player1": "Swiatek", "actualPlayer1": "Swiatek", "player2": "Jabeur", "actualPlayer2": "Jabeur"}
              ],
              "Champion": [
-                 {"player1": "Swiatek", "actualPlayer1": "?"}
+                 {"player1": "Swiatek", "actualPlayer1": "Swiatek"}
              ]
          }
      }
