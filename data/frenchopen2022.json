@@ -3,30 +3,30 @@
     "events": {
       "Men's Singles": {
             "4th Round": [
-                {"player1": "?", "actualPlayer1": "?", "player2": "?", "actualPlayer2": "?"},
-                {"player1": "?", "actualPlayer1": "?", "player2": "?", "actualPlayer2": "?"},
-                {"player1": "?", "actualPlayer1": "?", "player2": "?", "actualPlayer2": "?"},
-                {"player1": "?", "actualPlayer1": "?", "player2": "?", "actualPlayer2": "?"},
-                {"player1": "?", "actualPlayer1": "?", "player2": "?", "actualPlayer2": "?"},
-                {"player1": "?", "actualPlayer1": "?", "player2": "?", "actualPlayer2": "?"},
-                {"player1": "?", "actualPlayer1": "?", "player2": "?", "actualPlayer2": "?"},
-                {"player1": "?", "actualPlayer1": "?", "player2": "?", "actualPlayer2": "?"}
+                {"player1": "Djokovic", "actualPlayer1": "?", "player2": "Schwartzman", "actualPlayer2": "?"},
+                {"player1": "Auger-Aliassime", "actualPlayer1": "?", "player2": "Nadal", "actualPlayer2": "?"},
+                {"player1": "Davidovich Fokina", "actualPlayer1": "?", "player2": "Fritz", "actualPlayer2": "?"},
+                {"player1": "Norrie", "actualPlayer1": "?", "player2": "Alcaraz", "actualPlayer2": "?"},
+                {"player1": "Ruud", "actualPlayer1": "?", "player2": "Tiafoe", "actualPlayer2": "?"},
+                {"player1": "Shapovalov", "actualPlayer1": "?", "player2": "Tsitsipas", "actualPlayer2": "?"},
+                {"player1": "Rublev", "actualPlayer1": "?", "player2": "Sinner", "actualPlayer2": "?"},
+                {"player1": "Carreno Busta", "actualPlayer1": "?", "player2": "Kecmanovic", "actualPlayer2": "?"}
             ],
             "Quarter Finals": [
-                {"player1": "?", "actualPlayer1": "?", "player2": "?", "actualPlayer2": "?"},
-                {"player1": "?", "actualPlayer1": "?", "player2": "?", "actualPlayer2": "?"},
-                {"player1": "?", "actualPlayer1": "?", "player2": "?", "actualPlayer2": "?"},
-                {"player1": "?", "actualPlayer1": "?", "player2": "?", "actualPlayer2": "?"}
+                {"player1": "Djokovic", "actualPlayer1": "?", "player2": "Nadal", "actualPlayer2": "?"},
+                {"player1": "Davidovich Fokina", "actualPlayer1": "?", "player2": "Alcaraz", "actualPlayer2": "?"},
+                {"player1": "Ruud", "actualPlayer1": "?", "player2": "Tsitsipas", "actualPlayer2": "?"},
+                {"player1": "Sinner", "actualPlayer1": "?", "player2": "Kecmanovic", "actualPlayer2": "?"}
             ],
             "Semi Finals": [
-                {"player1": "?", "actualPlayer1": "?", "player2": "?", "actualPlayer2": "?"},
-                {"player1": "?", "actualPlayer1": "?", "player2": "?", "actualPlayer2": "?"}
+                {"player1": "Nadal", "actualPlayer1": "?", "player2": "Alcaraz", "actualPlayer2": "?"},
+                {"player1": "Tsitsipas", "actualPlayer1": "?", "player2": "Sinner", "actualPlayer2": "?"}
             ],
             "Final": [
-                {"player1": "?", "actualPlayer1": "?", "player2": "?", "actualPlayer2": "?"}
+                {"player1": "Nadal", "actualPlayer1": "?", "player2": "Tsitsipas", "actualPlayer2": "?"}
             ],
             "Champion": [
-                {"player1": "?", "actualPlayer1": "?"}
+                {"player1": "Nadal", "actualPlayer1": "?"}
             ]
         },
         "Women's Singles": {
