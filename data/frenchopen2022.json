@@ -31,30 +31,30 @@
         },
         "Women's Singles": {
             "4th Round": [
-                {"player1": "?", "actualPlayer1": "?", "player2": "?", "actualPlayer2": "?"},
-                {"player1": "?", "actualPlayer1": "?", "player2": "?", "actualPlayer2": "?"},
-                {"player1": "?", "actualPlayer1": "?", "player2": "?", "actualPlayer2": "?"},
-                {"player1": "?", "actualPlayer1": "?", "player2": "?", "actualPlayer2": "?"},
-                {"player1": "?", "actualPlayer1": "?", "player2": "?", "actualPlayer2": "?"},
-                {"player1": "?", "actualPlayer1": "?", "player2": "?", "actualPlayer2": "?"},
-                {"player1": "?", "actualPlayer1": "?", "player2": "?", "actualPlayer2": "?"},
-                {"player1": "?", "actualPlayer1": "?", "player2": "?", "actualPlayer2": "?"}
+                {"player1": "Swiatek", "actualPlayer1": "?", "player2": "Halep", "actualPlayer2": "?"},
+                {"player1": "Pegula", "actualPlayer1": "?", "player2": "Alexandrova", "actualPlayer2": "?"},
+                {"player1": "Badosa", "actualPlayer1": "?", "player2": "Rybakina", "actualPlayer2": "?"},
+                {"player1": "Kasatkina", "actualPlayer1": "?", "player2": "Sabalenka", "actualPlayer2": "?"},
+                {"player1": "Jabeur", "actualPlayer1": "?", "player2": "Raducanu", "actualPlayer2": "?"},
+                {"player1": "Andreescu", "actualPlayer1": "?", "player2": "Muchova", "actualPlayer2": "?"},
+                {"player1": "Kontaveit", "actualPlayer1": "?", "player2": "Gauff", "actualPlayer2": "?"},
+                {"player1": "Teichmann", "actualPlayer1": "?", "player2": "Cirstea", "actualPlayer2": "?"}
             ],
             "Quarter Finals": [
-                {"player1": "?", "actualPlayer1": "?", "player2": "?", "actualPlayer2": "?"},
-                {"player1": "?", "actualPlayer1": "?", "player2": "?", "actualPlayer2": "?"},
-                {"player1": "?", "actualPlayer1": "?", "player2": "?", "actualPlayer2": "?"},
-                {"player1": "?", "actualPlayer1": "?", "player2": "?", "actualPlayer2": "?"}
+                {"player1": "Swiatek", "actualPlayer1": "?", "player2": "Pegula", "actualPlayer2": "?"},
+                {"player1": "Rybakina", "actualPlayer1": "?", "player2": "Kasatkina", "actualPlayer2": "?"},
+                {"player1": "Jabeur", "actualPlayer1": "?", "player2": "Andreescu", "actualPlayer2": "?"},
+                {"player1": "Gauff", "actualPlayer1": "?", "player2": "Teichmann", "actualPlayer2": "?"}
             ],
             "Semi Finals": [
-                {"player1": "?", "actualPlayer1": "?", "player2": "?", "actualPlayer2": "?"},
-                {"player1": "?", "actualPlayer1": "?", "player2": "?", "actualPlayer2": "?"}
+                {"player1": "Swiatek", "actualPlayer1": "?", "player2": "Kasatkina", "actualPlayer2": "?"},
+                {"player1": "Jabeur", "actualPlayer1": "?", "player2": "Teichmann", "actualPlayer2": "?"}
             ],
             "Final": [
-                {"player1": "?", "actualPlayer1": "?", "player2": "?", "actualPlayer2": "?"}
+                {"player1": "Swiatek", "actualPlayer1": "?", "player2": "Jabeur", "actualPlayer2": "?"}
             ],
             "Champion": [
-                {"player1": "?", "actualPlayer1": "?"}
+                {"player1": "Swiatek", "actualPlayer1": "?"}
             ]
         }
     }
