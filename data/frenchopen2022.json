@@ -3,7 +3,7 @@
     "events": {
       "Men's Singles": {
             "4th Round": [
-                {"player1": "Djokovic", "actualPlayer1": "?", "player2": "Schwartzman", "actualPlayer2": "?"},
+                {"player1": "Djokovic", "actualPlayer1": "?", "player2": "Schwartzman", "actualPlayer2": "Schwartzman"},
                 {"player1": "Auger-Aliassime", "actualPlayer1": "?", "player2": "Nadal", "actualPlayer2": "?"},
                 {"player1": "Davidovich Fokina", "actualPlayer1": "?", "player2": "Fritz", "actualPlayer2": "?"},
                 {"player1": "Norrie", "actualPlayer1": "?", "player2": "Alcaraz", "actualPlayer2": "?"},
@@ -35,7 +35,7 @@
                 {"player1": "Pegula", "actualPlayer1": "?", "player2": "Alexandrova", "actualPlayer2": "?"},
                 {"player1": "Badosa", "actualPlayer1": "?", "player2": "Rybakina", "actualPlayer2": "?"},
                 {"player1": "Kasatkina", "actualPlayer1": "?", "player2": "Sabalenka", "actualPlayer2": "?"},
-                {"player1": "Jabeur", "actualPlayer1": "?", "player2": "Raducanu", "actualPlayer2": "?"},
+                {"player1": "Jabeur", "actualPlayer1": "Trevisan", "player2": "Raducanu", "actualPlayer2": "?"},
                 {"player1": "Andreescu", "actualPlayer1": "?", "player2": "Muchova", "actualPlayer2": "Anisimova"},
                 {"player1": "Kontaveit", "actualPlayer1": "?", "player2": "Gauff", "actualPlayer2": "?"},
                 {"player1": "Teichmann", "actualPlayer1": "?", "player2": "Cirstea", "actualPlayer2": "?"}
