@@ -4,7 +4,7 @@
       "Men's Singles": {
             "4th Round": [
                 {"player1": "Djokovic", "actualPlayer1": "Djokovic", "player2": "Schwartzman", "actualPlayer2": "Schwartzman"},
-                {"player1": "Auger-Aliassime", "actualPlayer1": "Auger-Aliassime", "player2": "Nadal", "actualPlayer2": "?"},
+                {"player1": "Auger-Aliassime", "actualPlayer1": "Auger-Aliassime", "player2": "Nadal", "actualPlayer2": "Nadal"},
                 {"player1": "Davidovich Fokina", "actualPlayer1": "?", "player2": "Fritz", "actualPlayer2": "?"},
                 {"player1": "Norrie", "actualPlayer1": "?", "player2": "Alcaraz", "actualPlayer2": "?"},
                 {"player1": "Ruud", "actualPlayer1": "?", "player2": "Tiafoe", "actualPlayer2": "?"},
