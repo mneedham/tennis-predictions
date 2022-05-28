@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>BMW Open Predictions</title>
+<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#players {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 98%;
+  margin: 0 0 15px 0;
+}
+
+#players td, #players th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#players tr:nth-child(even){background-color: #f2f2f2;}
+
+#players tr:hover {background-color: #ddd;}
+
+#players th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #008cc1;
+  color: white;
+}
+
+#players td.correct {
+  background-color: #3FFF00;
+}
+
+#players td.incorrect {
+    background-color: #D2042D;
+  color: #fff
+}
+
+#players td {
+height: 40px;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.column {
+  flex: 50%;
+  /* margin: 10px; */
+}
+
+@media (max-width: 1000px) {
+  .column{
+    flex: 100%;    
+    font-size: 2em;
+  }
+  h1 {
+    font-size: 3em;
+  }
+  #players td {
+     height: 75px;
+  }
+  p { font-size: 1.5em; }
+  
+}
+
+</style>
+</head>
+<body>
+
+<h1>BMW Open Predictions</h1>
+
+<p>Generated at 2022-05-28 09:02:49.364091</p>
+<p>
+  <a href="https://github.com/mneedham/tennis-predictions/edit/main/data/munich2022.json">Edit this tournament</a>
+</p>
+
+<div class="row">
+  
+  <div class="column">
+    <h2>Men's Singles</h2>
+    
+    
+    <table id="players">
+      <tr>
+        <th colspan="2">Quarter Finals</th>
+      </tr>
+
+      
+          <tr>
+              
+              
+              <td width="50%" class=" incorrect">
+                  
+                      <strike>Zverev</strike> <br />Rune
+                  
+              </td>
+              <td width="50%" class=" incorrect">
+                  
+                      <strike>Evans</strike> <br />Ruusuvuori
+                  
+              </td>
+              
+          </tr>
+      
+          <tr>
+              
+              
+              <td width="50%" class="correct ">
+                  
+                   Otte
+                  
+              </td>
+              <td width="50%" class=" incorrect">
+                  
+                      <strike>Garin</strike> <br />Tabilo
+                  
+              </td>
+              
+          </tr>
+      
+          <tr>
+              
+              
+              <td width="50%" class="correct ">
+                  
+                   Kecmanovic
+                  
+              </td>
+              <td width="50%" class="correct ">
+                  
+                   Basilashvili
+                  
+              </td>
+              
+          </tr>
+      
+          <tr>
+              
+              
+              <td width="50%" class="correct ">
+                  
+                   Van De Zandschulp
+                  
+              </td>
+              <td width="50%" class="correct ">
+                  
+                   Ruud
+                  
+              </td>
+              
+          </tr>
+      
+
+    </table>
+    
+    <table id="players">
+      <tr>
+        <th colspan="2">Semi Finals</th>
+      </tr>
+
+      
+          <tr>
+              
+              
+              <td width="50%" class=" incorrect">
+                  
+                      <strike>Zverev</strike> <br />Rune
+                  
+              </td>
+              <td width="50%" class=" incorrect">
+                  
+                      <strike>Garin</strike> <br />Otte
+                  
+              </td>
+              
+          </tr>
+      
+          <tr>
+              
+              
+              <td width="50%" class="correct ">
+                  
+                   Kecmanovic
+                  
+              </td>
+              <td width="50%" class=" incorrect">
+                  
+                      <strike>Ruud</strike> <br />Van De Zandschulp
+                  
+              </td>
+              
+          </tr>
+      
+
+    </table>
+    
+    <table id="players">
+      <tr>
+        <th colspan="2">Final</th>
+      </tr>
+
+      
+          <tr>
+              
+              
+              <td width="50%" class=" incorrect">
+                  
+                      <strike>Zverev</strike> <br />Rune
+                  
+              </td>
+              <td width="50%" class=" incorrect">
+                  
+                      <strike>Ruud</strike> <br />Van De Zandschulp
+                  
+              </td>
+              
+          </tr>
+      
+
+    </table>
+    
+    <table id="players">
+      <tr>
+        <th colspan="2">Champion</th>
+      </tr>
+
+      
+          <tr>
+              
+              
+              <td colspan="2" class=" incorrect">
+                
+                    <strike>Ruud</strike> <br />Rune
+                
+              </td>
+              
+          </tr>
+      
+
+    </table>
+    
+
+    </div>
+  
+
+</div>
+
+
+
+</body>
+</html>
