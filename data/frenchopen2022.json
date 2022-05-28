@@ -31,7 +31,7 @@
         },
         "Women's Singles": {
             "4th Round": [
-                {"player1": "Swiatek", "actualPlayer1": "?", "player2": "Halep", "actualPlayer2": "?"},
+                {"player1": "Swiatek", "actualPlayer1": "Swiatek", "player2": "Halep", "actualPlayer2": "?"},
                 {"player1": "Pegula", "actualPlayer1": "?", "player2": "Alexandrova", "actualPlayer2": "Begu"},
                 {"player1": "Badosa", "actualPlayer1": "?", "player2": "Rybakina", "actualPlayer2": "?"},
                 {"player1": "Kasatkina", "actualPlayer1": "?", "player2": "Sabalenka", "actualPlayer2": "?"},
