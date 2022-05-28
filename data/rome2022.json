@@ -13,20 +13,20 @@
                  {"player1": "De Minaur", "actualPlayer1": "De Minaur", "player2": "Zverev", "actualPlayer2": "Zverev"}
              ],
              "Quarter Finals": [
-                 {"player1": "Djokovic", "actualPlayer1": "?", "player2": "Kecmanovic", "actualPlayer2": "?"},
-                 {"player1": "Nadal", "actualPlayer1": "?", "player2": "Hurkacz", "actualPlayer2": "?"},
-                 {"player1": "Sinner", "actualPlayer1": "?", "player2": "Tsitsipas", "actualPlayer2": "?"},
-                 {"player1": "Cilic", "actualPlayer1": "?", "player2": "De Minaur", "actualPlayer2": "?"}
+                 {"player1": "Djokovic", "actualPlayer1": "Djokovic", "player2": "Kecmanovic", "actualPlayer2": "Auger-Aliassime"},
+                 {"player1": "Nadal", "actualPlayer1": "Shapovalov", "player2": "Hurkacz", "actualPlayer2": "Ruud"},
+                 {"player1": "Sinner", "actualPlayer1": "Sinner", "player2": "Tsitsipas", "actualPlayer2": "Tsitsipas"},
+                 {"player1": "Cilic", "actualPlayer1": "Garin", "player2": "De Minaur", "actualPlayer2": "Zverev"}
              ],
              "Semi Finals": [
-                 {"player1": "Djokovic", "actualPlayer1": "?", "player2": "Nadal", "actualPlayer2": "?"},
-                 {"player1": "Tsitsipas", "actualPlayer1": "?", "player2": "De Minaur", "actualPlayer2": "?"}
+                 {"player1": "Djokovic", "actualPlayer1": "Djokovic", "player2": "Nadal", "actualPlayer2": "Ruud"},
+                 {"player1": "Tsitsipas", "actualPlayer1": "Tsitsipas", "player2": "De Minaur", "actualPlayer2": "Zverev"}
              ],
              "Final": [
-                 {"player1": "Nadal", "actualPlayer1": "?", "player2": "Tsitsipas", "actualPlayer2": "?"}
+                 {"player1": "Nadal", "actualPlayer1": "Djokovic", "player2": "Tsitsipas", "actualPlayer2": "Tsitsipas"}
              ],
              "Champion": [
-                 {"player1": "Nadal", "actualPlayer1": "?"}
+                 {"player1": "Nadal", "actualPlayer1": "Djokovic"}
              ]
          },
          "Women's Singles": {
@@ -38,23 +38,23 @@
                  {"player1": "Muguruza", "actualPlayer1": "Putintseva", "player2": "Jabeur", "actualPlayer2": "Jabeur"},
                  {"player1": "Kostyuk", "actualPlayer1": "Gauff", "player2": "Sakkari", "actualPlayer2": "Sakkari"},
                  {"player1": "Teichmann", "actualPlayer1": "Teichmann", "player2": "Rybakina", "actualPlayer2": "Rybakina"},
-                 {"player1": "Fernandez", "actualPlayer1": "Kastakina", "player2": "Badosa", "actualPlayer2": "Badosa"}
+                 {"player1": "Fernandez", "actualPlayer1": "Kasatkina", "player2": "Badosa", "actualPlayer2": "Badosa"}
              ],
              "Quarter Finals": [
-                 {"player1": "Swiatek", "actualPlayer1": "?", "player2": "Raducanu", "actualPlayer2": "?"},
-                 {"player1": "Pegula", "actualPlayer1": "?", "player2": "Halep", "actualPlayer2": "?"},
-                 {"player1": "Jabeur", "actualPlayer1": "?", "player2": "Sakkari", "actualPlayer2": "?"},
-                 {"player1": "Rybakina", "actualPlayer1": "?", "player2": "Badosa", "actualPlayer2": "?"}
+                 {"player1": "Swiatek", "actualPlayer1": "Swiatek", "player2": "Raducanu", "actualPlayer2": "Andreescu"},
+                 {"player1": "Pegula", "actualPlayer1": "Sabalenka", "player2": "Halep", "actualPlayer2": "Anisimova"},
+                 {"player1": "Jabeur", "actualPlayer1": "Jabeur", "player2": "Sakkari", "actualPlayer2": "Sakkari"},
+                 {"player1": "Rybakina", "actualPlayer1": "Teichmann", "player2": "Badosa", "actualPlayer2": "Kasatkina"}
              ],
              "Semi Finals": [
-                 {"player1": "Swiatek", "actualPlayer1": "?", "player2": "Halep", "actualPlayer2": "?"},
-                 {"player1": "Jabeur", "actualPlayer1": "?", "player2": "Badosa", "actualPlayer2": "?"}
+                 {"player1": "Swiatek", "actualPlayer1": "Swiatek", "player2": "Halep", "actualPlayer2": "Sabalenka"},
+                 {"player1": "Jabeur", "actualPlayer1": "Jabeur", "player2": "Badosa", "actualPlayer2": "Kasatkina"}
              ],
              "Final": [
-                 {"player1": "Swiatek", "actualPlayer1": "?", "player2": "Jabeur", "actualPlayer2": "?"}
+                 {"player1": "Swiatek", "actualPlayer1": "Swiatek", "player2": "Jabeur", "actualPlayer2": "Jabeur"}
              ],
              "Champion": [
-                 {"player1": "Swiatek", "actualPlayer1": "?"}
+                 {"player1": "Swiatek", "actualPlayer1": "Swiatek"}
              ]
          }
      }
