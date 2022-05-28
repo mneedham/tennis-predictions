@@ -10,7 +10,7 @@
                 {"player1": "Ruud", "actualPlayer1": "?", "player2": "Tiafoe", "actualPlayer2": "?"},
                 {"player1": "Shapovalov", "actualPlayer1": "?", "player2": "Tsitsipas", "actualPlayer2": "?"},
                 {"player1": "Rublev", "actualPlayer1": "Rublev", "player2": "Sinner", "actualPlayer2": "Sinner"},
-                {"player1": "Carreno Busta", "actualPlayer1": "?", "player2": "Kecmanovic", "actualPlayer2": "?"}
+                {"player1": "Carreno Busta", "actualPlayer1": "?", "player2": "Kecmanovic", "actualPlayer2": "Medvedev"}
             ],
             "Quarter Finals": [
                 {"player1": "Djokovic", "actualPlayer1": "?", "player2": "Nadal", "actualPlayer2": "?"},
@@ -31,7 +31,7 @@
         },
         "Women's Singles": {
             "4th Round": [
-                {"player1": "Swiatek", "actualPlayer1": "Swiatek", "player2": "Halep", "actualPlayer2": "?"},
+                {"player1": "Swiatek", "actualPlayer1": "Swiatek", "player2": "Halep", "actualPlayer2": "Zheng"},
                 {"player1": "Pegula", "actualPlayer1": "?", "player2": "Alexandrova", "actualPlayer2": "Begu"},
                 {"player1": "Badosa", "actualPlayer1": "?", "player2": "Rybakina", "actualPlayer2": "?"},
                 {"player1": "Kasatkina", "actualPlayer1": "?", "player2": "Sabalenka", "actualPlayer2": "?"},
