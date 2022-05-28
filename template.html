@@ -1,67 +1,76 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-<title>{{ tournament }} Predictions</title>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
-<style>
-body {
-  font-family: Arial, Helvetica, sans-serif;
-}
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <title>{{ tournament }} Predictions</title>
+  <link rel="stylesheet" href="semantic.min.css">
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js"
+    integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+  <script src="semantic.min.js"></script>
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+    }
 
-#players {
-  font-family: Arial, Helvetica, sans-serif;
-  border-collapse: collapse;
-  width: 98%;
-  margin: 0 0 15px 0;
-}
+    #players {
+      font-family: Arial, Helvetica, sans-serif;
+      border-collapse: collapse;
+      width: 98%;
+      margin: 0 0 15px 0;
+    }
 
-#players td, #players th {
-  border: 1px solid #ddd;
-  padding: 8px;
-}
+    #players td,
+    #players th {
+      border: 1px solid #ddd;
+      padding: 8px;
+    }
 
-#players tr:nth-child(even){background-color: #f2f2f2;}
+    #players tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
 
-#players tr:hover {background-color: #ddd;}
+    #players tr:hover {
+      background-color: #ddd;
+    }
 
-#players th {
-  padding-top: 12px;
-  padding-bottom: 12px;
-  text-align: left;
-  background-color: #008cc1;
-  color: white;
-}
+    #players th {
+      padding-top: 12px;
+      padding-bottom: 12px;
+      text-align: left;
+      background-color: #008cc1;
+      color: white;
+    }
 
-#players td.correct {
-  background-color: #3FFF00;
-}
+    #players td.correct {
+      background-color: #3FFF00;
+    }
 
-#players td.incorrect {
-    background-color: #D2042D;
-  color: #fff
-}
+    #players td.incorrect {
+      background-color: #D2042D;
+      color: #fff
+    }
 
-#players td {
-height: 60px;
-}
+    #players td {
+      height: 60px;
+    }
 
-.row {
-  display: flex;
-  flex-wrap: wrap;
-}
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+    }
 
-.column {
-  flex: 100%;
-  /* margin: 10px; */
-}
+    .column {
+      flex: 100%;
+      margin-top: 5px;
+    }
 
-.ui.menu {
-  border-radius: 0;
-}
+    .ui.menu {
+      border-radius: 0;
+    }
 
-/* @media (max-width: 1000px) {
+    /* @media (max-width: 1000px) {
   .column{
     flex: 100%;    
     font-size: 2em;
@@ -75,76 +84,96 @@ height: 60px;
   p { font-size: 1.5em; }
   
 } */
-
-</style>
+  </style>
 </head>
+
 <body>
   <div class="ui menu inverted">
     <a class="active item" href="https://www.tennisyesplease.com">
       Home
     </a>
-  </div>  
+  </div>
 
   <div class="ui container">
 
 
-<h1 class="ui aligned header">{{ tournament }}</h1>
+    <h1 class="ui aligned header">{{ tournament }}</h1>
 
-<p>Generated at {{ now}}</p>
-<p>
-  <a href="https://github.com/mneedham/tennis-predictions/edit/main/data/{{ tournament_name }}.json">Edit this tournament</a>
-</p>
+    <p>Generated at {{ now}}</p>
+    <p>
+      <a href="https://github.com/mneedham/tennis-predictions/edit/main/data/{{ tournament_name }}.json">Edit this
+        tournament</a>
+    </p>
 
-<div class="row">
-  {% for event_name, events in predictions.items() %}
-  <div class="column">
-    <h2>{{ event_name }}</h2>
-    
-    {% for round, matches in events.items() %}
-    <table id="players">
-      <tr>
-        <th colspan="2">{{ round }}</th>
-      </tr>
+    <div class="ui top attached tabular menu">
+      {% for event_name, events in predictions.items() %}
+      <div class="item link {{'active' if event_name == 'Men\'s Singles' }}" data-tab="{{event_name}}">{{event_name}}</div>
 
-      {% for item in matches %}
-          <tr>
-              
+      {% endfor %}
+    </div>
+
+      {% for event_name, events in predictions.items() %}
+      <div class="ui tab {{'active' if event_name == 'Men\'s Singles' }}" data-tab="{{event_name}}">
+        <!-- Tab Content !-->
+
+        <div class="column">
+          <h2>{{ event_name }}</h2>
+
+          {% for round, matches in events.items() %}
+          <table id="players">
+            <tr>
+              <th colspan="2">{{ round }}</th>
+            </tr>
+
+            {% for item in matches %}
+            <tr>
+
               {% if item.player2 is not defined %}
-              <td colspan="2" class="{% if item.player1 == item.actualPlayer1 %}correct {%elif item.actualPlayer1 == '?' %}none  {% else %} incorrect{% endif %}">
+              <td colspan="2"
+                class="{% if item.player1 == item.actualPlayer1 %}correct {%elif item.actualPlayer1 == '?' %}none  {% else %} incorrect{% endif %}">
                 {% if item.player1 == item.actualPlayer1 or item.actualPlayer1 == '?' %}
-                 {{item.player1}}
+                {{item.player1}}
                 {% else %}
-                    <strike>{{item.player1}}</strike> <br />{{item.actualPlayer1}}
+                <strike>{{item.player1}}</strike> <br />{{item.actualPlayer1}}
                 {% endif %}
               </td>
               {% else %}
-              <td width="50%" class="{% if item.player1 == item.actualPlayer1 %}correct {%elif item.actualPlayer1 == '?' %}none {% else %} incorrect{% endif %}">
-                  {% if item.player1 == item.actualPlayer1 or item.actualPlayer1 == '?' %}
-                   {{item.player1}}
-                  {% else %}
-                      <strike>{{item.player1}}</strike> <br />{{item.actualPlayer1}}
-                  {% endif %}
+              <td width="50%"
+                class="{% if item.player1 == item.actualPlayer1 %}correct {%elif item.actualPlayer1 == '?' %}none {% else %} incorrect{% endif %}">
+                {% if item.player1 == item.actualPlayer1 or item.actualPlayer1 == '?' %}
+                {{item.player1}}
+                {% else %}
+                <strike>{{item.player1}}</strike> <br />{{item.actualPlayer1}}
+                {% endif %}
               </td>
-              <td width="50%" class="{% if item.player2 == item.actualPlayer2 %}correct {%elif item.actualPlayer2 == '?' %}none {% else %} incorrect{% endif %}">
-                  {% if item.player2 == item.actualPlayer2 or item.actualPlayer2 == '?' %}
-                   {{item.player2}}
-                  {% else %}
-                      <strike>{{item.player2}}</strike> <br />{{item.actualPlayer2}}
-                  {% endif %}
+              <td width="50%"
+                class="{% if item.player2 == item.actualPlayer2 %}correct {%elif item.actualPlayer2 == '?' %}none {% else %} incorrect{% endif %}">
+                {% if item.player2 == item.actualPlayer2 or item.actualPlayer2 == '?' %}
+                {{item.player2}}
+                {% else %}
+                <strike>{{item.player2}}</strike> <br />{{item.actualPlayer2}}
+                {% endif %}
               </td>
               {% endif %}
-          </tr>
+            </tr>
+            {% endfor %}
+
+          </table>
+          {% endfor %}
+
+        </div>
+      </div>
+
       {% endfor %}
 
-    </table>
-    {% endfor %}
-
-    </div>
-  {% endfor %}
-
-</div>
+  
 
 
-</div>
+  </div>
+
+  <script type="text/javascript">
+    $('.tabular.menu .item').tab();
+  </script>
 </body>
+
 </html>
