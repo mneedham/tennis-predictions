@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 <title>{{ tournament }} Predictions</title>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
 <style>
@@ -75,7 +77,7 @@ height: 60px;
 </head>
 <body>
 
-  <div class="container ui stretch">
+  <div class="ui container">
 
   <div class="ui menu inverted">
     <a class="active item" href="https://www.tennisyesplease.com">
@@ -83,7 +85,7 @@ height: 60px;
     </a>
   </div>  
 
-<h1>{{ tournament }} Predictions</h1>
+<h2 class="ui aligned header">{{ tournament }}</h2>
 
 <p>Generated at {{ now}}</p>
 <p>
