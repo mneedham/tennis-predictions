@@ -13,7 +13,7 @@
                 {"player1": "Carreno Busta", "actualPlayer1": "Cilic", "player2": "Kecmanovic", "actualPlayer2": "Medvedev"}
             ],
             "Quarter Finals": [
-                {"player1": "Djokovic", "actualPlayer1": "?", "player2": "Nadal", "actualPlayer2": "?"},
+                {"player1": "Djokovic", "actualPlayer1": "Djokovic", "player2": "Nadal", "actualPlayer2": "?"},
                 {"player1": "Davidovich Fokina", "actualPlayer1": "?", "player2": "Alcaraz", "actualPlayer2": "?"},
                 {"player1": "Ruud", "actualPlayer1": "?", "player2": "Tsitsipas", "actualPlayer2": "?"},
                 {"player1": "Sinner", "actualPlayer1": "?", "player2": "Kecmanovic", "actualPlayer2": "?"}
@@ -43,8 +43,8 @@
             "Quarter Finals": [
                 {"player1": "Swiatek", "actualPlayer1": "?", "player2": "Pegula", "actualPlayer2": "?"},
                 {"player1": "Rybakina", "actualPlayer1": "?", "player2": "Kasatkina", "actualPlayer2": "?"},
-                {"player1": "Jabeur", "actualPlayer1": "?", "player2": "Andreescu", "actualPlayer2": "?"},
-                {"player1": "Gauff", "actualPlayer1": "?", "player2": "Teichmann", "actualPlayer2": "?"}
+                {"player1": "Jabeur", "actualPlayer1": "Trevisan", "player2": "Andreescu", "actualPlayer2": "Fernandez"},
+                {"player1": "Gauff", "actualPlayer1": "Gauff", "player2": "Teichmann", "actualPlayer2": "?"}
             ],
             "Semi Finals": [
                 {"player1": "Swiatek", "actualPlayer1": "?", "player2": "Kasatkina", "actualPlayer2": "?"},
