@@ -9,3 +9,7 @@ def home():
     return {
         "currentTime": datetime.datetime.now()
     }
+
+@app.route('/')
+def index():
+    return app.send_static_file('index.html')
