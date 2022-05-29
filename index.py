@@ -1,8 +1,11 @@
 from flask import Flask
+import datetime
 
 app = Flask(__name__)
 
 
-@app.route("/")
+@app.route("/api/")
 def home():
-    return "<h2>Flask Vercel Mark</h2>"
+    return {
+        "currentTime": datetime.datetime.now()
+    }
