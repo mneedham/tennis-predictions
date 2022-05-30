@@ -8,7 +8,8 @@ app = Flask(__name__)
 @app.route('/<path:path>')
 def catch_all(path):
     return jsonify([{
-        "currentTime": datetime.datetime.now(),
-        "currentTime_": datetime.datetime.now(),
-        "path": path
+        "name": "Australian Open 2022"
+    },
+        {
+        "name": "French Open 2022"
     }])
