@@ -42,7 +42,7 @@
             ],
             "Quarter Finals": [
                 {"player1": "Swiatek", "actualPlayer1": "?", "player2": "Pegula", "actualPlayer2": "?"},
-                {"player1": "Rybakina", "actualPlayer1": "?", "player2": "Kasatkina", "actualPlayer2": "?"},
+                {"player1": "Rybakina", "actualPlayer1": "?", "player2": "Kasatkina", "actualPlayer2": "Kasatkina"},
                 {"player1": "Jabeur", "actualPlayer1": "Trevisan", "player2": "Andreescu", "actualPlayer2": "Fernandez"},
                 {"player1": "Gauff", "actualPlayer1": "Gauff", "player2": "Teichmann", "actualPlayer2": "Stephens"}
             ],
