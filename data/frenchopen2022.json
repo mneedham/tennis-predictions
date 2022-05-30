@@ -16,7 +16,7 @@
                 {"player1": "Djokovic", "actualPlayer1": "Djokovic", "player2": "Nadal", "actualPlayer2": "Nadal"},
                 {"player1": "Davidovich Fokina", "actualPlayer1": "Zverev", "player2": "Alcaraz", "actualPlayer2": "Alcaraz"},
                 {"player1": "Ruud", "actualPlayer1": "Ruud", "player2": "Tsitsipas", "actualPlayer2": "Rune"},
-                {"player1": "Sinner", "actualPlayer1": "?", "player2": "Kecmanovic", "actualPlayer2": "?"}
+                {"player1": "Sinner", "actualPlayer1": "Rublev", "player2": "Kecmanovic", "actualPlayer2": "?"}
             ],
             "Semi Finals": [
                 {"player1": "Nadal", "actualPlayer1": "?", "player2": "Alcaraz", "actualPlayer2": "?"},
