@@ -1,16 +1,12 @@
 from flask import Flask
 import datetime
 
-app = Flask(__name__, static_folder='../build', static_url_path='/')
+app = Flask(__name__)
 
 
-@app.route("/api/")
+@app.route("/")
 def home():
     return {
         "currentTime": datetime.datetime.now(),
         "currentTime_": datetime.datetime.now()
     }
-
-@app.route('/')
-def index():
-    return app.send_static_file('index.html')
