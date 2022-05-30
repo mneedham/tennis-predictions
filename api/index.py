@@ -1,12 +1,7 @@
-from flask import Flask
-import datetime
-
+from flask import Flask, Response
 app = Flask(__name__)
 
-
-@app.route("/")
-def home():
-    return {
-        "currentTime": datetime.datetime.now(),
-        "currentTime_": datetime.datetime.now()
-    }
+@app.route('/', defaults={'path': ''})
+@app.route('/<path:path>')
+def catch_all(path):
+    return Response("<h1>Flask</h1><p>You visited: /%s</p>" % (path), mimetype="text/html")
