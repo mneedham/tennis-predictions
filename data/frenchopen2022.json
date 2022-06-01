@@ -20,7 +20,7 @@
             ],
             "Semi Finals": [
                 {"player1": "Nadal", "actualPlayer1": "Nadal", "player2": "Alcaraz", "actualPlayer2": "Zverev"},
-                {"player1": "Tsitsipas", "actualPlayer1": "?", "player2": "Sinner", "actualPlayer2": "?"}
+                {"player1": "Tsitsipas", "actualPlayer1": "Ruud", "player2": "Sinner", "actualPlayer2": "Cilic"}
             ],
             "Final": [
                 {"player1": "Nadal", "actualPlayer1": "?", "player2": "Tsitsipas", "actualPlayer2": "?"}
