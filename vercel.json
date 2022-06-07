@@ -2,5 +2,9 @@
     "routes": [{
         "src": "/api/(.*)",
         "dest": "api/index.py"
+    },
+    {
+        "src": "/api/tournaments/(.*)",
+        "dest": "api/tor.py"
     }]
 }
