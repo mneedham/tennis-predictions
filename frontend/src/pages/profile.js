@@ -11,7 +11,7 @@ export const Profile = () => {
 
   return (
     <div className="content-layout">
-      <h1 className="content__title">Profile</h1>
+      <h1 className="content__title">My Profile</h1>
       <div className="content__body">
         <p>
           You can use the ID Token to get the profile information of an
