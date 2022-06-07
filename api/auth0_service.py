@@ -2,14 +2,7 @@ from http import HTTPStatus
 
 import jwt
 
-from flask import jsonify, abort
-
-
-def json_abort(status_code, data=None):
-    response = jsonify(data)
-    response.status_code = status_code
-    abort(response)
-
+from api.utils import json_abort
 
 class Auth0Service:
     """Perform JSON Web Token (JWT) validation using PyJWT"""
