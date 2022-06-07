@@ -1,5 +1,5 @@
 import datetime
-from flask import Blueprint
+from flask import Blueprint, g
 
 from utils.guards import authorization_guard
 
@@ -15,7 +15,8 @@ def catch_all(path):
   return {
     "currentTime": datetime.datetime.now(),
     "currentTime_": datetime.datetime.now(),
-    "path": path
+    "path": path,
+    "access_token": g.access_token
   }
 
 app = create_app()
