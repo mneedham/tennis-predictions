@@ -3,7 +3,7 @@ from flask_cors import CORS
 import datetime
 
 from os import environ
-from api.auth0_service import auth0_service
+from utils.auth0_service import auth0_service
 from api.guards import authorization_guard
 
 def safe_get_env_var(key):

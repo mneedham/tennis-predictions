@@ -2,7 +2,7 @@ from http import HTTPStatus
 
 import jwt
 
-from api.utils import json_abort
+from utils.json import json_abort
 
 class Auth0Service:
     """Perform JSON Web Token (JWT) validation using PyJWT"""
