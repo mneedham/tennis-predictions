@@ -3,3 +3,4 @@ Flask-Cors==3.0.10
 cowpy==1.0.3
 sanic==22.3.2
 PyJWT==2.3.0
+cryptography==35.0.0
