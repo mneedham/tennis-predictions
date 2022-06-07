@@ -5,6 +5,6 @@
     },
     {
         "src": "/api/tournaments/(.*)",
-        "dest": "api/tor.py"
+        "dest": "api/tournaments.py"
     }]
 }
