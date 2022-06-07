@@ -15,8 +15,8 @@ def catch_all(path):
   return {
     "currentTime": datetime.datetime.now(),
     "currentTime_": datetime.datetime.now(),
-    "path": path,
-    "access_token": g.access_token
+    "path": path
+    #"access_token": g.access_token.sub
   }
 
 app = create_app()
