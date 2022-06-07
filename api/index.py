@@ -25,7 +25,7 @@
 
 from sanic import Sanic
 from sanic.response import json
-app = Sanic(name=__name__)
+app = Sanic(name="tennis-predictions")
 
 
 @app.route('/')
