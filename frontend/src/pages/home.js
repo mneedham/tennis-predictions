@@ -4,7 +4,7 @@ import { Auth0Features } from "../components/auth0-features";
 
 export const Home = () => (
   <Fragment>
-    <HeroBanner />
+    
     <Auth0Features />
   </Fragment>
 );

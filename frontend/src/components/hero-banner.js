@@ -1,7 +1,7 @@
 import React from "react";
 
 export const HeroBanner = () => {
-  const logo = "https://cdn.auth0.com/blog/hello-auth0/react-logo.svg";
+  const logo = "noun-tennis-1922615-71D358.png";
 
   const openCodeSample = () => {
     window.open(
@@ -13,7 +13,7 @@ export const HeroBanner = () => {
 
   return (
     <div className="hero-banner">
-      <img className="hero-banner__logo" src={logo} alt="React logo" />
+      
       <h1 className="hero-banner__headline">Hello, React World!</h1>
       <p className="hero-banner__description">
         This is a sample application that demonstrates the authentication flow

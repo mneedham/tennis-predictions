@@ -3,7 +3,7 @@ import { Auth0Feature } from "./auth0-feature";
 
 export const Auth0Features = () => (
   <div className="auth0-features">
-    <h2 className="auth0-features__title">Explore Auth0 Features</h2>
+    <h2 className="auth0-features__title">Tennis Predictions</h2>
     <div className="auth0-features__grid">
       <Auth0Feature
         title="Identity Providers"
