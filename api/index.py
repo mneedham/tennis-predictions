@@ -39,6 +39,15 @@ CORS(
 
 auth0_service.initialize(auth0_domain, auth0_audience)
 
+@app.route('/tournaments')
+def tournaments(path):
+  return jsonify([{
+    "name": "Australian Open 2022"
+  },
+  {
+    "name": "French Open 2022"
+  }])
+
 
 @app.route('/', defaults={'path': ''})
 @app.route('/<path:path>')
@@ -51,11 +60,3 @@ def catch_all(path):
   }
 
 
-@app.route('/tournaments', defaults={'path': ''})
-def tournaments(path):
-  return jsonify([{
-    "name": "Australian Open 2022"
-  },
-  {
-    "name": "French Open 2022"
-  }])
