@@ -5,7 +5,7 @@
             "destination": "api/tournaments.py"
         },
         {
-            "source": "/api/",
+            "source": "/api/(.*)",
             "destination": "api/index.py"
         }
     ]
