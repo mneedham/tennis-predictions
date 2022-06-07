@@ -1,5 +1,18 @@
 from flask import Flask, jsonify
+from flask_cors import CORS
 import datetime
+
+from os import environ
+
+def safe_get_env_var(key):
+    try:
+        return environ[key]
+    except KeyError:
+        raise NameError(f"Missing {key} environment variable.")
+
+client_origin_url = safe_get_env_var("CLIENT_ORIGIN_URL")
+auth0_audience = safe_get_env_var("AUTH0_AUDIENCE")
+auth0_domain = safe_get_env_var("AUTH0_DOMAIN")
 
 app = Flask(__name__)
 
@@ -14,6 +27,13 @@ def add_headers(response):
     response.headers['Strict-Transport-Security'] = 'max-age=31536000; includeSubDomains'
     return response
 
+CORS(
+    app,
+    resources={r"/api/*": {"origins": client_origin_url}},
+    allow_headers=["Authorization", "Content-Type"],
+    methods=["GET"],
+    max_age=86400
+)
 
 @app.route('/', defaults={'path': ''})
 @app.route('/<path:path>')
