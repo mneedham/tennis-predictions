@@ -14,7 +14,6 @@ bp = Blueprint(bp_name, __name__)
 def catch_all(path):
   return {
     "currentTime": datetime.datetime.now(),
-    "currentTime_": datetime.datetime.now(),
     "path": path
     #"access_token": g.access_token.sub
   }
