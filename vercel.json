@@ -1,12 +1,12 @@
 {
-    "routes": [
+    "rewrites": [
         {
-            "src": "/api/tournaments/(.*)",
-            "dest": "api/tournaments.py"
+            "source": "/api/tournaments/(.*)",
+            "destination": "api/tournaments.py"
         },
         {
-            "src": "/api/(.*)",
-            "dest": "api/index.py"
+            "source": "/api/",
+            "destination": "api/index.py"
         }
     ]
 }
