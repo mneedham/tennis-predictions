@@ -1,7 +1,6 @@
 from flask import Flask, jsonify, Blueprint
 
-bp_name = 'api-messages'
-bp_url_prefix = '/api/messages'
+bp_name = 'api-tournaments'
 bp = Blueprint(bp_name, __name__)
 
 @bp.route('/', defaults={'path': ''})
