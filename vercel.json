@@ -1,10 +1,12 @@
 {
-    "routes": [{
-        "src": "/api/(.*)",
-        "dest": "api/index.py"
-    },
-    {
-        "src": "/api/tournaments/(.*)",
-        "dest": "api/tournaments.py"
-    }]
+    "routes": [
+        {
+            "src": "/api/tournaments/(.*)",
+            "dest": "api/tournaments.py"
+        },
+        {
+            "src": "/api/(.*)",
+            "dest": "api/index.py"
+        }
+    ]
 }
