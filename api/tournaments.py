@@ -1,16 +1,11 @@
-from flask import Flask, jsonify
-from flask_cors import CORS
-import datetime
+from flask import Flask, jsonify, Blueprint
 
-from os import environ
-from api.auth0_service import auth0_service
-from api.guards import authorization_guard
+bp_name = 'api-messages'
+bp_url_prefix = '/api/messages'
+bp = Blueprint(bp_name, __name__)
 
-app = Flask(__name__)
-
-
-@app.route('/', defaults={'path': ''})
-@app.route('/<path:path>')
+@bp.route('/', defaults={'path': ''})
+@bp.route('/<path:path>')
 def tournaments(path):
   return jsonify([{
     "name": "Australian Open 2022"
@@ -18,3 +13,8 @@ def tournaments(path):
   {
     "name": "French Open 2022"
   }])
+
+
+if __name__ == "__main__":
+  app = Flask(__name__)
+  app.register_blueprint(bp)
