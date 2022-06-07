@@ -4,7 +4,7 @@ import datetime
 
 from os import environ
 from utils.auth0_service import auth0_service
-from api.guards import authorization_guard
+from utils.guards import authorization_guard
 
 def safe_get_env_var(key):
     try:
