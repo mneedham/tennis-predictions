@@ -3,6 +3,7 @@ from flask_cors import CORS
 import datetime
 
 from os import environ
+from auth0_service import auth0_service
 
 def safe_get_env_var(key):
     try:
@@ -34,6 +35,9 @@ CORS(
     methods=["GET"],
     max_age=86400
 )
+
+auth0_service.initialize(auth0_domain, auth0_audience)
+
 
 @app.route('/', defaults={'path': ''})
 @app.route('/<path:path>')
