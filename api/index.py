@@ -5,8 +5,7 @@ app = Flask(__name__)
 
 
 @app.route('/', defaults={'path': ''})
-@app.route('/<path:path>')
-def catch_all(path):
+def home(path):
   return {
     "currentTime": datetime.datetime.now(),
     "currentTime_": datetime.datetime.now(),
