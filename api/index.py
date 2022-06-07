@@ -4,6 +4,7 @@ import datetime
 
 from os import environ
 from api.auth0_service import auth0_service
+from api.guards import authorization_guard
 
 def safe_get_env_var(key):
     try:
@@ -41,6 +42,7 @@ auth0_service.initialize(auth0_domain, auth0_audience)
 
 @app.route('/', defaults={'path': ''})
 @app.route('/<path:path>')
+@authorization_guard
 def catch_all(path):
   return {
     "currentTime": datetime.datetime.now(),
