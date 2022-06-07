@@ -48,7 +48,7 @@ class Auth0Service:
                 "jwks_uri": self.jwks_uri,
                 "issuer_url": self.issuer_url,
                 "audience": self.audience,
-                "error": error,
+                "error": str(error),
                 "error_description": error.__str__(),
                 "message": "Bad credentials"
             })
