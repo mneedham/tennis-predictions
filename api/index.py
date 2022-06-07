@@ -50,7 +50,7 @@ def tournaments(path):
 
 
 @app.route('/', defaults={'path': ''})
-# @app.route('/<path:path>')
+@app.route('/<path:path>')
 @authorization_guard
 def catch_all(path):
   return {
