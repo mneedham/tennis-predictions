@@ -1,4 +1,5 @@
-from flask import Flask, jsonify, Blueprint
+from flask import jsonify, Blueprint
+from utils.scaffolding import create_app
 
 bp_name = 'api-tournaments'
 bp = Blueprint(bp_name, __name__)
@@ -14,5 +15,5 @@ def tournaments(path):
   }])
 
 
-app = Flask(__name__)
+app = create_app()
 app.register_blueprint(bp)
