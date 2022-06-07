@@ -42,9 +42,8 @@ class Auth0Service:
                 issuer=self.issuer_url,
             )
         except Exception as error:
-            print("Exception", error, "token", token, "audience", self.audience)
             json_abort(HTTPStatus.UNAUTHORIZED, {
-                "error": "invalid_token",
+                "error": f"invalid_token: {token}",
                 "error_description": error.__str__(),
                 "message": "Bad credentials"
             })
