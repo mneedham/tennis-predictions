@@ -44,11 +44,6 @@ class Auth0Service:
         except Exception as error:
             json_abort(HTTPStatus.UNAUTHORIZED, {
                 "error": f"invalid_token",
-                "token": token,
-                "jwks_uri": self.jwks_uri,
-                "issuer_url": self.issuer_url,
-                "audience": self.audience,
-                "error": str(error),
                 "error_description": error.__str__(),
                 "message": "Bad credentials"
             })
