@@ -38,6 +38,10 @@ def create_app():
         max_age=86400
     )
 
+    # CORS(
+    #     app
+    # )
+
     auth0_service.initialize(auth0_domain, auth0_audience)
     return app
 
