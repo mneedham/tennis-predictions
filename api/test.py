@@ -5,7 +5,8 @@ public_key = b"-----BEGIN PUBLIC KEY-----\nMHYwEAYHKoZIzj0CAQYFK4EEAC..."
 
 app = Flask(__name__)
 
-@app.route("/<value>")
-def catch_all(value):
+@app.route("/")
+def catch_all():
+  value = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzb21lIjoicGF5bG9hZCJ9.4twFt5NiznN84AWoo1d7KO1T_yoc0Z6XOpOVswacPZg"
   decoded = jwt.decode(value, public_key, algorithms=["RS256"])
   return decoded
