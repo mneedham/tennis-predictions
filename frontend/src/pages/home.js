@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useEnv } from "../context/env.context";
 import axios from "axios";
 import { useAuth0 } from "@auth0/auth0-react";
+import { Link } from 'react-router-dom';
 
 const Tournaments = () => {
   const [tournaments, setTournaments] = useState([])
@@ -54,9 +55,12 @@ const Tournaments = () => {
   return <div>
     <h2 className="auth0-features__title">Tournaments</h2>
     <ul>
-    {tournaments.map(t => {
-      return <li>{t.name}</li>
-    })}
+    {tournaments.map(t => (
+      <li>
+        <Link to={`/tournaments/${t.shortName}`}>{t.name}</Link>
+        
+        </li>
+    ))}
     </ul>
   </div>
 }
