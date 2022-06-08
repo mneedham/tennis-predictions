@@ -6,6 +6,7 @@ bp = Blueprint(bp_name, __name__)
 
 
 @bp.route('/', defaults={'path': ''})
+@bp.route('/<path:path>')
 def tournaments(path):
   return jsonify([{
       "name": "Australian Open 2022",
