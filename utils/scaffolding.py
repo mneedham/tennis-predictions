@@ -1,16 +1,10 @@
 from flask import Flask, jsonify
 from flask_cors import CORS
 import datetime
-
-from os import environ
 from utils.auth0_service import auth0_service
 from utils.guards import authorization_guard
+from utils.env import safe_get_env_var
 
-def safe_get_env_var(key):
-    try:
-        return environ[key]
-    except KeyError:
-        raise NameError(f"Missing {key} environment variable.")
 
 def create_app():
     client_origin_url = safe_get_env_var("CLIENT_ORIGIN_URL")
