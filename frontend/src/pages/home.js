@@ -33,7 +33,7 @@ const Tournaments = () => {
     <h2 className="auth0-features__title">Tournaments</h2>
     <ul>
     {tournaments.map(t => (
-      <li>
+      <li className="content__body">
         <Link to={`/tournaments/${t.shortName}`}>{t.name}</Link>
         
         </li>

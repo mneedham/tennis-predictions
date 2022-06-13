@@ -33,12 +33,12 @@ export const Tournaments = () => {
 
   const Bracket = ({ bracket }) => {
     if (!bracket.player1 && !bracket.player2) {
-      return <div>{bracket.round} - N/A</div>
+      return <div className="content__body">{bracket.round} - N/A</div>
     }
 
-    return <div>
+    return <div  className="content__body">
 
-      {bracket.round} - 
+      {bracket.round} -
 
       {bracket.round == "Champion" && bracket.player1}
       {bracket.round != "Champion" && bracket.player1 + " vs " + bracket.player2}
