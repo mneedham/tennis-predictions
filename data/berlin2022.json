@@ -1,0 +1,23 @@
+{
+   "tournament": "Berlin 2022",
+    "events": {
+      "Women's Singles": {
+            "Quarter Finals": [
+                {"player1": "Muchova", "actualPlayer1": "?", "player2": "Sasnovich", "actualPlayer2": "?"},
+                {"player1": "Andreescu", "actualPlayer1": "?", "player2": "Gauff", "actualPlayer2": "?"},
+                {"player1": "Bencic", "actualPlayer1": "?", "player2": "Sabalenka", "actualPlayer2": "?"},
+                {"player1": "Kasatkina", "actualPlayer1": "?", "player2": "Sakkari", "actualPlayer2": "?"}
+            ],
+            "Semi Finals": [
+                {"player1": "Muchova", "actualPlayer1": "?", "player2": "Gauff", "actualPlayer2": "?"},
+                {"player1": "Bencic", "actualPlayer1": "?", "player2": "Sakkari", "actualPlayer2": "?"}
+            ],
+            "Final": [
+                {"player1": "Gauff", "actualPlayer1": "?", "player2": "Sakkari", "actualPlayer2": "?"}
+            ],
+            "Champion": [
+                {"player1": "Gauff", "actualPlayer1": "?"}
+            ]
+        }    
+    }
+}
