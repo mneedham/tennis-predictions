@@ -1,0 +1,23 @@
+{
+   "tournament": "Queens 2022",
+    "events": {
+      "Men's Singles": {
+            "Quarter Finals": [
+                {"player1": "Ruud", "actualPlayer1": "?", "player2": "Brooksby", "actualPlayer2": "?"},
+                {"player1": "Draper", "actualPlayer1": "?", "player2": "Cilic", "actualPlayer2": "?"},
+                {"player1": "Opelka", "actualPlayer1": "?", "player2": "Norrie", "actualPlayer2": "?"},
+                {"player1": "Tiafoe", "actualPlayer1": "?", "player2": "Berrettini", "actualPlayer2": "?"}
+            ],
+            "Semi Finals": [
+                {"player1": "Ruud", "actualPlayer1": "?", "player2": "Cilic", "actualPlayer2": "?"},
+                {"player1": "Norrie", "actualPlayer1": "?", "player2": "Berrettini", "actualPlayer2": "?"}
+            ],
+            "Final": [
+                {"player1": "Cilic", "actualPlayer1": "?", "player2": "Berrettini", "actualPlayer2": "?"}
+            ],
+            "Champion": [
+                {"player1": "Cilic", "actualPlayer1": "?"}
+            ]
+        }    
+    }
+}
