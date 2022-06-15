@@ -2,12 +2,13 @@ import React, { Fragment } from "react";
 import { useState } from "react";
 import { useParams } from 'react-router-dom';
 import { useExternalApi } from "../utils/requests";
-
+import { useAuth0 } from "@auth0/auth0-react";
 
 export const Tournaments = () => {
   const { tournamentId } = useParams();
+  const { isAuthenticated } = useAuth0();
 
-  const [data, setData] = useState({events: []})
+  const [data, setData] = useState({ events: [] })
 
   const {
     makeRequest,
@@ -21,14 +22,31 @@ export const Tournaments = () => {
         method: "GET",
         headers: {
           "content-type": "application/json",
-        }        
+        }
       };
-  
+
       const data = await makeRequest({ config });
       setData(data);
     }
 
-    getTournament(tournamentId)
+    const getTournamentAuthenticated = async (tournamentId) => {
+      const config = {
+        url: `${apiServerUrl}/api/tournaments/${tournamentId}/me`,
+        method: "GET",
+        headers: {
+          "content-type": "application/json",
+        }
+      };
+
+      const data = await makeRequest({ config, authenticated: true });
+      setData(data);
+    }    
+
+    if(isAuthenticated) {
+      getTournamentAuthenticated(tournamentId)
+    } else {
+      getTournament(tournamentId)
+    }
   }, [tournamentId])
 
   const Bracket = ({ bracket }) => {
@@ -36,16 +54,16 @@ export const Tournaments = () => {
       return <div className="content__body">{bracket.round} - N/A</div>
     }
 
-    return <div  className="content__body">
+    return <div className="content__body">
 
       {bracket.round} -
 
-      {bracket.round == "Champion" && bracket.player1}
-      {bracket.round != "Champion" && bracket.player1 + " vs " + bracket.player2}
+      {bracket.round === "Champion" && bracket.player1}
+      {bracket.round !== "Champion" && bracket.player1 + " vs " + bracket.player2}
     </div>
   }
 
-  return <Fragment>    
+  return <Fragment>
     <div className="content-layout">
       <h1 className="content__title">{data.name}</h1>
       {data.events.map(event => (
@@ -53,10 +71,10 @@ export const Tournaments = () => {
           <h2 className="content__title">{event.name}</h2>
           {event.brackets.map(bracket => (
             <Bracket bracket={bracket} />
-            
+
           ))}
 
-          </div>
+        </div>
       ))}
     </div>
   </Fragment>
