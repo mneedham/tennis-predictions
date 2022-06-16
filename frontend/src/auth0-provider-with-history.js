@@ -7,8 +7,9 @@ export const Auth0ProviderWithHistory = ({ children }) => {
   const history = useHistory();
   const { domain, clientId, audience } = useEnv();
   
-  const onRedirectCallback = async (appState) => {        
-    history.push(appState?.returnTo || window.location.pathname);
+  const onRedirectCallback = async (appState) => {    
+    // history.push(appState?.returnTo || window.location.pathname);
+    history.replace('/authcheck')
   };
 
   if (!(domain && clientId && audience)) {

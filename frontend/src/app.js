@@ -10,6 +10,7 @@ import { Home } from "./pages/home";
 import { Tournaments } from "./pages/tournaments";
 import { NotFound } from "./pages/not-found";
 import { Profile } from "./pages/profile";
+import { AuthCheck } from "./pages/authcheck";
 
 export const App = () => {
   const { isLoading } = useAuth0();
@@ -31,6 +32,7 @@ export const App = () => {
           <ProtectedRoute path="/profile" component={Profile} />
           <ProtectedRoute path="/external-api" component={ExternalApi} />
           <Route path="/tournaments/:tournamentId" component={Tournaments} />
+          <ProtectedRoute path="/authcheck" component={AuthCheck} />
           <Route path="*" component={NotFound} />
         </Switch>
       </div>
