@@ -4,6 +4,8 @@ import { useParams } from 'react-router-dom';
 import { useExternalApi } from "../utils/requests";
 import { useAuth0 } from "@auth0/auth0-react";
 
+const _ = require('underscore');
+
 export const Tournaments = () => {
   const { tournamentId } = useParams();
   const { isAuthenticated } = useAuth0();
@@ -65,7 +67,11 @@ export const Tournaments = () => {
 
   const Bracket = ({ bracket }) => {
     if (!bracket.player1 && !bracket.player2) {
-      return  <td colspan="2">{bracket.round} - N/A</td>
+      return  <tr><td colSpan="2">N/A</td></tr>
+    }
+
+    if(bracket.round === "Champion") {
+      return <tr><td colSpan="2">{bracket.player1}</td></tr>
     }
 
     return <tr>
@@ -78,6 +84,20 @@ export const Tournaments = () => {
     </tr>
   }
 
+  data.events.forEach(event => {  
+    const rounds = Array.from(new Set(event.brackets.map( i => i.round)));
+    const groups= rounds.map( round => { 
+      return  { round:round, brackets:[]};
+    } ); 
+
+    event.brackets.forEach( d => { 
+        groups.find( g => g.round === d.round).brackets.push(d);
+    });
+    event.newBrackets = groups
+  })
+  console.log("data", data)
+
+
   return <Fragment>
     <div class="ui container">
     <h1 class="ui aligned header">{ data.name }</h1>
@@ -86,9 +106,16 @@ export const Tournaments = () => {
       {data.events.map(event => (
         <Fragment>
           <h2 class="ui aligned header">{ event.name }</h2>
-          {event.brackets.map(bracket => (
-            <Bracket bracket={bracket} />
-
+          {event.newBrackets.map(b => (
+            <Fragment>
+            <tr>
+              <th colSpan="2">{b.round}</th>
+            </tr>
+            {b.brackets.map(bracket => (
+                <Bracket bracket={bracket} />
+            ))}
+            
+            </Fragment>
           ))}
 </Fragment>
       ))}
