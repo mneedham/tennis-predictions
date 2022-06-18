@@ -49,33 +49,51 @@ export const Tournaments = () => {
     }
   }, [tournamentId])
 
+  // const Bracket = ({ bracket }) => {
+  //   if (!bracket.player1 && !bracket.player2) {
+  //     return <div className="content__body">{bracket.round} - N/A</div>
+  //   }
+
+  //   return <div className="content__body">
+
+  //     {bracket.round} -
+
+  //     {bracket.round === "Champion" && bracket.player1}
+  //     {bracket.round !== "Champion" && bracket.player1 + " vs " + bracket.player2}
+  //   </div>
+  // }
+
   const Bracket = ({ bracket }) => {
     if (!bracket.player1 && !bracket.player2) {
-      return <div className="content__body">{bracket.round} - N/A</div>
+      return  <td colspan="2">{bracket.round} - N/A</td>
     }
 
-    return <div className="content__body">
-
-      {bracket.round} -
-
-      {bracket.round === "Champion" && bracket.player1}
-      {bracket.round !== "Champion" && bracket.player1 + " vs " + bracket.player2}
-    </div>
+    return <tr>
+      <td width="50%">
+        {bracket.player1}
+      </td>
+      <td width="50%">
+        {bracket.player2}
+      </td>
+    </tr>
   }
 
   return <Fragment>
-    <div className="content-layout">
-      <h1 className="content__title">{data.name}</h1>
+    <div class="ui container">
+    <h1 class="ui aligned header">{ data.name }</h1>
+    <div class="column">
+    <table id="players">
       {data.events.map(event => (
-        <div>
-          <h2 className="content__title">{event.name}</h2>
+        <Fragment>
+          <h2 class="ui aligned header">{ event.name }</h2>
           {event.brackets.map(bracket => (
             <Bracket bracket={bracket} />
 
           ))}
-
-        </div>
+</Fragment>
       ))}
+      </table>
+      </div>
     </div>
   </Fragment>
 };

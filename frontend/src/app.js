@@ -12,6 +12,8 @@ import { NotFound } from "./pages/not-found";
 import { Profile } from "./pages/profile";
 import { AuthCheck } from "./pages/authcheck";
 
+import 'semantic-ui-css/semantic.min.css'
+
 export const App = () => {
   const { isLoading } = useAuth0();
 
