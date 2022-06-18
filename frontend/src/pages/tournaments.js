@@ -42,35 +42,21 @@ export const Tournaments = () => {
 
       const data = await makeRequest({ config, authenticated: true });
       setData(data);
-    }    
+    }
 
-    if(isAuthenticated) {
+    if (isAuthenticated) {
       getTournamentAuthenticated(tournamentId)
     } else {
       getTournament(tournamentId)
     }
   }, [tournamentId])
 
-  // const Bracket = ({ bracket }) => {
-  //   if (!bracket.player1 && !bracket.player2) {
-  //     return <div className="content__body">{bracket.round} - N/A</div>
-  //   }
-
-  //   return <div className="content__body">
-
-  //     {bracket.round} -
-
-  //     {bracket.round === "Champion" && bracket.player1}
-  //     {bracket.round !== "Champion" && bracket.player1 + " vs " + bracket.player2}
-  //   </div>
-  // }
-
   const Bracket = ({ bracket }) => {
     if (!bracket.player1 && !bracket.player2) {
-      return  <tr><td colSpan="2">N/A</td></tr>
+      return <tr><td colSpan="2">N/A</td></tr>
     }
 
-    if(bracket.round === "Champion") {
+    if (bracket.round === "Champion") {
       return <tr><td colSpan="2">{bracket.player1}</td></tr>
     }
 
@@ -84,42 +70,42 @@ export const Tournaments = () => {
     </tr>
   }
 
-  data.events.forEach(event => {  
-    const rounds = Array.from(new Set(event.brackets.map( i => i.round)));
-    const groups= rounds.map( round => { 
-      return  { round:round, brackets:[]};
-    } ); 
+  data.events.forEach(event => {
+    const rounds = Array.from(new Set(event.brackets.map(i => i.round)));
+    const groups = rounds.map(round => {
+      return { round: round, brackets: [] };
+    });
 
-    event.brackets.forEach( d => { 
-        groups.find( g => g.round === d.round).brackets.push(d);
+    event.brackets.forEach(d => {
+      groups.find(g => g.round === d.round).brackets.push(d);
     });
     event.newBrackets = groups
   })
-  console.log("data", data)
-
 
   return <Fragment>
     <div class="ui container">
-    <h1 class="ui aligned header">{ data.name }</h1>
-    <div class="column">
-    <table id="players">
-      {data.events.map(event => (
-        <Fragment>
-          <h2 class="ui aligned header">{ event.name }</h2>
-          {event.newBrackets.map(b => (
+      <h1 class="ui aligned header">{data.name}</h1>
+      <div class="column">
+        
+          {data.events.map(event => (
             <Fragment>
-            <tr>
-              <th colSpan="2">{b.round}</th>
-            </tr>
-            {b.brackets.map(bracket => (
-                <Bracket bracket={bracket} />
-            ))}
-            
+              <h2 class="ui aligned header">{event.name}</h2>
+              <table id="players">
+              {event.newBrackets.map(b => (
+                <Fragment>
+                  <tr>
+                    <th colSpan="2">{b.round}</th>
+                  </tr>
+                  {b.brackets.map(bracket => (
+                    <Bracket bracket={bracket} />
+                  ))}
+
+                </Fragment>
+              ))}
+              </table>
             </Fragment>
           ))}
-</Fragment>
-      ))}
-      </table>
+        
       </div>
     </div>
   </Fragment>
