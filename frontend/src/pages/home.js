@@ -30,7 +30,7 @@ const Tournaments = () => {
   }, [])
 
   return <div className="auth0-features">
-    <h2 className="auth0-features__title">Tournaments</h2>
+    <h2>Tournaments</h2>
     <ul>
     {tournaments.map(t => (
       <li className="content__body">
@@ -43,8 +43,8 @@ const Tournaments = () => {
 }
 
 export const Home = () => (
-  <Fragment>    
+  <div className="ui container">    
     {/* <Auth0Features /> */}
     <Tournaments />
-  </Fragment>
+  </div>
 );

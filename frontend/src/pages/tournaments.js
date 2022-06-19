@@ -4,8 +4,6 @@ import { useParams } from 'react-router-dom';
 import { useExternalApi } from "../utils/requests";
 import { useAuth0 } from "@auth0/auth0-react";
 
-const _ = require('underscore');
-
 export const Tournaments = () => {
   const { tournamentId } = useParams();
   const { isAuthenticated } = useAuth0();
@@ -83,22 +81,26 @@ export const Tournaments = () => {
   })
 
   return <Fragment>
-    <div class="ui container">
-      <h1 class="ui aligned header">{data.name}</h1>
-      <div class="column">
+    <div className="ui container">
+      <h1 className="ui aligned header">{data.name}</h1>
+      <div className="column">
         
           {data.events.map(event => (
             <Fragment>
-              <h2 class="ui aligned header">{event.name}</h2>
+              <h2 className="ui aligned header">{event.name}</h2>
               <table id="players">
               {event.newBrackets.map(b => (
-                <Fragment>
+                <Fragment key={b.round}>
+                  <thead>
                   <tr>
                     <th colSpan="2">{b.round}</th>
                   </tr>
+                  </thead>
+                  <tbody>
                   {b.brackets.map(bracket => (
                     <Bracket bracket={bracket} />
                   ))}
+                  </tbody>
 
                 </Fragment>
               ))}

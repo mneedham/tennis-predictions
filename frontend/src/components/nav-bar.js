@@ -26,14 +26,6 @@ export const NavBar = () => {
           >
             Profile
           </NavLink>
-          <NavLink
-            to="/external-api"
-            exact
-            className="nav-bar__tab"
-            activeClassName="nav-bar__tab--active"
-          >
-            External API
-          </NavLink>
         </div>
         <div className="nav-bar__actions">
           <AuthenticationButton />
