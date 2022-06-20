@@ -1,0 +1,51 @@
+{
+   "tournament": "Eastbourne 2022",
+    "events": {
+      "Men's Singles": {
+            "Quarter Finals": [
+                {"player1": "Norrie", "actualPlayer1": "?", "player2": "Evans", "actualPlayer2": "?"},
+                {"player1": "Draper", "actualPlayer1": "?", "player2": "Peniston", "actualPlayer2": "?"},
+                {"player1": "Tiafoe", "actualPlayer1": "?", "player2": "Humbert", "actualPlayer2": "?"},
+                {"player1": "De Minaur", "actualPlayer1": "?", "player2": "Sinner", "actualPlayer2": "?"}
+            ],
+            "Semi Finals": [
+                {"player1": "?", "actualPlayer1": "?", "player2": "?", "actualPlayer2": "?"},
+                {"player1": "?", "actualPlayer1": "?", "player2": "?", "actualPlayer2": "?"}
+            ],
+            "Final": [
+                {"player1": "?", "actualPlayer1": "?", "player2": "?", "actualPlayer2": "?"}
+            ],
+            "Champion": [
+                {"player1": "?", "actualPlayer1": "?"}
+            ]
+        },
+        "Women's Singles": {
+            "4th Round": [
+                {"player1": "Badosa", "actualPlayer1": "?", "player2": "Haddad Maia", "actualPlayer2": "?"},
+                {"player1": "Rybakina", "actualPlayer1": "?", "player2": "Linette", "actualPlayer2": "?"},
+                {"player1": "Boulter", "actualPlayer1": "?", "player2": "Kvitova", "actualPlayer2": "?"},
+                {"player1": "Teichmann", "actualPlayer1": "?", "player2": "Kostyuk", "actualPlayer2": "?"},
+                {"player1": "Tomljanovic", "actualPlayer1": "?", "player2": "Keys", "actualPlayer2": "?"},
+                {"player1": "Putintseva", "actualPlayer1": "?", "player2": "Sakkari", "actualPlayer2": "?"},
+                {"player1": "Muguruza", "actualPlayer1": "?", "player2": "Giorgi", "actualPlayer2": "?"},
+                {"player1": "Mertens", "actualPlayer1": "?", "player2": "Rogers", "actualPlayer2": "?"}
+            ],
+            "Quarter Finals": [
+                {"player1": "?", "actualPlayer1": "?", "player2": "?", "actualPlayer2": "?"},
+                {"player1": "?", "actualPlayer1": "?", "player2": "?", "actualPlayer2": "?"},
+                {"player1": "?", "actualPlayer1": "?", "player2": "?", "actualPlayer2": "?"},
+                {"player1": "?", "actualPlayer1": "?", "player2": "?", "actualPlayer2": "?"}
+            ],
+            "Semi Finals": [
+                {"player1": "?", "actualPlayer1": "?", "player2": "?", "actualPlayer2": "?"},
+                {"player1": "?", "actualPlayer1": "?", "player2": "?", "actualPlayer2": "?"}
+            ],
+            "Final": [
+                {"player1": "?", "actualPlayer1": "?", "player2": "?", "actualPlayer2": "?"}
+            ],
+            "Champion": [
+                {"player1": "?", "actualPlayer1": "?"}
+            ]
+        }
+    }
+}
