@@ -12,6 +12,7 @@ def create_app():
     auth0_domain = safe_get_env_var("AUTH0_DOMAIN")
 
     app = Flask(__name__)
+    app.config['CORS_HEADERS'] = 'Content-Type'
 
 
     @app.after_request

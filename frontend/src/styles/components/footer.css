@@ -16,9 +16,15 @@
   position: fixed;
   left: 0;
   bottom: 0;  
+  height:40px;   /* Height of the footer */
 
   /* responsive */
 
   font-size: 1.6rem;
   line-height: 2.4rem;
+}
+
+.spacer{
+  margin-bottom: 20px; /* how high is your footer */
+  visibility: hidden; 
 }

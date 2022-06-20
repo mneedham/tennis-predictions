@@ -54,6 +54,10 @@
     border-radius: 0;
   }
 
+
+  i:hover {
+    cursor: pointer;
+}
   /* @media (max-width: 1000px) {
 .column{
   flex: 100%;    

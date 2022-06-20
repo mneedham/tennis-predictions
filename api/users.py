@@ -19,8 +19,7 @@ def add_user(tx, user_id, data):
   return [record["u"] for record in result][0]
   
 
-@bp.route('/', methods=["POST", "OPTIONS", "HEAD"])
-# @bp.route('/')
+@bp.route('/', methods=["POST"])
 @authorization_guard
 def users():
   data = request.json

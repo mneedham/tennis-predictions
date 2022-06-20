@@ -5,9 +5,9 @@ import { Footer } from "./components/footer";
 import { Loader } from "./components/loader";
 import { NavBar } from "./components/nav-bar";
 import { ProtectedRoute } from "./components/protected-route";
-import { ExternalApi } from "./pages/external-api";
 import { Home } from "./pages/home";
 import { Tournaments } from "./pages/tournaments";
+import { EditableTournaments } from "./pages/editableTournament";
 import { NotFound } from "./pages/not-found";
 import { Profile } from "./pages/profile";
 import { AuthCheck } from "./pages/authcheck";
@@ -32,12 +32,13 @@ export const App = () => {
         <Switch>
           <Route path="/" exact component={Home} />
           <ProtectedRoute path="/profile" component={Profile} />
-          <ProtectedRoute path="/external-api" component={ExternalApi} />
-          <Route path="/tournaments/:tournamentId" component={Tournaments} />
+          <Route exact path="/tournaments/:tournamentId" component={Tournaments} />
+          <ProtectedRoute path="/tournaments/:tournamentId/edit" component={EditableTournaments} />
           <ProtectedRoute path="/authcheck" component={AuthCheck} />
           <Route path="*" component={NotFound} />
         </Switch>
       </div>
+      <div  class="spacer"> . </div>
       <Footer />
     </div>
   );

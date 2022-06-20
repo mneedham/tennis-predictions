@@ -1,4 +1,4 @@
-from flask import jsonify, Blueprint, g
+from flask import jsonify, Blueprint, g, request
 from utils.scaffolding import create_app
 from neo4j import GraphDatabase
 from utils.env import safe_get_env_var
@@ -32,15 +32,21 @@ def get_tournament(tx, id):
 def get_tournament_authenticated(tx, tournament_id, user_id):
   print("user_id", user_id)
   result = tx.run("""
+  MATCH (u:User {id: $userId})
   MATCH (t:Tournament)-[:PART_OF]->(e)<-[:EVENT]-(bracket:Bracket)
   WHERE t.shortName = $tournamentId
   OPTIONAL MATCH (bracket)-[:PLAYER1]->(p1)
   OPTIONAL MATCH (bracket)-[:PLAYER2]->(p2)
-  WITH t, e, bracket, p1, p2
+  OPTIONAL MATCH (u)-[:SHADOW_BRACKET]->(sb)-[:BRACKET]->(bracket)
+  OPTIONAL MATCH (sb)-[:PLAYER1]->(sbPlayer1)
+  OPTIONAL MATCH (sb)-[:PLAYER2]->(sbPlayer2)
+  WITH t, e, bracket, p1, p2, sbPlayer1, sbPlayer2
   ORDER BY e, bracket.rank, bracket.index
   WITH t {.name, .shortName} AS t, e {.name} AS e, 
-       collect({name: bracket.name, id: bracket.id, round: bracket.round, player1: p1.name, player2: p2.name}) AS brackets
+       collect({name: bracket.name, id: bracket.id, round: bracket.round, 
+                player1: sbPlayer1.name, actualPlayer1: p1.name, player2: sbPlayer2.name, actualPlayer2: p2.name}) AS brackets
   RETURN t, collect ({name: e.name, brackets: brackets}) AS events
+  
   """, tournamentId=tournament_id, userId=user_id)
   return [{
       "name": record["t"]["name"],
@@ -79,6 +85,36 @@ def get_tournaments(tx):
 def all_tournaments():
   with driver.session() as session:
     return jsonify(session.read_transaction(get_tournaments))
+
+def update_bracket(tx, user_id, bracket_id, data):
+  result = tx.run("""
+  MATCH (u:User {id: $userId})
+  MATCH (b:Bracket {id: $bracketId})
+  MERGE (sb:ShadowBracket {id: b.id + "_" + $userId})
+  MERGE (u)-[:SHADOW_BRACKET]->(sb)
+  MERGE (sb)-[:BRACKET]->(b)
+  WITH u, b, sb
+  OPTIONAL MATCH (sb)-[playerRel:PLAYER1|PLAYER2]->()
+  DELETE playerRel
+  WITH u, b, sb
+  MERGE (p1:Player {name: $data.player1})
+  MERGE (sb)-[:PLAYER1]->(p1)
+  RETURN u {.id}, b {.id}
+  """, userId=user_id, bracketId=bracket_id, data=data)
+  return [
+    {"user": record["u"], "bracket": record["b"]} 
+    for record in result
+  ][0]
+  
+
+@bp.route('/<tournament_id>/bracket/<bracket_id>', methods=["POST"])
+@authorization_guard
+def update_bracket_route(tournament_id, bracket_id):
+  data = request.json
+  user_id = g.access_token["sub"]
+  print(user_id, tournament_id, bracket_id, data)
+  with driver.session() as session:
+    return jsonify(session.write_transaction(update_bracket, user_id, bracket_id, data))
 
 
 app = create_app()
