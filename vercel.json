@@ -1,0 +1,5 @@
+{
+    "redirects": [
+      { "source": "/api/test/.*", "destination": "api/test.py" }
+    ]
+}
