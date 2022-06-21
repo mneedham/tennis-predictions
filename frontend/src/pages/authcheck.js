@@ -28,7 +28,7 @@ export const AuthCheck = () => {
         }
       };
 
-      const data = await makeRequest({ config, authenticated: true });
+      const { data } = await makeRequest({ config, authenticated: true });
       setUserStored(true);
     }    
 

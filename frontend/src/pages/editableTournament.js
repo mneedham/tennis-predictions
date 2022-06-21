@@ -27,7 +27,7 @@ export const EditableTournaments = () => {
         }
       };
 
-      const data = await makeRequest({ config, authenticated: true });
+      const { data } = await makeRequest({ config, authenticated: true });
       setData(data);
     }
     getTournamentAuthenticated(tournamentId)

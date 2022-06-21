@@ -44,7 +44,8 @@ def get_tournament_authenticated(tx, tournament_id, user_id):
   ORDER BY e, bracket.rank, bracket.index
   WITH t {.name, .shortName} AS t, e {.name} AS e, 
        collect({name: bracket.name, id: bracket.id, round: bracket.round, 
-                player1: sbPlayer1.name, actualPlayer1: p1.name, player2: sbPlayer2.name, actualPlayer2: p2.name}) AS brackets
+                player1: sbPlayer1.name, actualPlayer1: p1.name, 
+                player2: sbPlayer2.name, actualPlayer2: p2.name}) AS brackets
   RETURN t, collect ({name: e.name, brackets: brackets}) AS events
   
   """, tournamentId=tournament_id, userId=user_id)
@@ -97,12 +98,21 @@ def update_bracket(tx, user_id, bracket_id, data):
   OPTIONAL MATCH (sb)-[playerRel:PLAYER1|PLAYER2]->()
   DELETE playerRel
   WITH u, b, sb
-  MERGE (p1:Player {name: $data.player1})
-  MERGE (sb)-[:PLAYER1]->(p1)
-  RETURN u {.id}, b {.id}
+  CALL apoc.do.when($data.player1 IS NOT NULL, 
+    "MERGE (p1:Player {name: data.player1}) MERGE (sb)-[:PLAYER1]->(p1) RETURN *", 
+    "", {data: $data, sb: sb})
+  YIELD value AS p1Action
+  CALL apoc.do.when($data.player2 IS NOT NULL, 
+    "MERGE (p2:Player {name: data.player2}) MERGE (sb)-[:PLAYER2]->(p2) RETURN *", 
+    "", {data: $data, sb: sb})
+  YIELD value AS p2Action
+  RETURN u {.id}, b {.id}, p1Action.p1.name AS p1Action, p2Action.p2.name AS p2Action
   """, userId=user_id, bracketId=bracket_id, data=data)
   return [
-    {"user": record["u"], "bracket": record["b"]} 
+    {"user": record["u"], "bracket": record["b"], 
+     "p1Action": record["p1Action"],
+     "p2Action": record["p2Action"]
+     } 
     for record in result
   ][0]
   

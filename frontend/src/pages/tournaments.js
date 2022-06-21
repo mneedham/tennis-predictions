@@ -5,6 +5,8 @@ import { useExternalApi } from "../utils/requests";
 import { useAuth0 } from "@auth0/auth0-react";
 import { Icon, Input } from 'semantic-ui-react'
 
+import { SemanticToastContainer, toast } from 'react-semantic-toasts';
+import 'react-semantic-toasts/styles/react-semantic-alert.css';
 
 export const Tournaments = () => {
   const { tournamentId } = useParams();
@@ -29,8 +31,8 @@ export const Tournaments = () => {
         }
       };
 
-      const data = await makeRequest({ config });
-      setData(data);
+      const response = await makeRequest({ config });
+      setData(response.data);
     }
 
     const getTournamentAuthenticated = async (tournamentId) => {
@@ -42,17 +44,16 @@ export const Tournaments = () => {
         }
       };
 
-      const data = await makeRequest({ config, authenticated: true });
-      console.log("data", data)
+      const response = await makeRequest({ config, authenticated: true });
 
       const b = {}
-      data.events.forEach(event => {
+      response.data.events.forEach(event => {
         event.brackets.forEach(bracket => {
-          b[bracket.id] = {"player1": b.player1, "player2": b.player2}
+          b[bracket.id] = {"player1": bracket.player1, "player2": bracket.player2}
         })
       })
 
-      setData(data);
+      setData(response.data);
       setBrackets(b)
     }
 
@@ -68,8 +69,6 @@ export const Tournaments = () => {
       ...state, [bracketId]: { ...state[bracketId], player1: player1, player2: player2 }
     }))
 
-    console.log("bracketId", bracketId, "data", data)
-
     const config = {
       url: `${apiServerUrl}/api/tournaments/${tournamentId}/bracket/${bracketId}`,
       method: "POST",
@@ -83,9 +82,27 @@ export const Tournaments = () => {
     };
 
     const response = await makeRequest({ config, authenticated: true });
-    console.log("response", response)
-  }
+    if (response.status === 200) {
+      toast({
+        type: 'success',
+        icon: 'envelope',
+        title: 'Bracket updated',
+        description: `${bracketId} successfully updated`,
+        animation: 'slide up',
+        time: 1000
+      });
+    } else {
+      toast({
+        type: 'error',
+        icon: 'envelope',
+        title: 'Bracket not update',
+        description: `${bracketId} was not updated`,
+        animation: 'slide up',
+        time: 1000
+      }); 
+    }
 
+  }
 
   const EditableBracket = ({ bracket }) => {
     const [player1, setPlayer1] = useState(brackets[bracket.id]["player1"])
@@ -100,7 +117,7 @@ export const Tournaments = () => {
             onChange={(_, data) => setPlayer1(data.value)}
           />
         </td>
-        <td key={bracket.id + "update"} onClick={() => updateBracket(bracket.id)}>Update</td>
+        <td key={bracket.id + "update"} onClick={() => updateBracket(bracket.id, player1)}><Icon name="checkmark" color="green" size="large" /></td>
       </tr>
     }
 
@@ -119,27 +136,30 @@ export const Tournaments = () => {
           onChange={(_, data) => setPlayer2(data.value)}
         />    
       </td>
-      <td key={bracket.id +"update"} onClick={() => updateBracket(bracket.id, player1, player2)}>Update</td>
+      <td key={bracket.id +"update"} onClick={() => updateBracket(bracket.id, player1, player2)}><Icon name="checkmark" color="green" size="large" /></td>
     </tr>
   }
 
   const Bracket = ({ bracket }) => {
-    if (!bracket.player1 && !bracket.player2) {
+    const player1 = (brackets[bracket.id] || {}).player1
+    const player2 = (brackets[bracket.id] || {}).player2
+
+    if (!player1 && !player2) {
       return <tr><td colSpan="2">N/A</td></tr>
     }
 
     if (bracket.round === "Champion") {
       return <tr>
-        <td colSpan="2">{bracket.player1}</td>        
+        <td colSpan="2">{player1}</td>        
         </tr>
     }
 
     return <tr>
       <td width="50%">
-        {bracket.player1}
+        {player1}
       </td>
       <td width="50%">
-        {bracket.player2}
+        {player2}
       </td>
     </tr>
   }
@@ -163,15 +183,13 @@ export const Tournaments = () => {
     event.newBrackets = groups
   })
 
-  console.log("brackets", brackets)
-
   return <Fragment>
+    <SemanticToastContainer />
     <div className="ui container" key={data.name}>
       <h1 className="ui aligned header">{data.name}</h1>
       <Icon color={mode === "edit" ? "green" : "black"} name='edit' size='large' onClick={() => setMode("edit")} />
       <Icon color={mode === "view" ? "green" : "black"} name='eye' size='large' onClick={() => setMode("view")} />
-      <div className="column">
-        
+      <div className="column">        
           {data.events.map(event => (
             <Fragment key={event.name}>
               <h2 className="ui aligned header">{event.name}</h2>

@@ -17,9 +17,8 @@ export const useExternalApi = () => {
             }
 
             const response = await axios(options.config);
-            const { data } = response;
 
-            return data;
+            return response;
         } catch (error) {
             if (axios.isAxiosError(error) && error.response) {
                 return error.response.data;

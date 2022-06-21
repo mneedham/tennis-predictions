@@ -22,7 +22,7 @@ const Tournaments = () => {
         }        
       };
   
-      const data = await makeRequest({ config });
+      const { data } = await makeRequest({ config });
       setTournaments(data);
     }
 
