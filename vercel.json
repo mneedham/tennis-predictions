@@ -1,5 +1,8 @@
 {
     "redirects": [
-      { "source": "/api/test/.*", "destination": "api/test.py" }
+        {
+            "source": "/api/test/.*",
+            "destination": "api/test.py"
+        }
     ]
 }
