@@ -49,7 +49,12 @@ export const Tournaments = () => {
       const b = {}
       response.data.events.forEach(event => {
         event.brackets.forEach(bracket => {
-          b[bracket.id] = {"player1": bracket.player1, "player2": bracket.player2}
+          b[bracket.id] = {
+            "player1": bracket.player1,
+            "player2": bracket.player2, 
+            "actualPlayer1": bracket.actualPlayer1,
+            "actualPlayer2": bracket.actualPlayer2
+          }
         })
       })
 
@@ -156,10 +161,10 @@ export const Tournaments = () => {
 
     return <tr>
       <td width="50%">
-        {player1}
+        {player1} {bracket.actualPlayer1}
       </td>
       <td width="50%">
-        {player2}
+        {player2} {bracket.actualPlayer2}
       </td>
     </tr>
   }

@@ -3,6 +3,7 @@ import { Auth0Features } from "../components/auth0-features";
 import { useState } from "react";
 import { Link } from 'react-router-dom';
 import { useExternalApi } from "../utils/requests";
+import { List } from 'semantic-ui-react'
 
 const Tournaments = () => {
   const [tournaments, setTournaments] = useState([])
@@ -29,17 +30,21 @@ const Tournaments = () => {
     getTournaments()
   }, [])
 
-  return <div className="auth0-features">
-    <h2>Tournaments</h2>
-    <ul>
+  return <Fragment>
+    <h1>Tournaments</h1>
+    <List divided relaxed>
     {tournaments.map(t => (
-      <li className="content__body">
-        <Link to={`/tournaments/${t.shortName}`}>{t.name}</Link>
-        
-        </li>
+
+  <List.Item>
+    <List.Icon name='angle right' size='large' verticalAlign='middle' />
+    <List.Content>
+      <List.Header as='a'><Link to={`/tournaments/${t.shortName}`}>{t.name}</Link></List.Header>
+    </List.Content>
+  </List.Item>
+  
     ))}
-    </ul>
-  </div>
+  </List>
+  </Fragment>
 }
 
 export const Home = () => (
