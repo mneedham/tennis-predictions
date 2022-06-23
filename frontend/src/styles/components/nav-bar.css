@@ -107,9 +107,9 @@
     margin-right: 1.6rem;
   }
 
-  .nav-bar__logo {
-    height: 3.2rem;
-  }
+  /* .nav-bar__logo {
+    height: 2rem;
+  } */
 
   .nav-bar__tab--active {
     text-decoration-thickness: 2px;

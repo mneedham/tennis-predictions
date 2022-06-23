@@ -195,8 +195,8 @@ export const Tournaments = () => {
     <SemanticToastContainer />
     <div className="ui container" key={data.name}>
       <div className="header-edit">
-        <h1 className="ui aligned header">{data.name}</h1> 
-        {isAuthenticated &&
+        <h2 className="ui aligned header">{data.name}</h2> 
+        {isAuthenticated && data.name &&
         <div>
           <Icon color={mode === "edit" ? "green" : "black"} name='edit' size='large' onClick={() => setMode("edit")} />
           <Icon color={mode === "view" ? "green" : "black"} name='eye' size='large' onClick={() => setMode("view")} />
@@ -205,7 +205,7 @@ export const Tournaments = () => {
       <div className="column">        
           {data.events.map(event => (
             <Fragment key={event.name}>
-              <h2 className="ui aligned header">{event.name}</h2>
+              <h3 className="ui aligned header">{event.name}</h3>
               <table id="players" key="players_table">
               {event.newBrackets.map((b, index) => (
                 <Fragment key={index}>

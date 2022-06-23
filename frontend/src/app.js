@@ -38,8 +38,8 @@ export const App = () => {
           <Route path="*" component={NotFound} />
         </Switch>
       </div>
-      <div  class="spacer"> . </div>
-      <Footer />
+      {/* <div  class="spacer"> . </div>
+      <Footer /> */}
     </div>
   );
 };

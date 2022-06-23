@@ -10,31 +10,17 @@ export const Profile = () => {
   }
 
   return (
-    <div className="content-layout">
-      <h1 className="content__title">My Profile</h1>
-      <div className="content__body">
-        <p>
-          You can use the ID Token to get the profile information of an
-          authenticated user.
-          <br />
-          <strong>Only authenticated users can access this page.</strong>
-        </p>
-        <div className="profile-grid">
-          <div className="profile__header">
-            <img src={user.picture} alt="Profile" className="profile__avatar" />
-            <div className="profile__headline">
-              <h2 className="profile__title">{user.name}</h2>
-              <span className="profile__description">{user.email}</span>
-            </div>
-          </div>
-          <div className="profile__details">
-            <CodeSnippet
-              title="Decoded ID Token"
-              code={JSON.stringify(user, null, 2)}
-            />
-          </div>
-        </div>
+
+    <div className="ui container">
+      <div className="header-edit">
+        <h2 className="ui aligned header">Profile</h2>
       </div>
+
+      <p>
+        Logged in as {user.email}
+      </p>
+
+
     </div>
   );
 };
