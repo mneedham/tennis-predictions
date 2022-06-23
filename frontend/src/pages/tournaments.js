@@ -116,7 +116,8 @@ export const Tournaments = () => {
     if(bracket.round === "Champion") {
       return <tr key={bracket.id + "_row"}>
         <td colSpan="2">
-          <Input fluid focus
+          <Input fluid 
+          icon={player1 !== brackets[bracket.id]["player1"] ? "pencil" : null}
             key={bracket.id + "_player1_formInput"}
             value={player1}
             onChange={(_, data) => setPlayer1(data.value)}
@@ -128,14 +129,16 @@ export const Tournaments = () => {
 
     return <tr key={bracket.id + "_row"}>
       <td width="50%">
-        <Input fluid focus
+        <Input fluid 
+          icon={player1 !== brackets[bracket.id]["player1"] ? "pencil" : null}
           key={bracket.id + "player1__formInput"}
           value={player1}
           onChange={(_, data) => setPlayer1(data.value)}
         />
       </td>
       <td width="50%">
-        <Input fluid focus
+        <Input fluid 
+          icon={player2 !== brackets[bracket.id]["player2"] ? "pencil" : null}
           key={bracket.id + "player2_formInput"}
           value={player2}
           onChange={(_, data) => setPlayer2(data.value)}
@@ -191,9 +194,14 @@ export const Tournaments = () => {
   return <Fragment>
     <SemanticToastContainer />
     <div className="ui container" key={data.name}>
-      <h1 className="ui aligned header">{data.name}</h1>
-      <Icon color={mode === "edit" ? "green" : "black"} name='edit' size='large' onClick={() => setMode("edit")} />
-      <Icon color={mode === "view" ? "green" : "black"} name='eye' size='large' onClick={() => setMode("view")} />
+      <div className="header-edit">
+        <h1 className="ui aligned header">{data.name}</h1> 
+        {isAuthenticated &&
+        <div>
+          <Icon color={mode === "edit" ? "green" : "black"} name='edit' size='large' onClick={() => setMode("edit")} />
+          <Icon color={mode === "view" ? "green" : "black"} name='eye' size='large' onClick={() => setMode("view")} />
+        </div>}
+      </div>
       <div className="column">        
           {data.events.map(event => (
             <Fragment key={event.name}>

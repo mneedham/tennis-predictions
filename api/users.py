@@ -5,7 +5,8 @@ from utils.env import safe_get_env_var
 from utils.guards import authorization_guard
 
 host = safe_get_env_var("NEO4J_HOST")
-driver = GraphDatabase.driver(f"{host}", auth=("neo4j", "neo"))
+password = safe_get_env_var("NEO4J_PASSWORD")
+driver = GraphDatabase.driver(f"{host}", auth=("neo4j", password))
 
 bp_name = 'api-users'
 bp = Blueprint(bp_name, __name__)

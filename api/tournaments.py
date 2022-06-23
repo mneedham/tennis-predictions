@@ -5,7 +5,7 @@ from utils.env import safe_get_env_var
 from utils.guards import authorization_guard
 
 host = safe_get_env_var("NEO4J_HOST")
-password = safe_get_env_var("NEO4J_HOST")
+password = safe_get_env_var("NEO4J_PASSWORD")
 driver = GraphDatabase.driver(f"{host}", auth=("neo4j", password))
 
 bp_name = 'api-tournaments'
