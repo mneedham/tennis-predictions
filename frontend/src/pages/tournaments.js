@@ -243,7 +243,7 @@ export const Tournaments = () => {
         </div>}
       </div>
       <div className="column">        
-        <Tab panes={panes} />
+        {panes.length > 0 && <Tab panes={panes} />}
       </div>
     </div>
   </Fragment>
