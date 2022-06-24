@@ -20,7 +20,7 @@ def get_tournament(tx, id):
   WITH t, e, bracket, p1, p2
   ORDER BY e, bracket.rank, bracket.index
   WITH t {.name, .shortName} AS t, e {.name} AS e, 
-       collect({name: bracket.name, id: bracket.id, round: bracket.round, player1: p1.name, player2: p2.name}) AS brackets
+       collect({name: bracket.name, id: bracket.id, round: bracket.round, actualPlayer1: p1.name, actualPlayer2: p2.name}) AS brackets
   RETURN t, collect ({name: e.name, brackets: brackets}) AS events
   """, tournamentId=id)
   return [{

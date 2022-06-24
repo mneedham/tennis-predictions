@@ -3,7 +3,7 @@ import { useState } from "react";
 import { useParams, Link } from 'react-router-dom';
 import { useExternalApi } from "../utils/requests";
 import { useAuth0 } from "@auth0/auth0-react";
-import { Icon, Input } from 'semantic-ui-react'
+import { Icon, Input, Tab } from 'semantic-ui-react'
 
 import { SemanticToastContainer, toast } from 'react-semantic-toasts';
 import 'react-semantic-toasts/styles/react-semantic-alert.css';
@@ -21,6 +21,21 @@ export const Tournaments = () => {
     apiServerUrl
   } = useExternalApi();
 
+  const getBrackets = (events) => {
+    const b = {}
+    events.forEach(event => {
+      event.brackets.forEach(bracket => {
+        b[bracket.id] = {
+          "player1": bracket.player1,
+          "player2": bracket.player2, 
+          "actualPlayer1": bracket.actualPlayer1,
+          "actualPlayer2": bracket.actualPlayer2
+        }
+      })
+    })
+    return b
+  }
+
   React.useEffect(() => {
     const getTournament = async (tournamentId) => {
       const config = {
@@ -32,7 +47,10 @@ export const Tournaments = () => {
       };
 
       const response = await makeRequest({ config });
+      const b = getBrackets(response.data.events)
+
       setData(response.data);
+      setBrackets(b)
     }
 
     const getTournamentAuthenticated = async (tournamentId) => {
@@ -46,18 +64,7 @@ export const Tournaments = () => {
 
       const response = await makeRequest({ config, authenticated: true });
 
-      const b = {}
-      response.data.events.forEach(event => {
-        event.brackets.forEach(bracket => {
-          b[bracket.id] = {
-            "player1": bracket.player1,
-            "player2": bracket.player2, 
-            "actualPlayer1": bracket.actualPlayer1,
-            "actualPlayer2": bracket.actualPlayer2
-          }
-        })
-      })
-
+      const b = getBrackets(response.data.events)
       setData(response.data);
       setBrackets(b)
     }
@@ -152,22 +159,29 @@ export const Tournaments = () => {
     const player1 = (brackets[bracket.id] || {}).player1
     const player2 = (brackets[bracket.id] || {}).player2
 
-    if (!player1 && !player2) {
+    if (!bracket.actualPlayer1 && !bracket.actualPlayer2) {
       return <tr><td colSpan="2">N/A</td></tr>
     }
 
+    const classNamePlayer1 = (bracket.actualPlayer1  === undefined || player1 == undefined) ? "none" :  (bracket.actualPlayer1 === player1 ? "correct" : "incorrect")
+    const classNamePlayer2 = (bracket.actualPlayer2 === undefined || player2 == undefined) ? "none" :  (bracket.actualPlayer2 === player2 ? "correct" : "incorrect")
+
     if (bracket.round === "Champion") {
       return <tr>
-        <td colSpan="2">{player1}</td>        
+        <td className={classNamePlayer1} colSpan="2">
+          {player1 === bracket.actualPlayer1 || bracket.actualPlayer1 === undefined ? player1 : <Fragment><strike>{player1}</strike><br />{bracket.actualPlayer1}</Fragment>}
+          </td>        
         </tr>
     }
 
     return <tr>
-      <td width="50%">
-        {player1} {bracket.actualPlayer1}
+      <td width="50%" className={classNamePlayer1}>
+        {(player1 === bracket.actualPlayer1 || bracket.actualPlayer1 == undefined || player1 === undefined) && player1}
+        {(player1 !== bracket.actualPlayer1 && bracket.player1 !== undefined && player1 !== undefined) && <Fragment><strike>{player1}</strike><br />{bracket.actualPlayer1}</Fragment>}        
       </td>
-      <td width="50%">
-        {player2} {bracket.actualPlayer2}
+      <td width="50%" className={classNamePlayer2}>
+        {(player2 === bracket.actualPlayer2 || bracket.actualPlayer2 == undefined || player2 === undefined) && player2}
+        {(player2 !== bracket.actualPlayer2) && <Fragment><strike>{player2}</strike><br />{bracket.actualPlayer2}</Fragment>}   
       </td>
     </tr>
   }
