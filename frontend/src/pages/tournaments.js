@@ -238,8 +238,8 @@ export const Tournaments = () => {
         <h2 className="ui aligned header">{data.name}</h2> 
         {isAuthenticated && data.name &&
         <div>
-          <Icon color={mode === "edit" ? "green" : "black"} name='edit' size='large' onClick={() => setMode("edit")} />
           <Icon color={mode === "view" ? "green" : "black"} name='eye' size='large' onClick={() => setMode("view")} />
+          <Icon color={mode === "edit" ? "green" : "black"} name='edit' size='large' onClick={() => setMode("edit")} />          
         </div>}
       </div>
       <div className="column">        

@@ -91,11 +91,11 @@
 
 @media only screen and (max-width: 480px) {
   .nav-bar__tab {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
   }
 
   .nav-bar {
-    height: 6.4rem;
+    height: 4.5rem;
 
     padding: 0.8rem 1.6rem;
   }

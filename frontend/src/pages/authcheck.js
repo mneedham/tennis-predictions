@@ -41,27 +41,20 @@ export const AuthCheck = () => {
 
   if (!userStored) {
     return (
-      <div className="content-layout">
-        <h1 className="content__title">Auth Check</h1>
-        <div className="content__body">
-          <p>
-            You can use the ID Token to get the profile information of an
-            authenticated user.
-            <br />
-            <strong>Only authenticated users can access this page.</strong>
-          </p>
-          <div className="profile-grid">
-            <div className="profile__header">
-              <img src={user.picture} alt="Profile" className="profile__avatar" />
-              <div className="profile__headline">
-                <h2 className="profile__title">{user.name}</h2>
-                <span className="profile__description">{user.sub}</span>
-              </div>
-            </div>
-           
-          </div>
-        </div>
+      <div className="ui container">
+      <div className="header-edit">
+        <h2 className="ui aligned header">Logging in...</h2>
       </div>
+
+      <p>
+        You are now logged in as {user.email}.
+      </p>
+      <p>
+        You will shortly be redirected to the home page.
+      </p>
+
+
+    </div>
     );
   }
 
