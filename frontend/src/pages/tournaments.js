@@ -205,6 +205,32 @@ export const Tournaments = () => {
     event.newBrackets = groups
   })
 
+  const panes = data.events.map(event => {
+    return {
+      menuItem: event.name, render: () => <Fragment key={event.name}>
+      <h3 className="ui aligned header">{event.name}</h3>
+      <table id="players" key="players_table">
+      {event.newBrackets.map((b, index) => (
+        <Fragment key={index}>
+          <thead key={b.round + "_thead"}> 
+            <tr>
+              <th colSpan={mode === "view" ? "2" : "3"}>{b.round}</th>
+            </tr>
+          </thead>
+          <tbody key={b.round + "_tbody"}>
+            {b.brackets.map((bracket, index) => (                                      
+              <Row bracket={bracket} mode={mode} key={index + "_row"} />
+            ))}
+          </tbody>
+
+        </Fragment>
+      ))}
+      </table>
+    </Fragment>
+    }
+  })
+
+  
   return <Fragment>
     <SemanticToastContainer />
     <div className="ui container" key={data.name}>
@@ -217,29 +243,7 @@ export const Tournaments = () => {
         </div>}
       </div>
       <div className="column">        
-          {data.events.map(event => (
-            <Fragment key={event.name}>
-              <h3 className="ui aligned header">{event.name}</h3>
-              <table id="players" key="players_table">
-              {event.newBrackets.map((b, index) => (
-                <Fragment key={index}>
-                  <thead key={b.round + "_thead"}> 
-                    <tr>
-                      <th colSpan={mode === "view" ? "2" : "3"}>{b.round}</th>
-                    </tr>
-                  </thead>
-                  <tbody key={b.round + "_tbody"}>
-                    {b.brackets.map((bracket, index) => (                                      
-                      <Row bracket={bracket} mode={mode} key={index + "_row"} />
-                    ))}
-                  </tbody>
-
-                </Fragment>
-              ))}
-              </table>
-            </Fragment>
-          ))}
-        
+        <Tab panes={panes} />
       </div>
     </div>
   </Fragment>
