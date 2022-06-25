@@ -1,22 +1,24 @@
 {
    "tournament": "Halle 2022",
+   "startDate": "2022-06-13",
+   "endDate": "2022-06-19",
     "events": {
       "Men's Singles": {
             "Quarter Finals": [
-                {"player1": "Medvedev", "actualPlayer1": "?", "player2": "Fucsovics", "actualPlayer2": "?"},
-                {"player1": "Kecmanovic", "actualPlayer1": "?", "player2": "Khachanov", "actualPlayer2": "?"},
-                {"player1": "Hurkacz", "actualPlayer1": "?", "player2": "Auger-Aliassime", "actualPlayer2": "?"},
-                {"player1": "Rune", "actualPlayer1": "?", "player2": "Kyrgios", "actualPlayer2": "?"}
+                {"player1": "Medvedev", "actualPlayer1": "Medvedev", "player2": "Fucsovics", "actualPlayer2": "Bautista Agut"},
+                {"player1": "Kecmanovic", "actualPlayer1": "Otte", "player2": "Khachanov", "actualPlayer2": "Khachanov"},
+                {"player1": "Hurkacz", "actualPlayer1": "Hurkacz", "player2": "Auger-Aliassime", "actualPlayer2": "Auger-Aliassime"},
+                {"player1": "Rune", "actualPlayer1": "Carreno Busta", "player2": "Kyrgios", "actualPlayer2": "Kyrgios"}
             ],
             "Semi Finals": [
-                {"player1": "Medvedev", "actualPlayer1": "?", "player2": "Khachanov", "actualPlayer2": "?"},
-                {"player1": "Hurkacz", "actualPlayer1": "?", "player2": "Rune", "actualPlayer2": "?"}
+                {"player1": "Medvedev", "actualPlayer1": "Medvedev", "player2": "Khachanov", "actualPlayer2": "Otte"},
+                {"player1": "Hurkacz", "actualPlayer1": "Hurkacz", "player2": "Rune", "actualPlayer2": "Kyrgios"}
             ],
             "Final": [
-                {"player1": "Medvedev", "actualPlayer1": "?", "player2": "Hurkacz", "actualPlayer2": "?"}
+                {"player1": "Medvedev", "actualPlayer1": "Medvedev", "player2": "Hurkacz", "actualPlayer2": "Hurkacz"}
             ],
             "Champion": [
-                {"player1": "Hurkacz", "actualPlayer1": "?"}
+                {"player1": "Hurkacz", "actualPlayer1": "Hurkacz"}
             ]
         }    
     }
