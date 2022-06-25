@@ -1,5 +1,7 @@
 {
    "tournament": "French Open 2022",
+   "startDate": "2022-05-22",
+   "endDate": "2022-06-05",
     "events": {
       "Men's Singles": {
             "4th Round": [
