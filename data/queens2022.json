@@ -3,20 +3,20 @@
     "events": {
       "Men's Singles": {
             "Quarter Finals": [
-                {"player1": "Ruud", "actualPlayer1": "?", "player2": "Brooksby", "actualPlayer2": "?"},
-                {"player1": "Draper", "actualPlayer1": "?", "player2": "Cilic", "actualPlayer2": "?"},
-                {"player1": "Opelka", "actualPlayer1": "?", "player2": "Norrie", "actualPlayer2": "?"},
-                {"player1": "Tiafoe", "actualPlayer1": "?", "player2": "Berrettini", "actualPlayer2": "?"}
+                {"player1": "Ruud", "actualPlayer1": "Peniston", "player2": "Brooksby", "actualPlayer2": "Krajinovic"},
+                {"player1": "Draper", "actualPlayer1": "Ruusuvuori", "player2": "Cilic", "actualPlayer2": "Cilic"},
+                {"player1": "Opelka", "actualPlayer1": "Davidovich Fokina", "player2": "Norrie", "actualPlayer2": "Van De Zandschulp"},
+                {"player1": "Tiafoe", "actualPlayer1": "Paul", "player2": "Berrettini", "actualPlayer2": "Berrettini"}
             ],
             "Semi Finals": [
-                {"player1": "Ruud", "actualPlayer1": "?", "player2": "Cilic", "actualPlayer2": "?"},
-                {"player1": "Norrie", "actualPlayer1": "?", "player2": "Berrettini", "actualPlayer2": "?"}
+                {"player1": "Ruud", "actualPlayer1": "Krajinovic", "player2": "Cilic", "actualPlayer2": "Cilic"},
+                {"player1": "Norrie", "actualPlayer1": "Van De Zandschulp", "player2": "Berrettini", "actualPlayer2": "Berrettini"}
             ],
             "Final": [
-                {"player1": "Cilic", "actualPlayer1": "?", "player2": "Berrettini", "actualPlayer2": "?"}
+                {"player1": "Cilic", "actualPlayer1": "Krajinovic", "player2": "Berrettini", "actualPlayer2": "Berrettini"}
             ],
             "Champion": [
-                {"player1": "Cilic", "actualPlayer1": "?"}
+                {"player1": "Cilic", "actualPlayer1": "Berrettini"}
             ]
         }    
     }
