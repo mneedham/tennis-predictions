@@ -1,22 +1,24 @@
 {
    "tournament": "Berlin 2022",
+       "startDate": "2022-06-13",
+    "endDate": "2022-06-19",
     "events": {
       "Women's Singles": {
             "Quarter Finals": [
-                {"player1": "Muchova", "actualPlayer1": "?", "player2": "Sasnovich", "actualPlayer2": "?"},
-                {"player1": "Andreescu", "actualPlayer1": "?", "player2": "Gauff", "actualPlayer2": "?"},
-                {"player1": "Bencic", "actualPlayer1": "?", "player2": "Sabalenka", "actualPlayer2": "?"},
-                {"player1": "Kasatkina", "actualPlayer1": "?", "player2": "Sakkari", "actualPlayer2": "?"}
+                {"player1": "Muchova", "actualPlayer1": "Jabeur", "player2": "Sasnovich", "actualPlayer2": "Sasnovich"},
+                {"player1": "Andreescu", "actualPlayer1": "Pliskova", "player2": "Gauff", "actualPlayer2": "Gauff"},
+                {"player1": "Bencic", "actualPlayer1": "Bencic", "player2": "Sabalenka", "actualPlayer2": "Kudermetova"},
+                {"player1": "Kasatkina", "actualPlayer1": "Kasatkina", "player2": "Sakkari", "actualPlayer2": "Sakkari"}
             ],
             "Semi Finals": [
-                {"player1": "Muchova", "actualPlayer1": "?", "player2": "Gauff", "actualPlayer2": "?"},
-                {"player1": "Bencic", "actualPlayer1": "?", "player2": "Sakkari", "actualPlayer2": "?"}
+                {"player1": "Muchova", "actualPlayer1": "Jabeur", "player2": "Gauff", "actualPlayer2": "Gauff"},
+                {"player1": "Bencic", "actualPlayer1": "Bencic", "player2": "Sakkari", "actualPlayer2": "Sakkari"}
             ],
             "Final": [
-                {"player1": "Gauff", "actualPlayer1": "?", "player2": "Sakkari", "actualPlayer2": "?"}
+                {"player1": "Gauff", "actualPlayer1": "Jabeur", "player2": "Sakkari", "actualPlayer2": "Bencic"}
             ],
             "Champion": [
-                {"player1": "Gauff", "actualPlayer1": "?"}
+                {"player1": "Gauff", "actualPlayer1": "Jabeur"}
             ]
         }    
     }
