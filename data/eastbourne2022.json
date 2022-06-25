@@ -1,50 +1,52 @@
 {
    "tournament": "Eastbourne 2022",
+   "startDate": "2022-06-20",
+   "endDate": "2022-06-25",
     "events": {
       "Men's Singles": {
             "Quarter Finals": [
-                {"player1": "Norrie", "actualPlayer1": "?", "player2": "Evans", "actualPlayer2": "?"},
-                {"player1": "Draper", "actualPlayer1": "?", "player2": "Peniston", "actualPlayer2": "?"},
-                {"player1": "Tiafoe", "actualPlayer1": "?", "player2": "Humbert", "actualPlayer2": "?"},
-                {"player1": "De Minaur", "actualPlayer1": "?", "player2": "Sinner", "actualPlayer2": "?"}
+                {"player1": "Norrie", "actualPlayer1": "Norrie", "player2": "Evans", "actualPlayer2": "Cressy"},
+                {"player1": "Draper", "actualPlayer1": "Draper", "player2": "Peniston", "actualPlayer2": "Peniston"},
+                {"player1": "Tiafoe", "actualPlayer1": "Bublik", "player2": "Humbert", "actualPlayer2": "Fritz"},
+                {"player1": "De Minaur", "actualPlayer1": "De Minaur", "player2": "Sinner", "actualPlayer2": "Paul"}
             ],
             "Semi Finals": [
-                {"player1": "Norrie", "actualPlayer1": "?", "player2": "Draper", "actualPlayer2": "?"},
-                {"player1": "Tiafoe", "actualPlayer1": "?", "player2": "De Minaur", "actualPlayer2": "?"}
+                {"player1": "Norrie", "actualPlayer1": "Cressy", "player2": "Draper", "actualPlayer2": "Draper"},
+                {"player1": "Tiafoe", "actualPlayer1": "Fritz", "player2": "De Minaur", "actualPlayer2": "De Minaur"}
             ],
             "Final": [
-                {"player1": "Norrie", "actualPlayer1": "?", "player2": "Tiafoe", "actualPlayer2": "?"}
+                {"player1": "Norrie", "actualPlayer1": "Cressy", "player2": "Tiafoe", "actualPlayer2": "Fritz"}
             ],
             "Champion": [
-                {"player1": "Tiafoe", "actualPlayer1": "?"}
+                {"player1": "Tiafoe", "actualPlayer1": "Fritz"}
             ]
         },
         "Women's Singles": {
             "4th Round": [
-                {"player1": "Badosa", "actualPlayer1": "?", "player2": "Haddad Maia", "actualPlayer2": "?"},
-                {"player1": "Rybakina", "actualPlayer1": "?", "player2": "Linette", "actualPlayer2": "?"},
-                {"player1": "Boulter", "actualPlayer1": "?", "player2": "Kvitova", "actualPlayer2": "?"},
-                {"player1": "Teichmann", "actualPlayer1": "?", "player2": "Kostyuk", "actualPlayer2": "?"},
-                {"player1": "Tomljanovic", "actualPlayer1": "?", "player2": "Keys", "actualPlayer2": "?"},
-                {"player1": "Putintseva", "actualPlayer1": "?", "player2": "Sakkari", "actualPlayer2": "?"},
-                {"player1": "Muguruza", "actualPlayer1": "?", "player2": "Giorgi", "actualPlayer2": "?"},
-                {"player1": "Mertens", "actualPlayer1": "?", "player2": "Rogers", "actualPlayer2": "?"}
+                {"player1": "Badosa", "actualPlayer1": "Burrage", "player2": "Haddad Maia", "actualPlayer2": "Haddad Maia"},
+                {"player1": "Rybakina", "actualPlayer1": "Tsurenko", "player2": "Linette", "actualPlayer2": "Linette"},
+                {"player1": "Boulter", "actualPlayer1": "Boulter", "player2": "Kvitova", "actualPlayer2": "Kvitova"},
+                {"player1": "Teichmann", "actualPlayer1": "Dart", "player2": "Kostyuk", "actualPlayer2": "Kostyuk"},
+                {"player1": "Tomljanovic", "actualPlayer1": "Ostapenko", "player2": "Keys", "actualPlayer2": "Keys"},
+                {"player1": "Putintseva", "actualPlayer1": "Putintseva", "player2": "Sakkari", "actualPlayer2": "Kalinina"},
+                {"player1": "Muguruza", "actualPlayer1": "Muguruza", "player2": "Giorgi", "actualPlayer2": "Giorgi"},
+                {"player1": "Mertens", "actualPlayer1": "Flipkens", "player2": "Rogers", "actualPlayer2": "Tomova"}
             ],
             "Quarter Finals": [
-                {"player1": "Haddad Maia", "actualPlayer1": "?", "player2": "Linette", "actualPlayer2": "?"},
-                {"player1": "Kvitova", "actualPlayer1": "?", "player2": "Kostyuk", "actualPlayer2": "?"},
-                {"player1": "Tomljanovic", "actualPlayer1": "?", "player2": "Sakkari", "actualPlayer2": "?"},
-                {"player1": "Muguruza", "actualPlayer1": "?", "player2": "Rogers", "actualPlayer2": "?"}
+                {"player1": "Haddad Maia", "actualPlayer1": "Haddad Maia", "player2": "Linette", "actualPlayer2": "Tsurenko"},
+                {"player1": "Kvitova", "actualPlayer1": "Kvitova", "player2": "Kostyuk", "actualPlayer2": "Dart"},
+                {"player1": "Tomljanovic", "actualPlayer1": "Ostapenko", "player2": "Sakkari", "actualPlayer2": "Kalinina"},
+                {"player1": "Muguruza", "actualPlayer1": "Giorgi", "player2": "Rogers", "actualPlayer2": "Tomova"}
             ],
             "Semi Finals": [
-                {"player1": "Haddad Maia", "actualPlayer1": "?", "player2": "Kvitova", "actualPlayer2": "?"},
-                {"player1": "Sakkari", "actualPlayer1": "?", "player2": "Rogers", "actualPlayer2": "?"}
+                {"player1": "Haddad Maia", "actualPlayer1": "Haddad Maia", "player2": "Kvitova", "actualPlayer2": "Kvitova"},
+                {"player1": "Sakkari", "actualPlayer1": "Ostapenko", "player2": "Rogers", "actualPlayer2": "Giorgi"}
             ],
             "Final": [
-                {"player1": "Haddad Maia", "actualPlayer1": "?", "player2": "Sakkari", "actualPlayer2": "?"}
+                {"player1": "Haddad Maia", "actualPlayer1": "Kvitova", "player2": "Sakkari", "actualPlayer2": "Ostapenko"}
             ],
             "Champion": [
-                {"player1": "Sakkari", "actualPlayer1": "?"}
+                {"player1": "Sakkari", "actualPlayer1": "Kvitova"}
             ]
         }
     }
