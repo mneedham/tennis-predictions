@@ -1,5 +1,7 @@
 {
    "tournament": "Madrid Open 2022",
+   "startDate": "2022-04-28",
+   "endDate": "2022-05-07",
     "events": {
       "Men's Singles": {
             "4th Round": [
