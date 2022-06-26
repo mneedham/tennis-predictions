@@ -1,22 +1,24 @@
 {
    "tournament": "Mallorca 2022",
+   "startDate": "2022-06-19",
+   "endDate": "2022-06-25",
     "events": {
       "Men's Singles": {
             "Quarter Finals": [
-                {"player1": "Medvedev", "actualPlayer1": "?", "player2": "Kyrgios", "actualPlayer2": "?"},
-                {"player1": "Carreno Busta", "actualPlayer1": "?", "player2": "Griekspoor", "actualPlayer2": "?"},
-                {"player1": "Baez", "actualPlayer1": "?", "player2": "Shapovalov", "actualPlayer2": "?"},
-                {"player1": "Van De Zandschulp", "actualPlayer1": "?", "player2": "Tsitsipas", "actualPlayer2": "?"}
+                {"player1": "Medvedev", "actualPlayer1": "Medvedev", "player2": "Kyrgios", "actualPlayer2": "Bautista Agut"},
+                {"player1": "Carreno Busta", "actualPlayer1": "Bellier", "player2": "Griekspoor", "actualPlayer2": "Griekspoor"},
+                {"player1": "Baez", "actualPlayer1": "Altmaier", "player2": "Shapovalov", "actualPlayer2": "Bonzi"},
+                {"player1": "Van De Zandschulp", "actualPlayer1": "Giron", "player2": "Tsitsipas", "actualPlayer2": "Tsitsipas"}
             ],
             "Semi Finals": [
-                {"player1": "Medvedev", "actualPlayer1": "?", "player2": "Griekspoor", "actualPlayer2": "?"},
-                {"player1": "Shapovalov", "actualPlayer1": "?", "player2": "Van De Zandschulp", "actualPlayer2": "?"}
+                {"player1": "Medvedev", "actualPlayer1": "Bautista Agut", "player2": "Griekspoor", "actualPlayer2": "Bellier"},
+                {"player1": "Shapovalov", "actualPlayer1": "Bonzi", "player2": "Van De Zandschulp", "actualPlayer2": "Tsitsipas"}
             ],
             "Final": [
-                {"player1": "Medvedev", "actualPlayer1": "?", "player2": "Shapovalov", "actualPlayer2": "?"}
+                {"player1": "Medvedev", "actualPlayer1": "Bautista Agut", "player2": "Shapovalov", "actualPlayer2": "Tsitsipas"}
             ],
             "Champion": [
-                {"player1": "Shapovalov", "actualPlayer1": "?"}
+                {"player1": "Shapovalov", "actualPlayer1": "Tsitsipas"}
             ]
         }
     }
