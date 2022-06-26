@@ -1,5 +1,7 @@
 {
    "tournament": "<Tournament>",
+   "startDate": "",
+   "endDate": "",
     "events": {
       "Men's Singles": {
             "4th Round": [
