@@ -39,6 +39,9 @@ const Tournaments = () => {
     <List.Icon name='angle right' size='large' verticalAlign='middle' />
     <List.Content>
       <List.Header as='a'><Link to={`/tournaments/${t.shortName}`}>{t.name}</Link></List.Header>
+      <List.Description>
+        {t.startDate} - {t.endDate}
+      </List.Description>
     </List.Content>
   </List.Item>
   

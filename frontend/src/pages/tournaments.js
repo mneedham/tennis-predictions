@@ -186,7 +186,34 @@ export const Tournaments = () => {
     </tr>
   }
 
+  const UnauthenticatedBracket = ({bracket}) => {
+    if (!bracket.actualPlayer1 && !bracket.actualPlayer2) {
+      return <tr><td colSpan="2">N/A</td></tr>
+    }
+
+    if(bracket.round === "Champion") {
+      return <tr>
+      <td colSpan="2">
+        {bracket.actualPlayer1}
+      </td>
+    </tr>
+    }
+
+    return <tr>
+      <td width="50%">
+        {bracket.actualPlayer1}
+      </td>
+      <td width="50%">
+        {bracket.actualPlayer2}
+      </td>
+    </tr>
+  }
+
   const Row = ({bracket, mode}) => {
+    if(!isAuthenticated) {
+      return <UnauthenticatedBracket bracket={bracket} />
+    }
+
     if(mode === "edit") {
       return <EditableBracket bracket={bracket} key={bracket.id + "_editableBracket"} />
     }

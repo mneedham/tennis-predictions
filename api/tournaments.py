@@ -75,11 +75,14 @@ def tournaments_me(tournament_id):
 def get_tournaments(tx):
   result = tx.run("""
   MATCH (t:Tournament)
-  RETURN t {.name, .shortName}
+  RETURN t {.name, .shortName, .startDate, .endDate}
+  ORDER BY t.startDate
   """)
   return [{
       "name": record["t"]["name"],
-      "shortName": record["t"]["shortName"]
+      "shortName": record["t"]["shortName"],
+      "startDate": record["t"]["startDate"].to_native().strftime("%d %b %Y"),
+      "endDate": record["t"]["endDate"].to_native().strftime("%d %b %Y")
   } for record in result
   ]
 
