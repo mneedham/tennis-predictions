@@ -1,0 +1,20 @@
+= Tennis Predictions App
+
+[source, bash]
+----
+docker run -p 7474:7474 -p 7687:7687 \
+  -v $PWD/data:/data \
+  -e NEO4JLABS_PLUGINS=\[\"apoc\"\] \
+  neo4j:4.4.7
+----
+
+[source, bash]
+----
+docker run \
+  -v $PWD/data:/data \
+  -v $PWD/dumps:/dumps \
+  --entrypoint bin/neo4j-admin \
+  neo4j:4.4.7 dump \
+  --database=neo4j \
+  --to=/dumps/backup-`date '+%s'`.dump
+----

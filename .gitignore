@@ -1,4 +1,8 @@
 .vercel
 **/__pycache__
-.env
+.env*
 node_modules
+venv
+data
+dumps
+.serverless

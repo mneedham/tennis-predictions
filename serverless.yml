@@ -1,0 +1,30 @@
+service: tennis-predictions
+
+useDotenv: true
+
+provider:
+  name: aws
+  runtime: python3.8
+  stage: dev
+  region: eu-west-1
+
+plugins:
+  - serverless-wsgi
+  - serverless-python-requirements
+  - serverless-dotenv-plugin
+custom:
+  wsgi:
+    app: local.app
+    packRequirements: false
+functions:
+  app:
+    handler: wsgi_handler.handler
+    events:
+      - http: ANY /
+      - http: ANY /{proxy+}
+package:
+  patterns:
+    - '!frontend/**'
+    - '!data/**'
+    - '!node_modules/**'
+    - '!venv/**'
