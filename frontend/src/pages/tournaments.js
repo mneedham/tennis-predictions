@@ -128,6 +128,11 @@ export const Tournaments = () => {
             key={bracket.id + "_player1_formInput"}
             value={player1}
             onChange={(_, data) => setPlayer1(data.value)}
+            onBlur={() => {
+              if(player1 !== brackets[bracket.id]["player1"]) {
+                updateBracket(bracket.id, player1)
+              }
+            }}
           />
         </td>
         <td key={bracket.id + "update"} onClick={() => updateBracket(bracket.id, player1)}><Icon name="checkmark" color="green" size="large" /></td>
@@ -141,6 +146,11 @@ export const Tournaments = () => {
           key={bracket.id + "player1__formInput"}
           value={player1}
           onChange={(_, data) => setPlayer1(data.value)}
+          onBlur={() => {
+            if(player1 !== brackets[bracket.id]["player1"]) {
+              updateBracket(bracket.id, player1, player2)
+            }
+          }}
         />
       </td>
       <td width="50%">
@@ -149,6 +159,11 @@ export const Tournaments = () => {
           key={bracket.id + "player2_formInput"}
           value={player2}
           onChange={(_, data) => setPlayer2(data.value)}
+          onBlur={() => {
+            if(player2 !== brackets[bracket.id]["player2"]) {
+              updateBracket(bracket.id, player1, player2)
+            }
+          }}
         />    
       </td>
       <td key={bracket.id +"update"} onClick={() => updateBracket(bracket.id, player1, player2)}><Icon name="checkmark" color="green" size="large" /></td>
