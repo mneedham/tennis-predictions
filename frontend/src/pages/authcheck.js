@@ -1,7 +1,6 @@
 import { useAuth0 } from "@auth0/auth0-react";
 import React, { useState } from "react";
 import { Redirect } from "react-router-dom";
-import { CodeSnippet } from "../components/code-snippet";
 import { useExternalApi } from "../utils/requests";
 
 export const AuthCheck = () => {

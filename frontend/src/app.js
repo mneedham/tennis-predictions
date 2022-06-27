@@ -1,7 +1,6 @@
 import { useAuth0 } from "@auth0/auth0-react";
 import React from "react";
 import { Route, Switch } from "react-router-dom";
-import { Footer } from "./components/footer";
 import { Loader } from "./components/loader";
 import { NavBar } from "./components/nav-bar";
 import { ProtectedRoute } from "./components/protected-route";

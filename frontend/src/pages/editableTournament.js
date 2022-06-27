@@ -1,6 +1,6 @@
 import React, { Fragment } from "react";
 import { useState } from "react";
-import { useParams, Link } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { useExternalApi } from "../utils/requests";
 import { useAuth0 } from "@auth0/auth0-react";
 import { Icon, Form } from 'semantic-ui-react'

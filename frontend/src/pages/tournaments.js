@@ -1,12 +1,15 @@
 import React, { Fragment } from "react";
 import { useState } from "react";
-import { useParams, Link } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { useExternalApi } from "../utils/requests";
 import { useAuth0 } from "@auth0/auth0-react";
 import { Icon, Input, Tab } from 'semantic-ui-react'
 
 import { SemanticToastContainer, toast } from 'react-semantic-toasts';
 import 'react-semantic-toasts/styles/react-semantic-alert.css';
+
+import Skeleton from "react-loading-skeleton";
+import 'react-loading-skeleton/dist/skeleton.css'
 
 export const Tournaments = () => {
   const { tournamentId } = useParams();
@@ -178,8 +181,8 @@ export const Tournaments = () => {
       return <tr><td colSpan="2">N/A</td></tr>
     }
 
-    const classNamePlayer1 = (bracket.actualPlayer1  === undefined || player1 == undefined) ? "none" :  (bracket.actualPlayer1 === player1 ? "correct" : "incorrect")
-    const classNamePlayer2 = (bracket.actualPlayer2 === undefined || player2 == undefined) ? "none" :  (bracket.actualPlayer2 === player2 ? "correct" : "incorrect")
+    const classNamePlayer1 = (bracket.actualPlayer1  === undefined || player1 === undefined) ? "none" :  (bracket.actualPlayer1 === player1 ? "correct" : "incorrect")
+    const classNamePlayer2 = (bracket.actualPlayer2 === undefined || player2 === undefined) ? "none" :  (bracket.actualPlayer2 === player2 ? "correct" : "incorrect")
 
     if (bracket.round === "Champion") {
       return <tr>
@@ -191,11 +194,11 @@ export const Tournaments = () => {
 
     return <tr>
       <td width="50%" className={classNamePlayer1}>
-        {(player1 === bracket.actualPlayer1 || bracket.actualPlayer1 == undefined || player1 === undefined) && player1}
+        {(player1 === bracket.actualPlayer1 || bracket.actualPlayer1 === undefined || player1 === undefined) && player1}
         {(player1 !== bracket.actualPlayer1 && bracket.player1 !== undefined && player1 !== undefined) && <Fragment><strike>{player1}</strike><br />{bracket.actualPlayer1}</Fragment>}        
       </td>
       <td width="50%" className={classNamePlayer2}>
-        {(player2 === bracket.actualPlayer2 || bracket.actualPlayer2 == undefined || player2 === undefined) && player2}
+        {(player2 === bracket.actualPlayer2 || bracket.actualPlayer2 === undefined || player2 === undefined) && player2}
         {(player2 !== bracket.actualPlayer2) && <Fragment><strike>{player2}</strike><br />{bracket.actualPlayer2}</Fragment>}   
       </td>
     </tr>
@@ -272,6 +275,29 @@ export const Tournaments = () => {
     }
   })
 
+  const dummyPanes = Array(1).fill().map(index => {
+    return {
+      menuItem: "Event Name",
+      render: () => <Fragment>
+        <h3 className="ui aligned header">Event Name</h3>
+        <Skeleton  count={10} />
+      </Fragment>
+    }
+  })
+
+  if(!data.name) {
+    return <Fragment>            
+      <div className="ui container" key={data.name}>      
+      <div className="header-edit">
+        <h2 className="ui aligned header">Loading Tournament...</h2>         
+      </div>
+      <div className="column"> 
+        <Tab panes={dummyPanes} />
+      </div>
+    </div>
+  </Fragment>
+
+  }
   
   return <Fragment>
     <SemanticToastContainer />
