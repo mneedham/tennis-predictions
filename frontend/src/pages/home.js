@@ -27,7 +27,10 @@ const Tournaments = () => {
       };
   
       const { data } = await makeRequest({ config });
-      setTournaments(data);
+      setTimeout(() => {
+        setTournaments(data);
+      }, 2000)
+    
     }
 
     getTournaments()
@@ -39,13 +42,12 @@ const Tournaments = () => {
       {Array(5).fill().map((item, index) => (
           <List.Item style={{display: "flex"}}>
     
-          <List.Icon name='angle right' size='large' verticalAlign='middle' />
+          <List.Icon name='calendar' size='large' verticalAlign='middle' />
           <List.Content style={{width: "100%"}}>
-            <List.Header as='a'><Skeleton inline={true} count={1} /></List.Header>
             <List.Description>
-              <Skeleton  />               
+              <Skeleton height={8} width="300px" count={2}  />               
             </List.Description>
-            <hr style={{width: "100%"}} />
+            {/* <hr style={{width: "100%"}} /> */}
           </List.Content>
         </List.Item>
         
@@ -56,12 +58,12 @@ const Tournaments = () => {
 
   return <Fragment>
     <h1>Tournaments</h1>
-    <List divided relaxed>
+    <List relaxed>
     {tournaments.map(t => (
 
   <List.Item>
     
-    <List.Icon name='angle right' size='large' verticalAlign='middle' />
+    <List.Icon name='calendar' size='large' verticalAlign='middle' />
     <List.Content>
       <List.Header as='a'><Link to={`/tournaments/${t.shortName}`}>{t.name}</Link></List.Header>
       <List.Description>
