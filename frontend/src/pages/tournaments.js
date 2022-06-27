@@ -173,33 +173,59 @@ export const Tournaments = () => {
     </tr>
   }
 
+  const computeClass = (player, actualPlayer) => {
+    if(actualPlayer === null) {
+      return "none"
+    }
+    if(actualPlayer === player) {
+      return "correct"
+    } 
+    return "incorrect"
+  }
+
+  const ComputeCell = ({player, actualPlayer}) => {
+    console.log("player", player, "actualPlayer", actualPlayer)
+    if(actualPlayer === null) {
+      return <Fragment>{player}</Fragment>
+    }
+
+    if(player === null) {
+      return <Fragment>{actualPlayer}</Fragment>
+    }
+
+    if(player === actualPlayer) {
+      return <Fragment>{player}</Fragment>
+    } else {
+      return <Fragment><strike>{player}</strike><br />{actualPlayer}</Fragment>
+    }
+  }
+
   const Bracket = ({ bracket }) => {
     const player1 = (brackets[bracket.id] || {}).player1
     const player2 = (brackets[bracket.id] || {}).player2
 
-    if (!bracket.actualPlayer1 && !bracket.actualPlayer2) {
-      return <tr><td colSpan="2">N/A</td></tr>
+    if (!bracket.actualPlayer1 && !bracket.actualPlayer2 && !player1 && !player2) {
+      return <tr><td colSpan="2">No predictions / No results</td></tr>
     }
 
-    const classNamePlayer1 = (bracket.actualPlayer1  === undefined || player1 === undefined) ? "none" :  (bracket.actualPlayer1 === player1 ? "correct" : "incorrect")
-    const classNamePlayer2 = (bracket.actualPlayer2 === undefined || player2 === undefined) ? "none" :  (bracket.actualPlayer2 === player2 ? "correct" : "incorrect")
+    const classNamePlayer1 = computeClass(player1, bracket.actualPlayer1)
+    const classNamePlayer2 = computeClass(player2, bracket.actualPlayer2)
 
     if (bracket.round === "Champion") {
       return <tr>
         <td className={classNamePlayer1} colSpan="2">
-          {player1 === bracket.actualPlayer1 || bracket.actualPlayer1 === undefined ? player1 : <Fragment><strike>{player1}</strike><br />{bracket.actualPlayer1}</Fragment>}
+          <ComputeCell player={player1} actualPlayer={bracket.actualPlayer1} />
           </td>        
         </tr>
     }
 
+    console.log("player2", player2, "bracket.actualPlayer2", bracket.actualPlayer2)
     return <tr>
       <td width="50%" className={classNamePlayer1}>
-        {(player1 === bracket.actualPlayer1 || bracket.actualPlayer1 === undefined || player1 === undefined) && player1}
-        {(player1 !== bracket.actualPlayer1 && bracket.player1 !== undefined && player1 !== undefined) && <Fragment><strike>{player1}</strike><br />{bracket.actualPlayer1}</Fragment>}        
+      <ComputeCell player={player1} actualPlayer={bracket.actualPlayer1} />      
       </td>
       <td width="50%" className={classNamePlayer2}>
-        {(player2 === bracket.actualPlayer2 || bracket.actualPlayer2 === undefined || player2 === undefined) && player2}
-        {(player2 !== bracket.actualPlayer2) && <Fragment><strike>{player2}</strike><br />{bracket.actualPlayer2}</Fragment>}   
+      <ComputeCell player={player2} actualPlayer={bracket.actualPlayer2} />
       </td>
     </tr>
   }
@@ -289,7 +315,7 @@ export const Tournaments = () => {
     return <Fragment>            
       <div className="ui container" key={data.name}>      
       <div className="header-edit">
-        <h2 className="ui aligned header">Loading Tournament...</h2>         
+        <h2 className="ui aligned header">{tournamentId}</h2>         
       </div>
       <div className="column"> 
         <Tab panes={dummyPanes} />
