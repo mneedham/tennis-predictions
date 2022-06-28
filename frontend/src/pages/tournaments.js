@@ -184,7 +184,6 @@ export const Tournaments = () => {
   }
 
   const ComputeCell = ({player, actualPlayer}) => {
-    console.log("player", player, "actualPlayer", actualPlayer)
     if(actualPlayer === null) {
       return <Fragment>{player}</Fragment>
     }
@@ -219,7 +218,6 @@ export const Tournaments = () => {
         </tr>
     }
 
-    console.log("player2", player2, "bracket.actualPlayer2", bracket.actualPlayer2)
     return <tr>
       <td width="50%" className={classNamePlayer1}>
       <ComputeCell player={player1} actualPlayer={bracket.actualPlayer1} />      
@@ -278,26 +276,44 @@ export const Tournaments = () => {
 
   const panes = data.events.map(event => {
     return {
-      menuItem: event.name, render: () => <Fragment key={event.name}>
-      <h3 className="ui aligned header">{event.name}</h3>
-      <table id="players" key="players_table">
-      {event.newBrackets.map((b, index) => (
-        <Fragment key={index}>
-          <thead key={b.round + "_thead"}> 
-            <tr>
-              <th colSpan={mode === "view" ? "2" : "3"}>{b.round}</th>
-            </tr>
-          </thead>
-          <tbody key={b.round + "_tbody"}>
-            {b.brackets.map((bracket, index) => (                                      
-              <Row bracket={bracket} mode={mode} key={index + "_row"} />
-            ))}
-          </tbody>
+      menuItem: event.name,
+      render: () => <Fragment key={event.name}>
+          {event.newBrackets.map((b, index) => {
+            return <div className="players">
+              <div className="header">{b.round}</div>
+              <div className="bracket">
+                {b.brackets.map((bracket, index) => {
+                  return <Fragment>
+                    <div className="cell">
+                      <p style={{ margin: "0.2rem 0" }}>{bracket.player1}</p>
+                      <p style={{ margin: "0.2rem 0" }}>{bracket.player1}</p>
+                    </div>
+                    <div className="cell">
+                      <p>{bracket.player2}</p>
+                    </div>
+                  </Fragment>
+                })}
 
-        </Fragment>
-      ))}
-      </table>
-    </Fragment>
+              </div></div>
+          })}
+        <table id="players" key="players_table">
+          {event.newBrackets.map((b, index) => (
+            <Fragment key={index}>
+              <thead key={b.round + "_thead"}>
+                <tr>
+                  <th colSpan={mode === "view" ? "2" : "3"}>{b.round}</th>
+                </tr>
+              </thead>
+              <tbody key={b.round + "_tbody"}>
+                {b.brackets.map((bracket, index) => (
+                  <Row bracket={bracket} mode={mode} key={index + "_row"} />
+                ))}
+              </tbody>
+
+            </Fragment>
+          ))}
+        </table>
+      </Fragment>
     }
   })
 
@@ -305,7 +321,6 @@ export const Tournaments = () => {
     return {
       menuItem: "Event Name",
       render: () => <Fragment>
-        <h3 className="ui aligned header">Event Name</h3>
         <Skeleton  count={10} />
       </Fragment>
     }
@@ -315,7 +330,7 @@ export const Tournaments = () => {
     return <Fragment>            
       <div className="ui container" key={data.name}>      
       <div className="header-edit">
-        <h2 className="ui aligned header">{tournamentId}</h2>         
+      <Skeleton  count={1} width="200px" height="25px" />  
       </div>
       <div className="column"> 
         <Tab panes={dummyPanes} />

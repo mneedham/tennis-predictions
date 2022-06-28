@@ -65,6 +65,34 @@ i:hover {
   justify-content: space-between;
 }
 
+div.players {
+  margin: 1rem 0 1.5rem 0;
+}
+
+div.players div.header {
+  background-color: #008cc1;
+  color: #fff; 
+  margin: 0.4rem 0.4rem 0.4rem 0;
+  padding: 0.7rem;
+  border-radius: 0.6rem;
+  font-weight: 700;
+}
+
+div.players div.bracket {
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+
+div.players div.bracket div.cell {
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(239, 239, 239);
+  padding: 0.7rem;
+  border-radius: 0.6rem;
+  margin: 0.4rem 0.8rem 0.4rem 0px;
+  justify-content: center;
+}
+
 /* @media (max-width: 1000px) {
 .column{
   flex: 100%;    
