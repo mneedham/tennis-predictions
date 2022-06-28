@@ -76,7 +76,7 @@ def get_tournaments(tx):
   result = tx.run("""
   MATCH (t:Tournament)
   RETURN t {.name, .shortName, .startDate, .endDate}
-  ORDER BY t.startDate
+  ORDER BY t.startDate DESC
   """)
   return [{
       "name": record["t"]["name"],

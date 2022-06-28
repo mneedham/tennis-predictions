@@ -1,7 +1,6 @@
 import { useAuth0 } from "@auth0/auth0-react";
 import React from "react";
 import { Route, Switch } from "react-router-dom";
-import { Loader } from "./components/loader";
 import { NavBar } from "./components/nav-bar";
 import { ProtectedRoute } from "./components/protected-route";
 import { Home } from "./pages/home";
@@ -10,6 +9,8 @@ import { EditableTournaments } from "./pages/editableTournament";
 import { NotFound } from "./pages/not-found";
 import { Profile } from "./pages/profile";
 import { AuthCheck } from "./pages/authcheck";
+import { Dimmer, Loader, Image, Segment } from 'semantic-ui-react'
+
 
 import 'semantic-ui-css/semantic.min.css'
 
@@ -18,8 +19,11 @@ export const App = () => {
 
   if (isLoading) {
     return (
-      <div className="page-layout">
-        <Loader />
+      <div className="container">
+           <Dimmer active>
+      <Loader />
+    </Dimmer>
+
       </div>
     );
   }

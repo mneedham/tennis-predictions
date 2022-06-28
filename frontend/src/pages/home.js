@@ -39,10 +39,11 @@ const Tournaments = () => {
   if(tournaments.length == 0) {
     return <Fragment>
       <h1>Tournaments</h1>
-      {Array(5).fill().map((item, index) => (
+      <List relaxed >
+      {Array(10).fill().map((item, index) => (
           <List.Item style={{display: "flex"}}>
     
-          <List.Icon name='calendar' size='large' verticalAlign='middle' />
+          <List.Icon name='trophy' size='large' verticalAlign='middle' />
           <List.Content style={{width: "100%"}}>
             <List.Description>
               <Skeleton height={8} width="300px" count={2}  />               
@@ -52,6 +53,7 @@ const Tournaments = () => {
         </List.Item>
         
       ))}
+      </List>
       
     </Fragment>
   }
@@ -63,7 +65,7 @@ const Tournaments = () => {
 
   <List.Item>
     
-    <List.Icon name='calendar' size='large' verticalAlign='middle' />
+    <List.Icon name='trophy' size='large' verticalAlign='middle' />
     <List.Content>
       <List.Header as='a'><Link to={`/tournaments/${t.shortName}`}>{t.name}</Link></List.Header>
       <List.Description>
