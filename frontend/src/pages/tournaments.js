@@ -228,6 +228,58 @@ export const Tournaments = () => {
     </tr>
   }
 
+  const NewComputeCell = ({player, actualPlayer}) => {
+    if(actualPlayer === null) {
+      return <Fragment><p>{player}</p></Fragment>
+    }
+
+    if(player === null) {
+      return <Fragment><p>{actualPlayer}</p></Fragment>
+    }
+
+    if(player === actualPlayer) {
+      return <Fragment><p>{player}</p></Fragment>
+    } else {
+      return <Fragment><p><strike>{player}</strike></p><p>{actualPlayer}</p></Fragment>
+    }
+  }
+
+  const NewBracket = ({bracket}) => {
+    const player1 = (brackets[bracket.id] || {}).player1
+    const player2 = (brackets[bracket.id] || {}).player2
+
+    if (!bracket.actualPlayer1 && !bracket.actualPlayer2 && !player1 && !player2) {
+      return <Fragment>
+        <div className="cell">
+          <p>No predictions/No results</p>
+        </div>
+        <div className="cell">
+          <p>No predictions/No results</p>
+        </div>
+      </Fragment>
+    }
+
+    const classNamePlayer1 = computeClass(player1, bracket.actualPlayer1)
+    const classNamePlayer2 = computeClass(player2, bracket.actualPlayer2)
+
+    if(bracket.round === "Champion") {
+      return <Fragment>
+      <div className={`cell ${classNamePlayer1}`}>
+        <NewComputeCell player={player1} actualPlayer={bracket.actualPlayer1} />  
+      </div>
+    </Fragment>
+    }
+
+    return <Fragment>
+    <div className={`cell ${classNamePlayer1}`}>
+      <NewComputeCell player={player1} actualPlayer={bracket.actualPlayer1} />  
+    </div>
+    <div className={`cell ${classNamePlayer2}`}>
+    <NewComputeCell player={player2} actualPlayer={bracket.actualPlayer2} />  
+    </div>
+  </Fragment>
+  }
+
   const UnauthenticatedBracket = ({bracket}) => {
     if (!bracket.actualPlayer1 && !bracket.actualPlayer2) {
       return <tr><td colSpan="2">N/A</td></tr>
@@ -262,6 +314,10 @@ export const Tournaments = () => {
     return <Bracket bracket={bracket} />
   }
 
+  const NewRow = ({bracket, mode}) => {
+    return <NewBracket bracket={bracket} />
+  }
+
   data.events.forEach(event => {
     const rounds = Array.from(new Set(event.brackets.map(i => i.round)));
     const groups = rounds.map(round => {
@@ -281,18 +337,10 @@ export const Tournaments = () => {
           {event.newBrackets.map((b, index) => {
             return <div className="players">
               <div className="header">{b.round}</div>
-              <div className="bracket">
-                {b.brackets.map((bracket, index) => {
-                  return <Fragment>
-                    <div className="cell">
-                      <p style={{ margin: "0.2rem 0" }}>{bracket.player1}</p>
-                      <p style={{ margin: "0.2rem 0" }}>{bracket.player1}</p>
-                    </div>
-                    <div className="cell">
-                      <p>{bracket.player2}</p>
-                    </div>
-                  </Fragment>
-                })}
+              <div className="bracket" data-Round={b.round}>
+                {b.brackets.map((bracket, index) => (
+                  <NewRow bracket={bracket} mode={mode} key={index + "_row"} />
+                ))}
 
               </div></div>
           })}

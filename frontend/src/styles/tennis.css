@@ -72,7 +72,7 @@ div.players {
 div.players div.header {
   background-color: #008cc1;
   color: #fff; 
-  margin: 0.4rem 0.4rem 0.4rem 0;
+  margin: 0.4rem 0;
   padding: 0.7rem;
   border-radius: 0.6rem;
   font-weight: 700;
@@ -89,8 +89,40 @@ div.players div.bracket div.cell {
   background-color: rgb(239, 239, 239);
   padding: 0.7rem;
   border-radius: 0.6rem;
-  margin: 0.4rem 0.8rem 0.4rem 0px;
+  margin: 0.4rem 0 0.4rem 0;
+  /* margin: 0.4rem 0.8rem 0.4rem 0px; */
   justify-content: center;
+  height: 60px;
+}
+
+div.players div.bracket div.cell:nth-child(odd) {
+  margin-right: 0.4rem;
+}
+
+div.players div.bracket div.cell:nth-child(even) {
+  margin-left: 0.4rem;
+}
+
+div.players div.bracket[data-round="Champion"] {
+  grid-template-columns: 100%;
+}
+
+div.players div.bracket[data-round="Champion"] div.cell {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+div.players div.bracket div.cell p {
+  margin: 0.2rem 0px;
+}
+
+div.players div.bracket div.cell.correct {
+  background-color: #3FFF00;
+}
+
+div.players div.bracket div.cell.incorrect {
+  background-color: #D2042D;
+  color: #fff;
 }
 
 /* @media (max-width: 1000px) {
