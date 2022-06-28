@@ -330,7 +330,7 @@ export const Tournaments = () => {
     <div className="ui container" key={data.name}>
       <div className="header-edit">
         <h2 className="ui aligned header">{data.name}</h2> 
-        {isAuthenticated && data.name &&
+        {isAuthenticated && data.editable && data.name &&
         <div>
           <Icon color={mode === "view" ? "green" : "black"} name='eye' size='large' onClick={() => setMode("view")} />
           <Icon color={mode === "edit" ? "green" : "black"} name='edit' size='large' onClick={() => setMode("edit")} />          

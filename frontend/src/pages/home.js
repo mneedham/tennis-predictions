@@ -48,7 +48,6 @@ const Tournaments = () => {
             <List.Description>
               <Skeleton height={8} width="300px" count={2}  />               
             </List.Description>
-            {/* <hr style={{width: "100%"}} /> */}
           </List.Content>
         </List.Item>
         

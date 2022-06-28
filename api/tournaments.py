@@ -44,14 +44,16 @@ def get_tournament_authenticated(tx, tournament_id, user_id):
   WITH t, e, bracket, p1, p2, sbPlayer1, sbPlayer2
   ORDER BY e, bracket.rank, bracket.index
   WITH t {.name, .shortName} AS t, e {.name} AS e, 
+       date() < t.endDate AS editable,
        collect({name: bracket.name, id: bracket.id, round: bracket.round, 
                 player1: sbPlayer1.name, actualPlayer1: p1.name, 
                 player2: sbPlayer2.name, actualPlayer2: p2.name}) AS brackets
-  RETURN t, collect ({name: e.name, brackets: brackets}) AS events
+  RETURN t, editable, collect ({name: e.name, brackets: brackets}) AS events
   
   """, tournamentId=tournament_id, userId=user_id)
   return [{
       "name": record["t"]["name"],
+      "editable": record["editable"],
       "shortName": record["t"]["shortName"],
       "events": record["events"]
   } for record in result
