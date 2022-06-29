@@ -271,13 +271,43 @@ export const Tournaments = () => {
     }
 
     return <Fragment>
-    <div className={`cell ${classNamePlayer1}`}>
-      <NewComputeCell player={player1} actualPlayer={bracket.actualPlayer1} />  
-    </div>
-    <div className={`cell ${classNamePlayer2}`}>
-    <NewComputeCell player={player2} actualPlayer={bracket.actualPlayer2} />  
-    </div>
-  </Fragment>
+      <div className={`cell ${classNamePlayer1}`}>
+        <NewComputeCell player={player1} actualPlayer={bracket.actualPlayer1} />
+      </div>
+      <div className={`cell ${classNamePlayer2}`}>
+        <NewComputeCell player={player2} actualPlayer={bracket.actualPlayer2} />
+      </div>
+    </Fragment>
+  }
+
+  const NewUnauthenticatedBracket = ({bracket}) => {
+    if (!bracket.actualPlayer1 && !bracket.actualPlayer2) {
+      return <Fragment>
+      <div className="cell">
+        <p>No predictions/No results</p>
+      </div>
+      <div className="cell">
+        <p>No predictions/No results</p>
+      </div>
+    </Fragment>
+    }
+
+    if(bracket.round === "Champion") {
+      return <Fragment>
+      <div className="cell">
+        <NewComputeCell actualPlayer={bracket.actualPlayer1} />  
+      </div>
+    </Fragment>
+    }
+
+    return <Fragment>
+      <div className="cell">
+        <NewComputeCell actualPlayer={bracket.actualPlayer1} />
+      </div>
+      <div className="cell">
+        <NewComputeCell actualPlayer={bracket.actualPlayer2} />
+      </div>
+    </Fragment>
   }
 
   const UnauthenticatedBracket = ({bracket}) => {
@@ -311,10 +341,15 @@ export const Tournaments = () => {
     if(mode === "edit") {
       return <EditableBracket bracket={bracket} key={bracket.id + "_editableBracket"} />
     }
+    
     return <Bracket bracket={bracket} />
   }
 
   const NewRow = ({bracket, mode}) => {
+    if(!isAuthenticated) {
+      return <NewUnauthenticatedBracket bracket={bracket} />
+    }
+
     return <NewBracket bracket={bracket} />
   }
 

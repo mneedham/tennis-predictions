@@ -95,6 +95,10 @@ div.players div.bracket div.cell {
   height: 60px;
 }
 
+div.players div.bracket div.cell:hover {
+  background-color: #d0d0d0;
+}
+
 div.players div.bracket div.cell:nth-child(odd) {
   margin-right: 0.4rem;
 }
