@@ -121,8 +121,16 @@ div.players div.bracket[data-round="Champion"] div.cell {
   margin-right: 0;
 }
 
+div.players div.bracket[data-round="Champion"][data-mode="edit"] div.cell {
+  margin-right: 0.4rem;
+}
+
 div.players div.bracket[data-mode="edit"] {
-  grid-template-columns: auto auto 50px;
+  grid-template-columns: 1fr 1fr 50px;
+}
+
+div.players div.bracket[data-mode="edit"][data-round="Champion"] {
+  grid-template-columns: auto 50px;
 }
 
 div.players div.bracket div.cell p {
@@ -130,12 +138,14 @@ div.players div.bracket div.cell p {
 }
 
 div.players div.bracket div.cell.correct {
-  background-color: #3FFF00;
+  /* background-color: #3FFF00; */
+  border-right: 1rem solid #3FFF00;
 }
 
 div.players div.bracket div.cell.incorrect {
-  background-color: #D2042D;
-  color: #fff;
+  /* background-color: #D2042D; */
+  border-right: 1rem solid #D2042D;
+  /* color: #fff; */
 }
 
 /* @media (max-width: 1000px) {

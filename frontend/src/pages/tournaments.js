@@ -178,53 +178,25 @@ export const Tournaments = () => {
     const [player2, setPlayer2] = useState(brackets[bracket.id]["player2"])
 
     if(bracket.round === "Champion") {
-      return <tr key={bracket.id + "_row"}>
-        <td colSpan="2">
-          <Input fluid 
-          icon={player1 !== brackets[bracket.id]["player1"] ? "pencil" : null}
-            key={bracket.id + "_player1_formInput"}
-            value={player1}
-            onChange={(_, data) => setPlayer1(data.value)}
-            onBlur={() => {
-              if(player1 !== brackets[bracket.id]["player1"]) {
-                updateBracket(bracket.id, player1)
-              }
-            }}
-          />
-        </td>
-        <td key={bracket.id + "update"} onClick={() => updateBracket(bracket.id, player1)}><Icon name="checkmark" color="green" size="large" /></td>
-      </tr>
+      return <Fragment>
+      <div className="cell">
+        <Input fluid 
+              icon={player1 !== brackets[bracket.id]["player1"] ? "pencil" : null}
+              key={bracket.id + "player1__formInput"}
+              value={player1}
+              onChange={(_, data) => setPlayer1(data.value)}
+              onBlur={() => {
+                if(player1 !== brackets[bracket.id]["player1"]) {
+                  updateBracket(bracket.id, player1, player2)
+                }
+              }}
+            />
+      </div>
+      <div className="cell update-bracket" onClick={() => updateBracket(bracket.id, player1)}>
+        <Icon name="checkmark" color="green" size="large" />
+      </div>
+      </Fragment>
     }
-
-    // return <tr key={bracket.id + "_row"}>
-    //   <td width="50%">
-    //     <Input fluid 
-    //       icon={player1 !== brackets[bracket.id]["player1"] ? "pencil" : null}
-    //       key={bracket.id + "player1__formInput"}
-    //       value={player1}
-    //       onChange={(_, data) => setPlayer1(data.value)}
-    //       onBlur={() => {
-    //         if(player1 !== brackets[bracket.id]["player1"]) {
-    //           updateBracket(bracket.id, player1, player2)
-    //         }
-    //       }}
-    //     />
-    //   </td>
-    //   <td width="50%">
-    //     <Input fluid 
-    //       icon={player2 !== brackets[bracket.id]["player2"] ? "pencil" : null}
-    //       key={bracket.id + "player2_formInput"}
-    //       value={player2}
-    //       onChange={(_, data) => setPlayer2(data.value)}
-    //       onBlur={() => {
-    //         if(player2 !== brackets[bracket.id]["player2"]) {
-    //           updateBracket(bracket.id, player1, player2)
-    //         }
-    //       }}
-    //     />    
-    //   </td>
-    //   <td key={bracket.id +"update"} onClick={() => updateBracket(bracket.id, player1, player2)}><Icon name="checkmark" color="green" size="large" /></td>
-    // </tr>
 
     return <Fragment>
     <div className="cell left">
@@ -463,30 +435,13 @@ export const Tournaments = () => {
         {event.newBrackets.map((b, index) => {
           return <div className="players">
             <div className="header">{b.round}</div>
-            <div className="bracket" data-Round={b.round} data-mode={mode}>
+            <div className="bracket" data-round={b.round} data-mode={mode}>
               {b.brackets.map((bracket, index) => (
                 <NewRow bracket={bracket} mode={mode} key={index + "_row"} />
               ))}
 
             </div></div>
         })}
-        <table id="players" key="players_table">
-          {event.newBrackets.map((b, index) => (
-            <Fragment key={index}>
-              <thead key={b.round + "_thead"}>
-                <tr>
-                  <th colSpan={mode === "view" ? "2" : "3"}>{b.round}</th>
-                </tr>
-              </thead>
-              <tbody key={b.round + "_tbody"}>
-                {b.brackets.map((bracket, index) => (
-                  <Row bracket={bracket} mode={mode} key={index + "_row"} />
-                ))}
-              </tbody>
-
-            </Fragment>
-          ))}
-        </table>
       </Fragment>
     }
   })
