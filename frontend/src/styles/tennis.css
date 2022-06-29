@@ -70,12 +70,13 @@ div.players {
 }
 
 div.players div.header {
-  background-color: #008cc1;
+  background-color: var(--dark-aluminium);
   color: #fff; 
   margin: 0.4rem 0;
   padding: 0.7rem;
   border-radius: 0.6rem;
   font-weight: 700;
+  font-size: 1.15rem;
 }
 
 div.players div.bracket {
@@ -87,23 +88,27 @@ div.players div.bracket div.cell {
   display: flex;
   flex-direction: column;
   background-color: rgb(239, 239, 239);
-  padding: 0.7rem;
+  padding: 0.9rem 0.7rem;
   border-radius: 0.6rem;
   margin: 0.4rem 0 0.4rem 0;
-  /* margin: 0.4rem 0.8rem 0.4rem 0px; */
   justify-content: center;
   height: 60px;
 }
 
-div.players div.bracket div.cell:hover {
-  background-color: #d0d0d0;
+div.players div.bracket div.cell.update-bracket {
+  margin-left: 0.4rem;
+  margin-right: 0.0;
 }
 
-div.players div.bracket div.cell:nth-child(odd) {
+div.players div.bracket div.cell.update-bracket:hover {
+  cursor: pointer;
+}
+
+div.players div.bracket div.cell.left {
   margin-right: 0.4rem;
 }
 
-div.players div.bracket div.cell:nth-child(even) {
+div.players div.bracket div.cell.right {
   margin-left: 0.4rem;
 }
 
@@ -114,6 +119,10 @@ div.players div.bracket[data-round="Champion"] {
 div.players div.bracket[data-round="Champion"] div.cell {
   margin-left: 0;
   margin-right: 0;
+}
+
+div.players div.bracket[data-mode="edit"] {
+  grid-template-columns: auto auto 50px;
 }
 
 div.players div.bracket div.cell p {

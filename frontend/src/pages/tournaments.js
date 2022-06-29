@@ -173,6 +173,93 @@ export const Tournaments = () => {
     </tr>
   }
 
+  const NewEditableBracket = ({ bracket }) => {
+    const [player1, setPlayer1] = useState(brackets[bracket.id]["player1"])
+    const [player2, setPlayer2] = useState(brackets[bracket.id]["player2"])
+
+    if(bracket.round === "Champion") {
+      return <tr key={bracket.id + "_row"}>
+        <td colSpan="2">
+          <Input fluid 
+          icon={player1 !== brackets[bracket.id]["player1"] ? "pencil" : null}
+            key={bracket.id + "_player1_formInput"}
+            value={player1}
+            onChange={(_, data) => setPlayer1(data.value)}
+            onBlur={() => {
+              if(player1 !== brackets[bracket.id]["player1"]) {
+                updateBracket(bracket.id, player1)
+              }
+            }}
+          />
+        </td>
+        <td key={bracket.id + "update"} onClick={() => updateBracket(bracket.id, player1)}><Icon name="checkmark" color="green" size="large" /></td>
+      </tr>
+    }
+
+    // return <tr key={bracket.id + "_row"}>
+    //   <td width="50%">
+    //     <Input fluid 
+    //       icon={player1 !== brackets[bracket.id]["player1"] ? "pencil" : null}
+    //       key={bracket.id + "player1__formInput"}
+    //       value={player1}
+    //       onChange={(_, data) => setPlayer1(data.value)}
+    //       onBlur={() => {
+    //         if(player1 !== brackets[bracket.id]["player1"]) {
+    //           updateBracket(bracket.id, player1, player2)
+    //         }
+    //       }}
+    //     />
+    //   </td>
+    //   <td width="50%">
+    //     <Input fluid 
+    //       icon={player2 !== brackets[bracket.id]["player2"] ? "pencil" : null}
+    //       key={bracket.id + "player2_formInput"}
+    //       value={player2}
+    //       onChange={(_, data) => setPlayer2(data.value)}
+    //       onBlur={() => {
+    //         if(player2 !== brackets[bracket.id]["player2"]) {
+    //           updateBracket(bracket.id, player1, player2)
+    //         }
+    //       }}
+    //     />    
+    //   </td>
+    //   <td key={bracket.id +"update"} onClick={() => updateBracket(bracket.id, player1, player2)}><Icon name="checkmark" color="green" size="large" /></td>
+    // </tr>
+
+    return <Fragment>
+    <div className="cell left">
+      <Input fluid 
+            icon={player1 !== brackets[bracket.id]["player1"] ? "pencil" : null}
+            key={bracket.id + "player1__formInput"}
+            value={player1}
+            onChange={(_, data) => setPlayer1(data.value)}
+            onBlur={() => {
+              if(player1 !== brackets[bracket.id]["player1"]) {
+                updateBracket(bracket.id, player1, player2)
+              }
+            }}
+          />
+    </div>
+    <div className="cell right">
+    <Input fluid 
+          icon={player2 !== brackets[bracket.id]["player2"] ? "pencil" : null}
+          key={bracket.id + "player2_formInput"}
+          value={player2}
+          onChange={(_, data) => setPlayer2(data.value)}
+          onBlur={() => {
+            if(player2 !== brackets[bracket.id]["player2"]) {
+              updateBracket(bracket.id, player1, player2)
+            }
+          }}
+        />    
+    </div>
+    <div className="cell update-bracket" onClick={() => updateBracket(bracket.id, player1, player2)}>
+      <Icon name="checkmark" color="green" size="large" />
+    </div>
+    </Fragment>
+  }
+
+
   const computeClass = (player, actualPlayer) => {
     if(actualPlayer === null) {
       return "none"
@@ -250,10 +337,10 @@ export const Tournaments = () => {
 
     if (!bracket.actualPlayer1 && !bracket.actualPlayer2 && !player1 && !player2) {
       return <Fragment>
-        <div className="cell">
+        <div className="cell left">
           <p>No predictions/No results</p>
         </div>
-        <div className="cell">
+        <div className="cell right">
           <p>No predictions/No results</p>
         </div>
       </Fragment>
@@ -271,10 +358,10 @@ export const Tournaments = () => {
     }
 
     return <Fragment>
-      <div className={`cell ${classNamePlayer1}`}>
+      <div className={`cell left ${classNamePlayer1}`}>
         <NewComputeCell player={player1} actualPlayer={bracket.actualPlayer1} />
       </div>
-      <div className={`cell ${classNamePlayer2}`}>
+      <div className={`cell right ${classNamePlayer2}`}>
         <NewComputeCell player={player2} actualPlayer={bracket.actualPlayer2} />
       </div>
     </Fragment>
@@ -341,13 +428,17 @@ export const Tournaments = () => {
     if(mode === "edit") {
       return <EditableBracket bracket={bracket} key={bracket.id + "_editableBracket"} />
     }
-    
+
     return <Bracket bracket={bracket} />
   }
 
   const NewRow = ({bracket, mode}) => {
     if(!isAuthenticated) {
       return <NewUnauthenticatedBracket bracket={bracket} />
+    }
+
+    if(mode === "edit") {
+      return <NewEditableBracket bracket={bracket} key={bracket.id + "_editableBracket"} />
     }
 
     return <NewBracket bracket={bracket} />
@@ -369,16 +460,16 @@ export const Tournaments = () => {
     return {
       menuItem: event.name,
       render: () => <Fragment key={event.name}>
-          {event.newBrackets.map((b, index) => {
-            return <div className="players">
-              <div className="header">{b.round}</div>
-              <div className="bracket" data-Round={b.round}>
-                {b.brackets.map((bracket, index) => (
-                  <NewRow bracket={bracket} mode={mode} key={index + "_row"} />
-                ))}
+        {event.newBrackets.map((b, index) => {
+          return <div className="players">
+            <div className="header">{b.round}</div>
+            <div className="bracket" data-Round={b.round} data-mode={mode}>
+              {b.brackets.map((bracket, index) => (
+                <NewRow bracket={bracket} mode={mode} key={index + "_row"} />
+              ))}
 
-              </div></div>
-          })}
+            </div></div>
+        })}
         <table id="players" key="players_table">
           {event.newBrackets.map((b, index) => (
             <Fragment key={index}>
