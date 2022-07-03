@@ -132,6 +132,55 @@ def update_bracket_route(tournament_id, bracket_id):
   with driver.session() as session:
     return jsonify(session.write_transaction(update_bracket, user_id, bracket_id, data))
 
+def update_result(tx, bracket_id, data):
+  result = tx.run("""
+  MATCH (b:Bracket {id: $bracketId})
+  OPTIONAL MATCH (b)-[playerRel:PLAYER1|PLAYER2]->()
+  DELETE playerRel
+  WITH b
+  CALL apoc.do.when($data.player1 IS NOT NULL, 
+    "MERGE (p1:Player {name: data.player1}) MERGE (b)-[:PLAYER1]->(p1) RETURN *", 
+    "", {data: $data, b: b})
+  YIELD value AS p1Action
+  CALL apoc.do.when($data.player2 IS NOT NULL, 
+    "MERGE (p2:Player {name: data.player2}) MERGE (b)-[:PLAYER2]->(p2) RETURN *", 
+    "", {data: $data, b: b})
+  YIELD value AS p2Action
+  RETURN b {.id}, p1Action.p1.name AS p1Action, p2Action.p2.name AS p2Action
+  """, bracketId=bracket_id, data=data)
+  return [
+    {"bracket": record["b"], 
+     "p1Action": record["p1Action"],
+     "p2Action": record["p2Action"]
+     } 
+    for record in result
+  ][0]
+
+def get_user(tx, user_id):
+  result = tx.run("""
+  OPTIONAL MATCH (u:User {id: $userId})
+  WHERE u.editor 
+  RETURN count(u) > 0 AS isEditor
+  """, userId=user_id)
+  return [
+    {"isEditor": record["isEditor"]} 
+    for record in result
+  ][0]
+
+@bp.route('/<tournament_id>/result/<bracket_id>', methods=["POST"])
+@authorization_guard
+def update_result_route(tournament_id, bracket_id):
+  with driver.session() as session:
+    user_id = g.access_token["sub"]
+    result = session.read_transaction(get_user, user_id)
+    print("result", result)
+
+    if result["isEditor"] != True:
+      return {"message": "User is not an editor"}, 401
+
+    data = request.json  
+    return jsonify(session.write_transaction(update_result, bracket_id, data))
+
 
 app = create_app()
 app.register_blueprint(bp)

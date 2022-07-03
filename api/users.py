@@ -18,7 +18,20 @@ def add_user(tx, user_id, data):
   RETURN u {.id}
   """, userId=user_id, data=data)
   return [record["u"] for record in result][0]
+
+def get_user(tx, user_id):  
+  result = tx.run("""
+  MATCH (u:User {id: $userId})
+  RETURN u {.editor}
+  """, userId=user_id)
+  return [record["u"] for record in result][0]
   
+@bp.route("/profile")
+@authorization_guard
+def profile():
+  user_id = g.access_token["sub"]
+  with driver.session() as session:
+    return jsonify(session.read_transaction(get_user, user_id))
 
 @bp.route('/', methods=["POST"])
 @authorization_guard

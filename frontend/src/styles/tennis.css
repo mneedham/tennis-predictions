@@ -121,15 +121,18 @@ div.players div.bracket[data-round="Champion"] div.cell {
   margin-right: 0;
 }
 
-div.players div.bracket[data-round="Champion"][data-mode="edit"] div.cell {
+div.players div.bracket[data-round="Champion"][data-mode="edit"] div.cell,
+div.players div.bracket[data-round="Champion"][data-mode="admin"] div.cell {
   margin-right: 0.4rem;
 }
 
-div.players div.bracket[data-mode="edit"] {
+div.players div.bracket[data-mode="edit"],
+div.players div.bracket[data-mode="admin"] {
   grid-template-columns: 1fr 1fr 50px;
 }
 
-div.players div.bracket[data-mode="edit"][data-round="Champion"] {
+div.players div.bracket[data-mode="edit"][data-round="Champion"],
+div.players div.bracket[data-mode="admin"][data-round="Champion"] {
   grid-template-columns: auto 50px;
 }
 

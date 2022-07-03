@@ -18,6 +18,7 @@ export const Tournaments = () => {
   const [data, setData] = useState({ events: [] })
   const [mode, setMode] = useState("view")
   const [brackets, setBrackets] = useState({})
+  const [userProfile, setUserProfile] = useState({editor: false})
 
   const {
     makeRequest,
@@ -72,8 +73,23 @@ export const Tournaments = () => {
       setBrackets(b)
     }
 
+    const getUserProfile = async () => {
+      const config = {
+        url: `${apiServerUrl}/api/users/profile`,
+        method: "GET",
+        headers: {
+          "content-type": "application/json",
+        }
+      };
+
+      const response = await makeRequest({ config, authenticated: true });
+
+      setUserProfile(response.data);
+    }    
+
     if (isAuthenticated) {
       getTournamentAuthenticated(tournamentId)
+      getUserProfile()
     } else {
       getTournament(tournamentId)
     }
@@ -116,8 +132,47 @@ export const Tournaments = () => {
         time: 1000
       }); 
     }
-
   }
+
+  const updateResult = async (bracketId, player1, player2) => {
+    console.log("updateResult", player1, player2)
+    setBrackets(state => ({
+      ...state, [bracketId]: { ...state[bracketId], actualPlayer1: player1, actualPlayer2: player2 }
+    }))
+
+    const config = {
+      url: `${apiServerUrl}/api/tournaments/${tournamentId}/result/${bracketId}`,
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      data: {
+        "player1": player1,
+        "player2": player2
+      }
+    };
+
+    const response = await makeRequest({ config, authenticated: true });
+    if (response.status === 200) {
+      toast({
+        type: 'success',
+        icon: 'envelope',
+        title: 'Result updated',
+        description: `${bracketId} successfully updated`,
+        animation: 'slide up',
+        time: 1000
+      });
+    } else {
+      toast({
+        type: 'error',
+        icon: 'envelope',
+        title: 'Result not updated',
+        description: `${bracketId} was not updated`,
+        animation: 'slide up',
+        time: 1000
+      }); 
+    }
+  }  
 
   const NewEditableBracket = ({ bracket }) => {
     const [player1, setPlayer1] = useState(brackets[bracket.id]["player1"])
@@ -206,9 +261,11 @@ export const Tournaments = () => {
 
   const NewBracket = ({bracket}) => {
     const player1 = (brackets[bracket.id] || {}).player1
+    const actualPlayer1 = (brackets[bracket.id] || {}).actualPlayer1
     const player2 = (brackets[bracket.id] || {}).player2
+    const actualPlayer2 = (brackets[bracket.id] || {}).actualPlayer2
 
-    if (!bracket.actualPlayer1 && !bracket.actualPlayer2 && !player1 && !player2) {
+    if (!actualPlayer1 && !actualPlayer2 && !player1 && !player2) {
       return <Fragment>
         <div className="cell left">
           <p>No predictions/No results</p>
@@ -219,24 +276,84 @@ export const Tournaments = () => {
       </Fragment>
     }
 
-    const classNamePlayer1 = computeClass(player1, bracket.actualPlayer1)
-    const classNamePlayer2 = computeClass(player2, bracket.actualPlayer2)
+    const classNamePlayer1 = computeClass(player1, actualPlayer1)
+    const classNamePlayer2 = computeClass(player2, actualPlayer2)
 
     if(bracket.round === "Champion") {
       return <Fragment>
       <div className={`cell ${classNamePlayer1}`}>
-        <NewComputeCell player={player1} actualPlayer={bracket.actualPlayer1} />  
+        <NewComputeCell player={player1} actualPlayer={actualPlayer1} />  
       </div>
     </Fragment>
     }
 
     return <Fragment>
       <div className={`cell left ${classNamePlayer1}`}>
-        <NewComputeCell player={player1} actualPlayer={bracket.actualPlayer1} />
+        <NewComputeCell player={player1} actualPlayer={actualPlayer1} />
       </div>
       <div className={`cell right ${classNamePlayer2}`}>
-        <NewComputeCell player={player2} actualPlayer={bracket.actualPlayer2} />
+        <NewComputeCell player={player2} actualPlayer={actualPlayer2} />
       </div>
+    </Fragment>
+  }
+
+  const AdminBracket = ({bracket}) => {
+    const [player1, setPlayer1] = useState(brackets[bracket.id].actualPlayer1)
+    const [player2, setPlayer2] = useState(brackets[bracket.id].actualPlayer2)
+
+    console.log("AdminBracket: player1", player1, "player2", player2, "bracket", bracket)
+
+    if(bracket.round === "Champion") {
+      return <Fragment>
+      <div className="cell">
+        <Input fluid 
+              icon={player1 !== brackets[bracket.id]["actualPlayer1"] ? "pencil" : null}
+              key={bracket.id + "_admin_player1__formInput"}
+              value={player1}
+              onChange={(_, data) => setPlayer1(data.value)}
+              onBlur={() => {
+                if(player1 !== brackets[bracket.id]["actualPlayer1"]) {
+                  updateResult(bracket.id, player1, player2)
+                }
+              }}
+            />
+      </div>
+      <div className="cell update-bracket" onClick={() => updateResult(bracket.id, player1)}>
+        <Icon name="checkmark" color="green" size="large" />
+      </div>
+      </Fragment>
+    }
+
+    return <Fragment>
+    <div className="cell left">
+      <Input fluid
+            icon={player1 !== brackets[bracket.id]["actualPlayer1"] ? "pencil" : null}
+            key={bracket.id + "_admin_player1__formInput"}
+            value={player1}
+            onChange={(_, data) => setPlayer1(data.value)}
+            onBlur={() => {
+              if(player1 !== brackets[bracket.id]["actualPlayer1"]) {
+                updateResult(bracket.id, player1, player2)
+              }
+            }}
+          />
+    </div>
+    <div className="cell right">
+    <Input fluid 
+          icon={player2 !== brackets[bracket.id]["actualPlayer2"] ? "pencil" : null}
+          key={bracket.id + "_admin_player2_formInput"}
+          value={player2}
+          onChange={(_, data) => setPlayer2(data.value)}
+          onBlur={() => {
+            if(player2 !== brackets[bracket.id]["actualPlayer2"]) {
+              updateResult(bracket.id, player1, player2)
+            }
+          }}
+        />    
+    </div>
+    <div className="cell update-bracket" onClick={() => updateResult(bracket.id, player1, player2)}>
+      <Icon name="checkmark" color="green" size="large" />
+    </div>
     </Fragment>
   }
 
@@ -270,16 +387,19 @@ export const Tournaments = () => {
     </Fragment>
   }
 
-  const NewRow = ({bracket, mode}) => {
-    if(!isAuthenticated) {
+  const NewRow = ({ bracket, mode }) => {
+    if (!isAuthenticated) {
       return <NewUnauthenticatedBracket bracket={bracket} />
     }
 
-    if(mode === "edit") {
-      return <NewEditableBracket bracket={bracket} key={bracket.id + "_editableBracket"} />
+    switch (mode) {
+      case "edit":
+        return <NewEditableBracket bracket={bracket} key={bracket.id + "_editableBracket"} />
+      case "admin":
+        return <AdminBracket bracket={bracket} key={bracket.id + "_adminBracket"} />
+      default:
+        return <NewBracket bracket={bracket} />
     }
-
-    return <NewBracket bracket={bracket} />
   }
 
   data.events.forEach(event => {
@@ -334,6 +454,8 @@ export const Tournaments = () => {
   </Fragment>
 
   }
+
+  console.log("brackets", brackets)
   
   return <Fragment>
     <SemanticToastContainer />
@@ -343,7 +465,8 @@ export const Tournaments = () => {
         {isAuthenticated && data.editable && data.name &&
         <div>
           <Icon color={mode === "view" ? "green" : "black"} name='eye' size='large' onClick={() => setMode("view")} />
-          <Icon color={mode === "edit" ? "green" : "black"} name='edit' size='large' onClick={() => setMode("edit")} />          
+          <Icon color={mode === "edit" ? "green" : "black"} name='edit' size='large' onClick={() => setMode("edit")} />    
+          {userProfile.editor && <Icon color={mode === "admin" ? "green" : "black"} name='pencil' size='large' onClick={() => setMode("admin")} />}      
         </div>}
       </div>
       <div className="column">        
