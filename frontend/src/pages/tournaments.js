@@ -342,10 +342,10 @@ export const Tournaments = () => {
   const NewUnauthenticatedBracket = ({bracket}) => {
     if (!bracket.actualPlayer1 && !bracket.actualPlayer2) {
       return <Fragment>
-      <div className="cell">
+      <div className="cell left">
         <p>No predictions/No results</p>
       </div>
-      <div className="cell">
+      <div className="cell right">
         <p>No predictions/No results</p>
       </div>
     </Fragment>
