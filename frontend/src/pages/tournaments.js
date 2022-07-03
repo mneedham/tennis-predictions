@@ -119,60 +119,6 @@ export const Tournaments = () => {
 
   }
 
-  const EditableBracket = ({ bracket }) => {
-    const [player1, setPlayer1] = useState(brackets[bracket.id]["player1"])
-    const [player2, setPlayer2] = useState(brackets[bracket.id]["player2"])
-
-    if(bracket.round === "Champion") {
-      return <tr key={bracket.id + "_row"}>
-        <td colSpan="2">
-          <Input fluid 
-          icon={player1 !== brackets[bracket.id]["player1"] ? "pencil" : null}
-            key={bracket.id + "_player1_formInput"}
-            value={player1}
-            onChange={(_, data) => setPlayer1(data.value)}
-            onBlur={() => {
-              if(player1 !== brackets[bracket.id]["player1"]) {
-                updateBracket(bracket.id, player1)
-              }
-            }}
-          />
-        </td>
-        <td key={bracket.id + "update"} onClick={() => updateBracket(bracket.id, player1)}><Icon name="checkmark" color="green" size="large" /></td>
-      </tr>
-    }
-
-    return <tr key={bracket.id + "_row"}>
-      <td width="50%">
-        <Input fluid 
-          icon={player1 !== brackets[bracket.id]["player1"] ? "pencil" : null}
-          key={bracket.id + "player1__formInput"}
-          value={player1}
-          onChange={(_, data) => setPlayer1(data.value)}
-          onBlur={() => {
-            if(player1 !== brackets[bracket.id]["player1"]) {
-              updateBracket(bracket.id, player1, player2)
-            }
-          }}
-        />
-      </td>
-      <td width="50%">
-        <Input fluid 
-          icon={player2 !== brackets[bracket.id]["player2"] ? "pencil" : null}
-          key={bracket.id + "player2_formInput"}
-          value={player2}
-          onChange={(_, data) => setPlayer2(data.value)}
-          onBlur={() => {
-            if(player2 !== brackets[bracket.id]["player2"]) {
-              updateBracket(bracket.id, player1, player2)
-            }
-          }}
-        />    
-      </td>
-      <td key={bracket.id +"update"} onClick={() => updateBracket(bracket.id, player1, player2)}><Icon name="checkmark" color="green" size="large" /></td>
-    </tr>
-  }
-
   const NewEditableBracket = ({ bracket }) => {
     const [player1, setPlayer1] = useState(brackets[bracket.id]["player1"])
     const [player2, setPlayer2] = useState(brackets[bracket.id]["player2"])
@@ -240,51 +186,6 @@ export const Tournaments = () => {
       return "correct"
     } 
     return "incorrect"
-  }
-
-  const ComputeCell = ({player, actualPlayer}) => {
-    if(actualPlayer === null) {
-      return <Fragment>{player}</Fragment>
-    }
-
-    if(player === null) {
-      return <Fragment>{actualPlayer}</Fragment>
-    }
-
-    if(player === actualPlayer) {
-      return <Fragment>{player}</Fragment>
-    } else {
-      return <Fragment><strike>{player}</strike><br />{actualPlayer}</Fragment>
-    }
-  }
-
-  const Bracket = ({ bracket }) => {
-    const player1 = (brackets[bracket.id] || {}).player1
-    const player2 = (brackets[bracket.id] || {}).player2
-
-    if (!bracket.actualPlayer1 && !bracket.actualPlayer2 && !player1 && !player2) {
-      return <tr><td colSpan="2">No predictions / No results</td></tr>
-    }
-
-    const classNamePlayer1 = computeClass(player1, bracket.actualPlayer1)
-    const classNamePlayer2 = computeClass(player2, bracket.actualPlayer2)
-
-    if (bracket.round === "Champion") {
-      return <tr>
-        <td className={classNamePlayer1} colSpan="2">
-          <ComputeCell player={player1} actualPlayer={bracket.actualPlayer1} />
-          </td>        
-        </tr>
-    }
-
-    return <tr>
-      <td width="50%" className={classNamePlayer1}>
-      <ComputeCell player={player1} actualPlayer={bracket.actualPlayer1} />      
-      </td>
-      <td width="50%" className={classNamePlayer2}>
-      <ComputeCell player={player2} actualPlayer={bracket.actualPlayer2} />
-      </td>
-    </tr>
   }
 
   const NewComputeCell = ({player, actualPlayer}) => {
@@ -367,41 +268,6 @@ export const Tournaments = () => {
         <NewComputeCell actualPlayer={bracket.actualPlayer2} />
       </div>
     </Fragment>
-  }
-
-  const UnauthenticatedBracket = ({bracket}) => {
-    if (!bracket.actualPlayer1 && !bracket.actualPlayer2) {
-      return <tr><td colSpan="2">N/A</td></tr>
-    }
-
-    if(bracket.round === "Champion") {
-      return <tr>
-      <td colSpan="2">
-        {bracket.actualPlayer1}
-      </td>
-    </tr>
-    }
-
-    return <tr>
-      <td width="50%">
-        {bracket.actualPlayer1}
-      </td>
-      <td width="50%">
-        {bracket.actualPlayer2}
-      </td>
-    </tr>
-  }
-
-  const Row = ({bracket, mode}) => {
-    if(!isAuthenticated) {
-      return <UnauthenticatedBracket bracket={bracket} />
-    }
-
-    if(mode === "edit") {
-      return <EditableBracket bracket={bracket} key={bracket.id + "_editableBracket"} />
-    }
-
-    return <Bracket bracket={bracket} />
   }
 
   const NewRow = ({bracket, mode}) => {
