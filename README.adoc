@@ -5,7 +5,8 @@
 docker run -p 7474:7474 -p 7687:7687 \
   -v $PWD/data:/data \
   -e NEO4JLABS_PLUGINS=\[\"apoc\"\] \
-  neo4j:4.4.7
+  --env=NEO4J_ACCEPT_LICENSE_AGREEMENT=yes \
+  neo4j:4.4.7-enterprise
 ----
 
 [source, bash]
@@ -17,4 +18,15 @@ docker run \
   neo4j:4.4.7 dump \
   --database=neo4j \
   --to=/dumps/backup-`date '+%s'`.dump
+----
+
+[source, bash]
+----
+docker run \
+  -v $PWD/data:/data \
+  -v $PWD/dumps:/dumps \
+  --entrypoint bin/neo4j-admin \
+  neo4j:4.4.7 load \
+  --database=aura-20220713 \
+  --from=/dumps/aura/neo4j-20220713.dump
 ----

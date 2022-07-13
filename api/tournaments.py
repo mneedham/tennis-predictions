@@ -61,7 +61,7 @@ def get_tournament_authenticated(tx, tournament_id, user_id):
 
 @bp.route('/<tournament_id>')
 def tournaments(tournament_id):
-  with driver.session() as session:
+  with driver.session(database='aura-20220713') as session:
     result = session.read_transaction(get_tournament, tournament_id)
     return jsonify(result)
 
@@ -70,7 +70,7 @@ def tournaments(tournament_id):
 @authorization_guard
 def tournaments_me(tournament_id):
   user_id = g.access_token["sub"]
-  with driver.session() as session:
+  with driver.session(database='aura-20220713') as session:
     result = session.read_transaction(get_tournament_authenticated, tournament_id, user_id)
     return jsonify(result)
 
@@ -90,7 +90,7 @@ def get_tournaments(tx):
 
 @bp.route('/')
 def all_tournaments():
-  with driver.session() as session:
+  with driver.session(database='aura-20220713') as session:
     return jsonify(session.read_transaction(get_tournaments))
 
 def update_bracket(tx, user_id, bracket_id, data):
@@ -129,7 +129,7 @@ def update_bracket_route(tournament_id, bracket_id):
   data = request.json
   user_id = g.access_token["sub"]
   print(user_id, tournament_id, bracket_id, data)
-  with driver.session() as session:
+  with driver.session(database='aura-20220713') as session:
     return jsonify(session.write_transaction(update_bracket, user_id, bracket_id, data))
 
 def update_result(tx, bracket_id, data):
@@ -170,7 +170,7 @@ def get_user(tx, user_id):
 @bp.route('/<tournament_id>/result/<bracket_id>', methods=["POST"])
 @authorization_guard
 def update_result_route(tournament_id, bracket_id):
-  with driver.session() as session:
+  with driver.session(database='aura-20220713') as session:
     user_id = g.access_token["sub"]
     result = session.read_transaction(get_user, user_id)
     print("result", result)

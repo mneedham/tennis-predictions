@@ -358,31 +358,20 @@ export const Tournaments = () => {
   }
 
   const NewUnauthenticatedBracket = ({bracket}) => {
-    if (!bracket.actualPlayer1 && !bracket.actualPlayer2) {
-      return <Fragment>
-      <div className="cell left">
-        <p>No predictions/No results</p>
-      </div>
-      <div className="cell right">
-        <p>No predictions/No results</p>
-      </div>
-    </Fragment>
-    }
-
     if(bracket.round === "Champion") {
       return <Fragment>
       <div className="cell">
-        <NewComputeCell actualPlayer={bracket.actualPlayer1} />  
+        <NewComputeCell actualPlayer={bracket.actualPlayer1 || "No predictions/No results"} />  
       </div>
     </Fragment>
     }
 
     return <Fragment>
-      <div className="cell">
-        <NewComputeCell actualPlayer={bracket.actualPlayer1} />
+      <div className="cell left">
+        <NewComputeCell actualPlayer={bracket.actualPlayer1 || "No predictions/No results"} />
       </div>
       <div className="cell">
-        <NewComputeCell actualPlayer={bracket.actualPlayer2} />
+        <NewComputeCell actualPlayer={bracket.actualPlayer2 || "No predictions/No results"} />
       </div>
     </Fragment>
   }
