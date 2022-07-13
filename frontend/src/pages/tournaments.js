@@ -451,12 +451,18 @@ export const Tournaments = () => {
     <div className="ui container" key={data.name}>
       <div className="header-edit">
         <h2 className="ui aligned header">{data.name}</h2> 
-        {isAuthenticated && data.editable && data.name &&
+        
         <div>
+        {isAuthenticated && data.editable && data.name && <Fragment>
           <Icon color={mode === "view" ? "green" : "black"} name='eye' size='large' onClick={() => setMode("view")} />
           <Icon color={mode === "edit" ? "green" : "black"} name='edit' size='large' onClick={() => setMode("edit")} />    
-          {userProfile.editor && <Icon color={mode === "admin" ? "green" : "black"} name='pencil' size='large' onClick={() => setMode("admin")} />}      
-        </div>}
+          <Icon color={mode === "admin" ? "green" : "black"} name='cog' size='large' onClick={() => setMode("admin")} />
+          </Fragment>}
+          {isAuthenticated && !data.editable && data.name && userProfile.editor && <Fragment>
+            <Icon color={mode === "view" ? "green" : "black"} name='eye' size='large' onClick={() => setMode("view")} />
+            <Icon color={mode === "admin" ? "green" : "black"} name='cog' size='large' onClick={() => setMode("admin")} />
+            </Fragment>}      
+        </div>
       </div>
       <div className="column">        
         {panes.length > 0 && <Tab panes={panes} />}
