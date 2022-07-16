@@ -151,6 +151,18 @@ div.players div.bracket div.cell.incorrect {
   /* color: #fff; */
 }
 
+.newTournament.input, .newTournament.button {
+  margin: 0 5px 5px 0;
+}
+
+div.newTournament.dates {
+  display: flex;
+}
+
+.newTournament.date.input {
+  width: 50%;
+}
+
 /* @media (max-width: 1000px) {
 .column{
   flex: 100%;    

@@ -8,10 +8,32 @@ import { List } from 'semantic-ui-react'
 import Skeleton from "react-loading-skeleton";
 import 'react-loading-skeleton/dist/skeleton.css'
 
+import { Icon, Input, Tab, Button } from 'semantic-ui-react'
+
+
 const Tournaments = () => {
   const [tournaments, setTournaments] = useState([])
 
   const [addNewEvent, setAddNewEvent] = useState(false)
+
+  const NewTournament = () => {
+    return <List.Item>
+
+      <List.Icon color='green' name='trophy' size='large' verticalAlign='top' />
+      <List.Content style={{ width: "500px" }}>
+        <List.Header>
+          <Input fluid className="newTournament" placeholder="Event Name" size="mini" />
+        </List.Header>
+        <List.Description>
+          <div className="newTournament dates">
+          <Input className="newTournament date" placeholder="Start Date" size="mini" />
+          <Input className="newTournament date" placeholder="End Date" size="mini" />
+          </div>
+        </List.Description>
+        <Button className="newTournament" color='green'>Create Event</Button>
+      </List.Content>
+    </List.Item>
+  }
 
   const {
     makeRequest,
@@ -64,6 +86,7 @@ const Tournaments = () => {
   return <Fragment>
     <h1>Events</h1>
     <List relaxed>
+      {/* <NewTournament /> */}
       {tournaments.map(t => (
 
         <List.Item>
