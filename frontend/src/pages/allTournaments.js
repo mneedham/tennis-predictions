@@ -11,6 +11,8 @@ import 'react-loading-skeleton/dist/skeleton.css'
 const Tournaments = () => {
   const [tournaments, setTournaments] = useState([])
 
+  const [addNewEvent, setAddNewEvent] = useState(false)
+
   const {
     makeRequest,
     apiServerUrl
@@ -27,54 +29,56 @@ const Tournaments = () => {
       };
   
       const { data } = await makeRequest({ config });
-      setTimeout(() => {
-        setTournaments(data);
-      }, 2000)
+      // setTimeout(() => {
+      //   setTournaments(data);
+      // }, 2000)
+      setTournaments(data);
+      
     
     }
 
     getTournaments()
   }, [])
 
-  if(tournaments.length == 0) {
+  if (tournaments.length == 0) {
     return <Fragment>
       <h1>Events</h1>
       <List relaxed >
-      {Array(10).fill().map((item, index) => (
-          <List.Item style={{display: "flex"}}>
-    
-          <List.Icon name='trophy' size='large' verticalAlign='middle' />
-          <List.Content style={{width: "100%"}}>
-            <List.Description>
-              <Skeleton height={8} width="300px" count={2}  />               
-            </List.Description>
-          </List.Content>
-        </List.Item>
-        
-      ))}
+        {Array(10).fill().map((item, index) => (
+          <List.Item style={{ display: "flex" }}>
+
+            <List.Icon name='trophy' size='large' verticalAlign='middle' />
+            <List.Content style={{ width: "100%" }}>
+              <List.Description>
+                <Skeleton height={8} width="300px" count={2} />
+              </List.Description>
+            </List.Content>
+          </List.Item>
+
+        ))}
       </List>
-      
+
     </Fragment>
   }
 
   return <Fragment>
     <h1>Events</h1>
     <List relaxed>
-    {tournaments.map(t => (
+      {tournaments.map(t => (
 
-  <List.Item>
-    
-    <List.Icon name='trophy' size='large' verticalAlign='middle' />
-    <List.Content>
-      <List.Header as='a'><Link to={`/tournaments/${t.shortName}`}>{t.name}</Link></List.Header>
-      <List.Description>
-        {t.startDate} - {t.endDate}        
-      </List.Description>
-    </List.Content>
-  </List.Item>
-  
-    ))}
-  </List>
+        <List.Item>
+
+          <List.Icon name='trophy' size='large' verticalAlign='middle' />
+          <List.Content>
+            <List.Header as='a'><Link to={`/tournaments/${t.shortName}`}>{t.name}</Link></List.Header>
+            <List.Description>
+              {t.startDate} - {t.endDate}
+            </List.Description>
+          </List.Content>
+        </List.Item>
+
+      ))}
+    </List>
   </Fragment>
 }
 

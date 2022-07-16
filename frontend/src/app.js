@@ -5,7 +5,6 @@ import { NavBar } from "./components/nav-bar";
 import { ProtectedRoute } from "./components/protected-route";
 import { Home } from "./pages/home";
 import { Tournaments } from "./pages/tournaments";
-import { EditableTournaments } from "./pages/editableTournament";
 import { AllTournaments } from "./pages/allTournaments";
 import { NotFound } from "./pages/not-found";
 import { Profile } from "./pages/profile";
@@ -38,7 +37,6 @@ export const App = () => {
           <Route path="/tournaments" exact component={AllTournaments} />
           <ProtectedRoute path="/profile" component={Profile} />
           <Route exact path="/tournaments/:tournamentId" component={Tournaments} />
-          <ProtectedRoute path="/tournaments/:tournamentId/edit" component={EditableTournaments} />
           <ProtectedRoute path="/authcheck" component={AuthCheck} />
           <Route path="*" component={NotFound} />
         </Switch>

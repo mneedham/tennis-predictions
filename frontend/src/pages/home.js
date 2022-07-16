@@ -27,9 +27,10 @@ const Tournaments = () => {
       };
   
       const { data } = await makeRequest({ config });
-      setTimeout(() => {
-        setTournaments(data);
-      }, 2000)
+      // setTimeout(() => {
+      //   setTournaments(data);
+      // }, 2000)
+      setTournaments(data);
     
     }
 
