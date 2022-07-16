@@ -11,8 +11,8 @@ driver = GraphDatabase.driver(f"{host}", auth=("neo4j", password))
 bp_name = 'api-tournaments'
 bp = Blueprint(bp_name, __name__)
 
-# database='aura-20220713'
-database='neo4j'
+database='aura-20220713'
+# database='neo4j'
 
 def get_tournament(tx, id):
   result = tx.run("""
@@ -95,6 +95,26 @@ def get_tournaments(tx):
 def all_tournaments():
   with driver.session(database=database) as session:
     return jsonify(session.read_transaction(get_tournaments))
+
+def get_latest_tournaments(tx):
+  result = tx.run("""
+  MATCH (t:Tournament)
+  WHERE t.endDate > date()
+  RETURN t {.name, .shortName, .startDate, .endDate}
+  ORDER BY t.startDate DESC
+  """)
+  return [{
+      "name": record["t"]["name"],
+      "shortName": record["t"]["shortName"],
+      "startDate": record["t"]["startDate"].to_native().strftime("%d %b %Y"),
+      "endDate": record["t"]["endDate"].to_native().strftime("%d %b %Y")
+  } for record in result
+  ]
+
+@bp.route('/latest')
+def latest_tournaments():
+  with driver.session(database=database) as session:
+    return jsonify(session.read_transaction(get_latest_tournaments))    
 
 def update_bracket(tx, user_id, bracket_id, data):
   result = tx.run("""

@@ -19,7 +19,7 @@ const Tournaments = () => {
   React.useEffect(() => {
     const getTournaments = async () => {
       const config = {
-        url: `${apiServerUrl}/api/tournaments/latest`,
+        url: `${apiServerUrl}/api/tournaments`,
         method: "GET",
         headers: {
           "content-type": "application/json",
@@ -38,7 +38,7 @@ const Tournaments = () => {
 
   if(tournaments.length == 0) {
     return <Fragment>
-      <h1>Current Events</h1>
+      <h1>Events</h1>
       <List relaxed >
       {Array(10).fill().map((item, index) => (
           <List.Item style={{display: "flex"}}>
@@ -53,14 +53,12 @@ const Tournaments = () => {
         
       ))}
       </List>
-
-      <Link to={`/tournaments`}>↗ All Tournaments</Link>
       
     </Fragment>
   }
 
   return <Fragment>
-    <h1>Current Events</h1>
+    <h1>Events</h1>
     <List relaxed>
     {tournaments.map(t => (
 
@@ -77,13 +75,11 @@ const Tournaments = () => {
   
     ))}
   </List>
-  <Link to={`/tournaments`}>↗ All Events</Link>
   </Fragment>
 }
 
-export const Home = () => (
+export const AllTournaments = () => (
   <div className="ui container">    
-    {/* <Auth0Features /> */}
     <Tournaments />
   </div>
 );

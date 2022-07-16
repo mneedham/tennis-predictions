@@ -26,6 +26,15 @@ export const NavBar = () => {
           >
             Profile
           </NavLink>
+
+          <NavLink
+            to="/tournaments"
+            exact
+            className="nav-bar__tab"
+            activeClassName="nav-bar__tab--active"
+          >
+            Events
+          </NavLink>
         </div>
         <div className="nav-bar__actions">
           <AuthenticationButton />

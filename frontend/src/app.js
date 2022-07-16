@@ -6,6 +6,7 @@ import { ProtectedRoute } from "./components/protected-route";
 import { Home } from "./pages/home";
 import { Tournaments } from "./pages/tournaments";
 import { EditableTournaments } from "./pages/editableTournament";
+import { AllTournaments } from "./pages/allTournaments";
 import { NotFound } from "./pages/not-found";
 import { Profile } from "./pages/profile";
 import { AuthCheck } from "./pages/authcheck";
@@ -34,6 +35,7 @@ export const App = () => {
       <div className="page-layout__content">
         <Switch>
           <Route path="/" exact component={Home} />
+          <Route path="/tournaments" exact component={AllTournaments} />
           <ProtectedRoute path="/profile" component={Profile} />
           <Route exact path="/tournaments/:tournamentId" component={Tournaments} />
           <ProtectedRoute path="/tournaments/:tournamentId/edit" component={EditableTournaments} />

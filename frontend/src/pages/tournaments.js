@@ -443,8 +443,6 @@ export const Tournaments = () => {
   </Fragment>
 
   }
-
-  console.log("brackets", brackets)
   
   return <Fragment>
     <SemanticToastContainer />
