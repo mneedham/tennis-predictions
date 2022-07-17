@@ -10,30 +10,13 @@ import 'react-loading-skeleton/dist/skeleton.css'
 
 import { Icon, Input, Tab, Button } from 'semantic-ui-react'
 
+import { SemanticToastContainer, toast } from 'react-semantic-toasts';
+import 'react-semantic-toasts/styles/react-semantic-alert.css';
 
 const Tournaments = () => {
   const [tournaments, setTournaments] = useState([])
 
   const [addNewEvent, setAddNewEvent] = useState(false)
-
-  const NewTournament = () => {
-    return <List.Item>
-
-      <List.Icon color='green' name='trophy' size='large' verticalAlign='top' />
-      <List.Content style={{ width: "500px" }}>
-        <List.Header>
-          <Input fluid className="newTournament" placeholder="Event Name" size="mini" />
-        </List.Header>
-        <List.Description>
-          <div className="newTournament dates">
-          <Input className="newTournament date" placeholder="Start Date" size="mini" />
-          <Input className="newTournament date" placeholder="End Date" size="mini" />
-          </div>
-        </List.Description>
-        <Button className="newTournament" color='green'>Create Event</Button>
-      </List.Content>
-    </List.Item>
-  }
 
   const {
     makeRequest,
@@ -51,16 +34,86 @@ const Tournaments = () => {
       };
   
       const { data } = await makeRequest({ config });
-      // setTimeout(() => {
-      //   setTournaments(data);
-      // }, 2000)
       setTournaments(data);
-      
-    
     }
 
     getTournaments()
   }, [])
+
+  const NewTournament = () => {
+    const [eventName, setEventName] = useState("")
+    const [startDate, setStartDate] = useState("")
+    const [endDate, setEndDate] = useState("")
+
+    const addNewTournament = () => {
+      const postTournament = async () => {
+        const config = {
+          url: `${apiServerUrl}/api/tournaments/new`,
+          method: "POST",
+          headers: {
+            "content-type": "application/json",
+          },
+          data: {
+            name: eventName,
+            startDate: startDate,
+            endDate: endDate
+          }    
+        };
+    
+        const response = await makeRequest({ config, authenticated: true });
+        console.log("status", response)
+        
+        if (response.status === 200) {
+          toast({
+            type: 'success',
+            icon: 'envelope',
+            title: 'Event updated',
+            description: `${eventName} successfully updated`,
+            animation: 'slide up',
+            time: 1000
+          });
+        } else {
+          toast({
+            type: 'error',
+            icon: 'envelope',
+            title: 'Event not updated',
+            description: `${eventName} was not updated`,
+            animation: 'slide up',
+            time: 1000
+          }); 
+        }
+
+      }
+
+      postTournament()
+    }
+
+    return <List.Item>
+
+      <List.Icon color='green' name='trophy' size='large' verticalAlign='top' />
+      <List.Content style={{ width: "500px" }}>
+        <List.Header>
+          <Input fluid className="newTournament" 
+            value={eventName} 
+            onChange={(_, {value}) => setEventName(value)} 
+            placeholder="Event Name" size="mini" />
+        </List.Header>
+        <List.Description>
+          <div className="newTournament dates">
+          <Input className="newTournament date" 
+          onChange={(_, {value}) => setStartDate(value)}
+          value={startDate}
+          placeholder="Start Date" size="mini" />
+          <Input className="newTournament date" 
+          onChange={(_, {value}) => setEndDate(value)}
+          value={endDate}
+          placeholder="End Date" size="mini" />
+          </div>
+        </List.Description>
+        <Button className="newTournament" color='green' onClick={addNewTournament}>Create Event</Button>
+      </List.Content>
+    </List.Item>
+  }  
 
   if (tournaments.length == 0) {
     return <Fragment>
@@ -86,7 +139,7 @@ const Tournaments = () => {
   return <Fragment>
     <h1>Events</h1>
     <List relaxed>
-      {/* <NewTournament /> */}
+      <NewTournament />
       {tournaments.map(t => (
 
         <List.Item>
