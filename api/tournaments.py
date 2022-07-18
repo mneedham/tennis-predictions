@@ -13,8 +13,7 @@ driver = GraphDatabase.driver(f"{host}", auth=("neo4j", password))
 bp_name = 'api-tournaments'
 bp = Blueprint(bp_name, __name__)
 
-database='aura-20220713'
-# database='neo4j'
+database = safe_get_env_var("NEO4J_DATABASE")
 
 @bp.route('/<tournament_id>')
 def tournaments(tournament_id):
@@ -68,7 +67,7 @@ def new_tournament_route():
     data["events"] = [
         {"name": "Men's Singles", "rounds": [
           {"name": "Quarter Finals", "entries": 4},
-          {"name": "Semi Finals", "entries": 1},
+          {"name": "Semi Finals", "entries": 2},
           {"name": "Final", "entries": 1},
           {"name": "Champion", "entries": 1}
       ]}

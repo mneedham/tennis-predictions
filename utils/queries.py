@@ -61,18 +61,25 @@ def new_tournament(tx, data):
   WITH *
   UNWIND event.rounds AS round
   CALL {
+    WITH * WITH * WHERE round.name = "Champion"
+    MERGE (b:Bracket {id: eventName + "-" + round.name})
+    SET b.round = round.name, b.name = round.name, b.rank = 4
+    MERGE (b)-[:EVENT]->(e)
+    RETURN count(*) AS championCount
+  }
+  CALL {
     WITH * WITH * WHERE round.name <> "Champion"
     UNWIND range(0, round.entries-1) AS index
     MERGE (b:Bracket {id: eventName + "-" + round.name + "_" + index})
     SET b.round = round.name, b.name = round.name + "_" + index, b.index = index, 
         b.rank = CASE 
-          WHEN round = "4th Round" THEN 0
-          WHEN round = "Quarter Finals" THEN 1
-          WHEN round = "Semi Finals" THEN 2
-          WHEN round = "Final" THEN 3
+          WHEN round.name = "4th Round" THEN 0
+          WHEN round.name = "Quarter Finals" THEN 1
+          WHEN round.name = "Semi Finals" THEN 2
+          WHEN round.name = "Final" THEN 3
           ELSE -1 END
     MERGE (b)-[:EVENT]->(e)
-    RETURN count(*)
+    RETURN count(*) AS otherCount
   }
   RETURN count(*) AS count
   """, data=data)
