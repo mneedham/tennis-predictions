@@ -75,6 +75,19 @@ const Tournaments = () => {
     const [startDate, setStartDate] = useState("")
     const [endDate, setEndDate] = useState("")
 
+    const getTournaments = async () => {
+      const config = {
+        url: `${apiServerUrl}/api/tournaments`,
+        method: "GET",
+        headers: {
+          "content-type": "application/json",
+        }        
+      };
+  
+      const { data } = await makeRequest({ config });
+      setTournaments(data);
+    }
+
     const addNewTournament = () => {
       const postTournament = async () => {
         const config = {
@@ -112,10 +125,15 @@ const Tournaments = () => {
             time: 1000
           }); 
         }
-
+        return response.status
       }
 
-      postTournament()
+      const status = postTournament()
+      status.then(value => {
+        if(value) {
+          getTournaments()
+        }
+      })
     }
 
 
