@@ -132,6 +132,7 @@ const Tournaments = () => {
       status.then(value => {
         if(value) {
           getTournaments()
+          setAddNewEvent(prev => !prev)
         }
       })
     }
