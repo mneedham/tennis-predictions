@@ -17,6 +17,7 @@ const Tournaments = () => {
   const { isAuthenticated } = useAuth0();
   const [tournaments, setTournaments] = useState([])
   const [addNewEvent, setAddNewEvent] = useState(false)
+  const [userProfile, setUserProfile] = useState({editor: false})
 
   const {
     makeRequest,
@@ -37,8 +38,37 @@ const Tournaments = () => {
       setTournaments(data);
     }
 
+    const getUserProfile = async () => {
+      const config = {
+        url: `${apiServerUrl}/api/users/profile`,
+        method: "GET",
+        headers: {
+          "content-type": "application/json",
+        }
+      };
+
+      const response = await makeRequest({ config, authenticated: true });
+
+      setUserProfile(response.data);
+    }       
+
     getTournaments()
+
+    if (isAuthenticated) {
+      getUserProfile()
+    }
   }, [])
+
+  const AddNewEventButton = ({userProfile}) => {
+    if(isAuthenticated && userProfile) {
+      return <Icon 
+        name="circle plus" color={addNewEvent ? "grey":"green"} size="small" onClick={() => setAddNewEvent(prev => !prev)} 
+        />
+      
+    } else {
+      return <Fragment></Fragment>;
+    }
+  }  
 
   const NewTournament = () => {
     const [eventName, setEventName] = useState("")
@@ -88,6 +118,8 @@ const Tournaments = () => {
       postTournament()
     }
 
+
+
     return <List.Item>
 
       <List.Icon color='green' name='trophy' size='large' verticalAlign='top' />
@@ -117,8 +149,8 @@ const Tournaments = () => {
 
   if (tournaments.length == 0) {
     return <Fragment>      
-      <h1>Events <Icon name="circle plus" color={addNewEvent ? "grey":"green"} size="small" onClick={() => setAddNewEvent(prev => !prev)} /></h1>
-      {addNewEvent && isAuthenticated && <NewTournament />}
+      <h1>Events <AddNewEventButton userProfile={userProfile} /></h1>
+      {addNewEvent && isAuthenticated && userProfile.editor && <NewTournament />}
       <List relaxed >
         {Array(10).fill().map((item, index) => (
           <List.Item style={{ display: "flex" }}>
@@ -138,9 +170,9 @@ const Tournaments = () => {
   }
 
   return <Fragment>
-    <h1>Events <Icon name="circle plus" color={addNewEvent ? "grey":"green"} size="small" onClick={() => setAddNewEvent(prev => !prev)} /></h1>
+    <h1>Events <AddNewEventButton userProfile={userProfile} /></h1>
     <List relaxed>
-      {addNewEvent && isAuthenticated && <NewTournament />}
+      {addNewEvent && isAuthenticated && userProfile.editor && <NewTournament />}
       {tournaments.map(t => (
 
         <List.Item>
