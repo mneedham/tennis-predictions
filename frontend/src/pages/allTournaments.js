@@ -1,9 +1,9 @@
 import React, { Fragment } from "react";
-import { Auth0Features } from "../components/auth0-features";
 import { useState } from "react";
 import { Link } from 'react-router-dom';
 import { useExternalApi } from "../utils/requests";
 import { List } from 'semantic-ui-react'
+import { useAuth0 } from "@auth0/auth0-react";
 
 import Skeleton from "react-loading-skeleton";
 import 'react-loading-skeleton/dist/skeleton.css'
@@ -14,8 +14,8 @@ import { SemanticToastContainer, toast } from 'react-semantic-toasts';
 import 'react-semantic-toasts/styles/react-semantic-alert.css';
 
 const Tournaments = () => {
+  const { isAuthenticated } = useAuth0();
   const [tournaments, setTournaments] = useState([])
-
   const [addNewEvent, setAddNewEvent] = useState(false)
 
   const {
@@ -61,7 +61,6 @@ const Tournaments = () => {
         };
     
         const response = await makeRequest({ config, authenticated: true });
-        console.log("status", response)
         
         if (response.status === 200) {
           toast({
@@ -73,6 +72,7 @@ const Tournaments = () => {
             time: 1000
           });
         } else {
+          console.log("ERERRRR")
           toast({
             type: 'error',
             icon: 'envelope',
@@ -116,8 +116,9 @@ const Tournaments = () => {
   }  
 
   if (tournaments.length == 0) {
-    return <Fragment>
-      <h1>Events</h1>
+    return <Fragment>      
+      <h1>Events <Icon name="circle plus" color={addNewEvent ? "grey":"green"} size="small" onClick={() => setAddNewEvent(prev => !prev)} /></h1>
+      {addNewEvent && isAuthenticated && <NewTournament />}
       <List relaxed >
         {Array(10).fill().map((item, index) => (
           <List.Item style={{ display: "flex" }}>
@@ -137,9 +138,9 @@ const Tournaments = () => {
   }
 
   return <Fragment>
-    <h1>Events</h1>
+    <h1>Events <Icon name="circle plus" color={addNewEvent ? "grey":"green"} size="small" onClick={() => setAddNewEvent(prev => !prev)} /></h1>
     <List relaxed>
-      <NewTournament />
+      {addNewEvent && isAuthenticated && <NewTournament />}
       {tournaments.map(t => (
 
         <List.Item>
@@ -160,6 +161,7 @@ const Tournaments = () => {
 
 export const AllTournaments = () => (
   <div className="ui container">    
+    <SemanticToastContainer />
     <Tournaments />
   </div>
 );

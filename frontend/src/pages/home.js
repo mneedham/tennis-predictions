@@ -1,5 +1,4 @@
 import React, { Fragment } from "react";
-import { Auth0Features } from "../components/auth0-features";
 import { useState } from "react";
 import { Link } from 'react-router-dom';
 import { useExternalApi } from "../utils/requests";
@@ -37,7 +36,7 @@ const Tournaments = () => {
     getTournaments()
   }, [])
 
-  if(tournaments.length == 0) {
+  if(tournaments.length === 0) {
     return <Fragment>
       <h1>Current Events</h1>
       <List relaxed >
