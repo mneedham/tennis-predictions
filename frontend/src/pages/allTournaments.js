@@ -204,7 +204,7 @@ const Tournaments = () => {
               placeholder="Start Date"
               value={startDate}
               iconPosition="left"
-              popupPosition="bottom"
+              popupPosition="bottom left"
               size="mini"
               onChange={(_, { value }) => setStartDate(value)}
             />
@@ -215,19 +215,10 @@ const Tournaments = () => {
               placeholder="End Date"
               value={endDate}
               iconPosition="left"
-              popupPosition="bottom"
+              popupPosition="bottom left"
               size="mini"
               onChange={(_, { value }) => setEndDate(value)}
             />            
-
-            {/* <Input className="newTournament date"
-              onChange={(_, { value }) => setStartDate(value)}
-              value={startDate}
-              placeholder="Start Date" size="mini" />
-            <Input className="newTournament date"
-              onChange={(_, { value }) => setEndDate(value)}
-              value={endDate}
-              placeholder="End Date" size="mini" />               */}
           </div>
 
           <div>

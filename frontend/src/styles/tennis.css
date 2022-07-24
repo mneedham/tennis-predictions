@@ -165,6 +165,10 @@ div.newTournament.dates {
   margin: 0 5px 0 0;
 }
 
+a.nav-bar__tab {
+  color: #ffffff;
+}
+
 /* @media (max-width: 1000px) {
 .column{
   flex: 100%;    
