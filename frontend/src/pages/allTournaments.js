@@ -13,6 +13,8 @@ import { Icon, Input, Tab, Button } from 'semantic-ui-react'
 import { SemanticToastContainer, toast } from 'react-semantic-toasts';
 import 'react-semantic-toasts/styles/react-semantic-alert.css';
 
+import { Checkbox, Radio } from 'semantic-ui-react'
+
 const Tournaments = () => {
   const { isAuthenticated } = useAuth0();
   const [tournaments, setTournaments] = useState([])
@@ -89,6 +91,8 @@ const Tournaments = () => {
     }
 
     const addNewTournament = () => {
+      console.log("events", events)
+
       const postTournament = async () => {
         const config = {
           url: `${apiServerUrl}/api/tournaments/new`,
@@ -99,7 +103,8 @@ const Tournaments = () => {
           data: {
             name: eventName,
             startDate: startDate,
-            endDate: endDate
+            endDate: endDate,
+            events: events
           }    
         };
     
@@ -115,7 +120,6 @@ const Tournaments = () => {
             time: 1000
           });
         } else {
-          console.log("ERERRRR")
           toast({
             type: 'error',
             icon: 'envelope',
@@ -137,31 +141,73 @@ const Tournaments = () => {
       })
     }
 
+    const [events, setEvents] = useState({
+      "Men's Singles": { name: "Men's Singles", round: "4th Round", selected: true },
+      "Women's Singles": { name: "Women's Singles", round: "4th Round", selected: true }
+    })
+
+    const Event = ({name}) => {
+      const event = events[name] || {}
+
+      return <p>
+        <Checkbox label={name}
+          style={{width: "140px"}}
+          checked={event.selected}
+          onClick={() => setEvents(prevState => {
+            return {...prevState, [name]: {name: name, round: prevState[name].round, selected: !prevState[name].selected}}
+          })}
+        />
+        <Radio
+          label='4th Round'
+          style={{marginRight: "10px"}}
+          name={name}
+          value='4th Round'
+          checked={event.round === "4th Round"}
+          onChange={(e, data) => setEvents(prevState => {
+            return {...prevState, [name]: {name: name, round: data.value, selected: prevState[name].selected}}
+          })}
+        />
+        <Radio
+          label='Quarter Finals'
+          name={name}
+          value='Quarter Finals'
+          checked={event.round === "Quarter Finals"}
+          onChange={(e, data) => setEvents(prevState => {
+            return {...prevState, [name]: {name: name, round: data.value, selected: prevState[name].selected}}
+          })}
+        />
+      </p>
+    }
 
 
     return <List.Item>
-
       <List.Icon color='green' name='trophy' size='large' verticalAlign='top' />
       <List.Content style={{ width: "500px" }}>
         <List.Header>
-          <Input fluid className="newTournament" 
-            value={eventName} 
-            onChange={(_, {value}) => setEventName(value)} 
+          <Input fluid className="newTournament"
+            value={eventName}
+            onChange={(_, { value }) => setEventName(value)}
             placeholder="Event Name" size="mini" />
         </List.Header>
         <List.Description>
           <div className="newTournament dates">
-          <Input className="newTournament date" 
-          onChange={(_, {value}) => setStartDate(value)}
-          value={startDate}
-          placeholder="Start Date" size="mini" />
-          <Input className="newTournament date" 
-          onChange={(_, {value}) => setEndDate(value)}
-          value={endDate}
-          placeholder="End Date" size="mini" />
+            <Input className="newTournament date"
+              onChange={(_, { value }) => setStartDate(value)}
+              value={startDate}
+              placeholder="Start Date" size="mini" />
+            <Input className="newTournament date"
+              onChange={(_, { value }) => setEndDate(value)}
+              value={endDate}
+              placeholder="End Date" size="mini" />              
           </div>
+
+          <div>
+            <Event name="Men's Singles" />
+            <Event name="Women's Singles" />
+          </div>
+
         </List.Description>
-        <Button className="newTournament" color='green' onClick={addNewTournament}>Create Event</Button>
+        <Button className="newTournament" color='green' style={{marginTop: "5px"}} onClick={addNewTournament}>Create Event</Button>
       </List.Content>
     </List.Item>
   }  

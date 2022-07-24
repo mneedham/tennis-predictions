@@ -52,6 +52,23 @@ def get_latest_tournaments(tx):
   } for record in result
   ]
 
+
+round_mapping = {
+    "4th Round": [
+        {"name": "4th Round", "entries": 8},
+        {"name": "Quarter Finals", "entries": 4},
+        {"name": "Semi Finals", "entries": 2},
+        {"name": "Final", "entries": 1},
+        {"name": "Champion", "entries": 1}
+    ],
+    "Quarter Finals": [
+        {"name": "Quarter Finals", "entries": 4},
+        {"name": "Semi Finals", "entries": 2},
+        {"name": "Final", "entries": 1},
+        {"name": "Champion", "entries": 1}
+    ]
+}
+
 @bp.route('/new', methods=["POST"])
 @authorization_guard
 def new_tournament_route():
@@ -63,15 +80,20 @@ def new_tournament_route():
     if result["isEditor"] != True:
       return {"message": "User is not an editor"}, 401
 
-    data = request.json
-    data["events"] = [
-        {"name": "Men's Singles", "rounds": [
-          {"name": "Quarter Finals", "entries": 4},
-          {"name": "Semi Finals", "entries": 2},
-          {"name": "Final", "entries": 1},
-          {"name": "Champion", "entries": 1}
-      ]}
-    ]
+    request_json = request.json
+
+    data = {
+      "name": request_json["name"],
+      "startDate": request_json["startDate"],
+      "endDate": request_json["endDate"]
+    }
+
+    selected_events = [value for value in request_json["events"].values() if value["selected"]]
+    if len(selected_events) == 0:
+      return {"error": "No events selected"}, 500
+    
+    data["events"] = [{"name": event["name"], "rounds": round_mapping[event["round"]]} for event in selected_events]
+    
  
     try: 
       result = session.write_transaction(queries.new_tournament, data)
