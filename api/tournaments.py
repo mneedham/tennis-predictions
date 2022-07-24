@@ -54,14 +54,14 @@ def get_latest_tournaments(tx):
 
 
 round_mapping = {
-    "4th Round": [
+    "R4": [
         {"name": "4th Round", "entries": 8},
         {"name": "Quarter Finals", "entries": 4},
         {"name": "Semi Finals", "entries": 2},
         {"name": "Final", "entries": 1},
         {"name": "Champion", "entries": 1}
     ],
-    "Quarter Finals": [
+    "QF": [
         {"name": "Quarter Finals", "entries": 4},
         {"name": "Semi Finals", "entries": 2},
         {"name": "Final", "entries": 1},

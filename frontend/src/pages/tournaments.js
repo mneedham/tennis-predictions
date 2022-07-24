@@ -448,7 +448,7 @@ export const Tournaments = () => {
     <SemanticToastContainer />
     <div className="ui container" key={data.name}>
       <div className="header-edit">
-        <h2 className="ui aligned header">{data.name}</h2> 
+        <h2 className="ui aligned header" style={{maxWidth: "75%"}}>{data.name}</h2> 
         
         <div>
         {isAuthenticated && data.editable && data.name && <Fragment>
