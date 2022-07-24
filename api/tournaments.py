@@ -40,7 +40,7 @@ def all_tournaments():
 def get_latest_tournaments(tx):
   result = tx.run("""
   MATCH (t:Tournament)
-  WHERE t.endDate > date()
+  WHERE t.endDate >= date()
   RETURN t {.name, .shortName, .startDate, .endDate}
   ORDER BY t.startDate DESC
   """)

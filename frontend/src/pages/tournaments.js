@@ -266,6 +266,14 @@ export const Tournaments = () => {
     const actualPlayer2 = (brackets[bracket.id] || {}).actualPlayer2
 
     if (!actualPlayer1 && !actualPlayer2 && !player1 && !player2) {
+      if(bracket.round === "Champion") {
+        return <Fragment>
+        <div className="cell">
+          <p>No predictions/No results</p>
+        </div>
+      </Fragment>
+      }
+
       return <Fragment>
         <div className="cell left">
           <p>No predictions/No results</p>
@@ -370,7 +378,7 @@ export const Tournaments = () => {
       <div className="cell left">
         <NewComputeCell actualPlayer={bracket.actualPlayer1 || "No predictions/No results"} />
       </div>
-      <div className="cell">
+      <div className="cell right">
         <NewComputeCell actualPlayer={bracket.actualPlayer2 || "No predictions/No results"} />
       </div>
     </Fragment>
