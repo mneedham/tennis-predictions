@@ -207,6 +207,7 @@ const Tournaments = () => {
               value={startDate}
               iconPosition="left"
               popupPosition="bottom left"
+              hideMobileKeyboard
               size="mini"
               onChange={(_, { value }) => setStartDate(value)}
             />
@@ -218,6 +219,7 @@ const Tournaments = () => {
               value={endDate}
               iconPosition="left"
               popupPosition="bottom left"
+              hideMobileKeyboard
               size="mini"
               onChange={(_, { value }) => setEndDate(value)}
             />            
