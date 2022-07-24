@@ -156,7 +156,7 @@ const Tournaments = () => {
     const Event = ({name}) => {
       const event = events[name] || {}
 
-      return <p>
+      return <div className="event">
         <Checkbox label={name}
           style={{width: "140px"}}
           checked={event.selected}
@@ -164,6 +164,7 @@ const Tournaments = () => {
             return {...prevState, [name]: {name: name, round: prevState[name].round, selected: !prevState[name].selected}}
           })}
         />
+        <div>
         <Radio
           label='R4'
           style={{marginRight: "10px"}}
@@ -183,7 +184,8 @@ const Tournaments = () => {
             return {...prevState, [name]: {name: name, round: data.value, selected: prevState[name].selected}}
           })}
         />
-      </p>
+        </div>
+      </div>
     }
 
 
@@ -221,7 +223,11 @@ const Tournaments = () => {
             />            
           </div>
 
-          <div>
+          <div className="events">
+            <div className="heading">
+              <div className="left">Event name</div>
+              <div className="right">1st round to predict</div>
+            </div>
             <Event name="Men's Singles" />
             <Event name="Women's Singles" />
           </div>

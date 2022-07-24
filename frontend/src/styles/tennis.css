@@ -169,6 +169,25 @@ a.nav-bar__tab {
   color: #ffffff;
 }
 
+.events .heading {
+  display: flex;
+  margin: 1rem 0px 0px;
+}
+
+.events .heading .left {
+  width: 140px;
+  font-weight: 600;
+}
+
+.events .heading .right {
+  font-weight: 600;
+}
+
+.events .event {
+  margin: 1rem 0px;
+    display: flex;
+}
+
 /* @media (max-width: 1000px) {
 .column{
   flex: 100%;    
