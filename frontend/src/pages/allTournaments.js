@@ -15,6 +15,13 @@ import 'react-semantic-toasts/styles/react-semantic-alert.css';
 
 import { Checkbox, Radio } from 'semantic-ui-react'
 
+import {
+  DateInput,
+  TimeInput,
+  DateTimeInput,
+  DatesRangeInput
+} from 'semantic-ui-calendar-react';
+
 const Tournaments = () => {
   const { isAuthenticated } = useAuth0();
   const [tournaments, setTournaments] = useState([])
@@ -191,14 +198,34 @@ const Tournaments = () => {
         </List.Header>
         <List.Description>
           <div className="newTournament dates">
-            <Input className="newTournament date"
+            <DateInput className="newTournament date"
+              name="date"
+              dateFormat="YYYY-MM-DD"
+              placeholder="Start Date"
+              value={startDate}
+              iconPosition="left"
+              size="mini"
+              onChange={(_, { value }) => setStartDate(value)}
+            />
+
+            <DateInput className="newTournament date"
+              name="date"
+              dateFormat="YYYY-MM-DD"
+              placeholder="End Date"
+              value={endDate}
+              iconPosition="left"
+              size="mini"
+              onChange={(_, { value }) => setEndDate(value)}
+            />            
+
+            {/* <Input className="newTournament date"
               onChange={(_, { value }) => setStartDate(value)}
               value={startDate}
               placeholder="Start Date" size="mini" />
             <Input className="newTournament date"
               onChange={(_, { value }) => setEndDate(value)}
               value={endDate}
-              placeholder="End Date" size="mini" />              
+              placeholder="End Date" size="mini" />               */}
           </div>
 
           <div>

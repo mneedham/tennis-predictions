@@ -157,10 +157,12 @@ div.players div.bracket div.cell.incorrect {
 
 div.newTournament.dates {
   display: flex;
+  margin: 0 0 5px 0;
 }
 
-.newTournament.date.input {
+.newTournament.date input {
   width: 50%;
+  margin: 0 5px 0 0;
 }
 
 /* @media (max-width: 1000px) {
