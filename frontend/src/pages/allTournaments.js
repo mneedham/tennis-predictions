@@ -149,8 +149,8 @@ const Tournaments = () => {
     }
 
     const [events, setEvents] = useState({
-      "Men's Singles": { name: "Men's Singles", round: "R4", selected: true },
-      "Women's Singles": { name: "Women's Singles", round: "R4", selected: true }
+      "Men's Singles": { name: "Men's Singles", round: "R16", selected: true },
+      "Women's Singles": { name: "Women's Singles", round: "R16", selected: true }
     })
 
     const Event = ({name}) => {
@@ -166,11 +166,11 @@ const Tournaments = () => {
         />
         <div>
         <Radio
-          label='R4'
+          label='R16'
           style={{marginRight: "10px"}}
           name={name}
-          value='R4'
-          checked={event.round === "R4"}
+          value='R16'
+          checked={event.round === "R16"}
           onChange={(e, data) => setEvents(prevState => {
             return {...prevState, [name]: {name: name, round: data.value, selected: prevState[name].selected}}
           })}
