@@ -309,8 +309,6 @@ export const Tournaments = () => {
     const [player1, setPlayer1] = useState(brackets[bracket.id].actualPlayer1)
     const [player2, setPlayer2] = useState(brackets[bracket.id].actualPlayer2)
 
-    console.log("AdminBracket: player1", player1, "player2", player2, "bracket", bracket)
-
     if(bracket.round === "Champion") {
       return <Fragment>
       <div className="cell">
@@ -432,22 +430,40 @@ export const Tournaments = () => {
   const dummyPanes = Array(1).fill().map(index => {
     return {
       menuItem: "Event Name",
-      render: () => <Fragment>
-        <Skeleton  count={10} />
-      </Fragment>
+      render: () => <div className="players">
+        <div className="header loading"></div>
+        <div className="bracket" data-round="Champion">
+        {Array(5).fill().map((item) => {
+          return <div className="cell">
+              <Skeleton  height="60px" borderRadius="10px" />
+          </div>
+        })}
+        </div>
+        
+      </div>
     }
   })
 
   if(!data.name) {
-    return <Fragment>            
-      <div className="ui container" key={data.name}>      
-      <div className="header-edit">
-      <Skeleton  count={1} width="200px" height="25px" />  
+    return <Fragment>
+      <div className="ui container" key={data.name}>
+        <div>
+          <div className="header-edit loading">
+            <div>
+              <Skeleton count={1} width="250px" height="25px" />
+            </div>
+            <div>
+            <Skeleton count={1} width="50px" height="25px" />
+            </div>
+          </div>
+          <div className="header-meta">
+          <Skeleton count={1} width="200px" height="25px" />
+          </div>
+        </div>
+        <div className="column">
+          <Tab panes={dummyPanes} />
+        </div>
       </div>
-      <div className="column"> 
-        <Tab panes={dummyPanes} />
-      </div>
-    </div>
   </Fragment>
 
   }
@@ -455,21 +471,26 @@ export const Tournaments = () => {
   return <Fragment>
     <SemanticToastContainer />
     <div className="ui container" key={data.name}>
-      <div className="header-edit">
-        <h2 className="ui aligned header" style={{maxWidth: "75%"}}>{data.name}</h2> 
-        
-        <div>
-        {isAuthenticated && data.editable && data.name && <Fragment>
-          <Icon color={mode === "view" ? "green" : "black"} name='eye' size='large' onClick={() => setMode("view")} />
-          <Icon color={mode === "edit" ? "green" : "black"} name='edit' size='large' onClick={() => setMode("edit")} />    
-          <Icon color={mode === "admin" ? "green" : "black"} name='cog' size='large' onClick={() => setMode("admin")} />
-          </Fragment>}
-          {isAuthenticated && !data.editable && data.name && userProfile.editor && <Fragment>
-            <Icon color={mode === "view" ? "green" : "black"} name='eye' size='large' onClick={() => setMode("view")} />
-            <Icon color={mode === "admin" ? "green" : "black"} name='cog' size='large' onClick={() => setMode("admin")} />
-            </Fragment>}      
+      <div>
+        <div className="header-edit">
+          <h2 className="ui aligned header" style={{ maxWidth: "75%" }}>{data.name}</h2>
+          <div>
+            {isAuthenticated && data.editable && data.name && <Fragment>
+              <Icon color={mode === "view" ? "green" : "black"} name='eye' size='large' onClick={() => setMode("view")} />
+              <Icon color={mode === "edit" ? "green" : "black"} name='edit' size='large' onClick={() => setMode("edit")} />
+              <Icon color={mode === "admin" ? "green" : "black"} name='cog' size='large' onClick={() => setMode("admin")} />
+            </Fragment>}
+            {isAuthenticated && !data.editable && data.name && userProfile.editor && <Fragment>
+              <Icon color={mode === "view" ? "green" : "black"} name='eye' size='large' onClick={() => setMode("view")} />
+              <Icon color={mode === "admin" ? "green" : "black"} name='cog' size='large' onClick={() => setMode("admin")} />
+            </Fragment>}
+          </div>
+        </div>
+        <div className="header-meta">
+          {data.startDate} - {data.endDate}
         </div>
       </div>
+      
       <div className="column">        
         {panes.length > 0 && <Tab panes={panes} />}
       </div>

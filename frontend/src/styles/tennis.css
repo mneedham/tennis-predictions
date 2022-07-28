@@ -60,9 +60,19 @@ i:hover {
 }
 
 .header-edit {
-  margin: 10px 0 10px 0;
+  margin: 10px 0 0 0;
   display: flex;
   justify-content: space-between;
+}
+
+.header-edit.loading {
+  padding: 5px 0;
+}
+
+.header-meta {
+  margin: 0 0 10px 0;
+  font-weight: 500;
+  font-size: 1.3rem;
 }
 
 div.players {
@@ -77,6 +87,10 @@ div.players div.header {
   border-radius: 0.6rem;
   font-weight: 700;
   font-size: 1.15rem;
+}
+
+div.players div.header.loading {
+  height: 40px;
 }
 
 div.players div.bracket {

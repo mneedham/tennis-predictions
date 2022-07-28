@@ -127,7 +127,7 @@ def get_tournament_authenticated(tx, tournament_id, user_id):
   OPTIONAL MATCH (sb)-[:PLAYER2]->(sbPlayer2)
   WITH t, e, bracket, p1, p2, sbPlayer1, sbPlayer2
   ORDER BY e, bracket.rank, bracket.index
-  WITH t {.name, .shortName} AS t, e {.name} AS e, 
+  WITH t {.name, .shortName, .startDate, .endDate} AS t, e {.name} AS e, 
        date() < t.endDate AS editable,
        collect({name: bracket.name, id: bracket.id, round: bracket.round, 
                 player1: sbPlayer1.name, actualPlayer1: p1.name, 
@@ -137,8 +137,10 @@ def get_tournament_authenticated(tx, tournament_id, user_id):
   """, tournamentId=tournament_id, userId=user_id)
   return [{
       "name": record["t"]["name"],
-      "editable": record["editable"],
       "shortName": record["t"]["shortName"],
+      "startDate": record["t"]["startDate"].to_native().strftime("%d %b %Y"),
+      "endDate": record["t"]["endDate"].to_native().strftime("%d %b %Y"),
+      "editable": record["editable"],      
       "events": record["events"]
   } for record in result
   ][0]
@@ -152,13 +154,15 @@ def get_tournament(tx, id):
   OPTIONAL MATCH (bracket)-[:PLAYER2]->(p2)
   WITH t, e, bracket, p1, p2
   ORDER BY e, bracket.rank, bracket.index
-  WITH t {.name, .shortName} AS t, e {.name} AS e, 
+  WITH t {.name, .shortName, .startDate, .endDate} AS t, e {.name} AS e, 
        collect({name: bracket.name, id: bracket.id, round: bracket.round, actualPlayer1: p1.name, actualPlayer2: p2.name}) AS brackets
   RETURN t, collect ({name: e.name, brackets: brackets}) AS events
   """, tournamentId=id)
   return [{
       "name": record["t"]["name"],
       "shortName": record["t"]["shortName"],
+      "startDate": record["t"]["startDate"].to_native().strftime("%d %b %Y"),
+      "endDate": record["t"]["endDate"].to_native().strftime("%d %b %Y"),
       "events": record["events"]
   } for record in result
   ][0]   
