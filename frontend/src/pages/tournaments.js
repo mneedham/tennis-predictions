@@ -406,6 +406,9 @@ export const Tournaments = () => {
     event.brackets.forEach(d => {
       groups.find(g => g.round === d.round).brackets.push(d);
     });
+
+    console.log("brackets", event.brackets, groups)
+
     event.newBrackets = groups
   })
 
@@ -413,6 +416,7 @@ export const Tournaments = () => {
     return {
       menuItem: event.name,
       render: () => <Fragment key={event.name}>
+        <div className="picks">Picks: 0/10</div>
         {event.newBrackets.map((b, index) => {
           return <div className="players">
             <div className="header">{b.round}</div>
@@ -450,14 +454,14 @@ export const Tournaments = () => {
         <div>
           <div className="header-edit loading">
             <div>
-              <Skeleton count={1} width="250px" height="25px" />
+              <Skeleton count={1} width="250px" height="30px" />
             </div>
             <div>
-            <Skeleton count={1} width="50px" height="25px" />
+            <Skeleton count={1} width="50px" height="30px" />
             </div>
           </div>
-          <div className="header-meta">
-          <Skeleton count={1} width="200px" height="25px" />
+          <div className="header-meta loading">
+          <Skeleton count={1} width="200px" height="20px" />
           </div>
         </div>
         <div className="column">

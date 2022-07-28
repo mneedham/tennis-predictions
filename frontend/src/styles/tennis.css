@@ -75,6 +75,10 @@ i:hover {
   font-size: 1.3rem;
 }
 
+.header-meta.loading {
+  margin: 0.7rem 0 10px 0;
+}
+
 div.players {
   margin: 1rem 0 1.5rem 0;
 }
