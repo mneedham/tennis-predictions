@@ -407,16 +407,29 @@ export const Tournaments = () => {
       groups.find(g => g.round === d.round).brackets.push(d);
     });
 
-    console.log("brackets", event.brackets, groups)
-
+    
     event.newBrackets = groups
+
+    event.matches = event.brackets.flatMap(bracket => {
+      if(bracket.round === "Champion") {
+        return {player: bracket.player1, actualPlayer: bracket.actualPlayer1}
+      }
+      return [
+        {player: bracket.player1, actualPlayer: bracket.actualPlayer1},
+        {player: bracket.player2, actualPlayer: bracket.actualPlayer2}
+      ]
+    })
   })
 
   const panes = data.events.map(event => {
     return {
       menuItem: event.name,
       render: () => <Fragment key={event.name}>
-        <div className="picks">Picks: 0/10</div>
+        
+        <div className="picks">
+          Picks: {event.matches.filter(match => match.player === match.actualPlayer).length}/{event.matches.length}
+        </div>
+
         {event.newBrackets.map((b, index) => {
           return <div className="players">
             <div className="header">{b.round}</div>

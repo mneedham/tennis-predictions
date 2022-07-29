@@ -206,6 +206,12 @@ a.nav-bar__tab {
     display: flex;
 }
 
+div.picks {
+  margin: 1rem 0;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
 /* @media (max-width: 1000px) {
 .column{
   flex: 100%;    
