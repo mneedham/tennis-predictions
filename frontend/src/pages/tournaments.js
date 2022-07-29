@@ -424,12 +424,7 @@ export const Tournaments = () => {
   const panes = data.events.map(event => {
     return {
       menuItem: event.name,
-      render: () => <Fragment key={event.name}>
-        
-        <div className="picks">
-          Picks: {event.matches.filter(match => match.player === match.actualPlayer).length}/{event.matches.length}
-        </div>
-
+      render: () => <Fragment key={event.name}>      
         {event.newBrackets.map((b, index) => {
           return <div className="players">
             <div className="header">{b.round}</div>
@@ -440,6 +435,9 @@ export const Tournaments = () => {
 
             </div></div>
         })}
+                <div className="picks">
+          Picks: {event.matches.filter(match => match.player === match.actualPlayer).length}/{event.matches.length}
+        </div>
       </Fragment>
     }
   })

@@ -208,8 +208,13 @@ a.nav-bar__tab {
 
 div.picks {
   margin: 1rem 0;
-  font-size: 1.2rem;
-  font-weight: 500;
+  font-size: 1.15rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #fff;
+  border-radius: 0.6rem;
+  background-color: #474e59;
+  padding: 0.7rem;
 }
 
 /* @media (max-width: 1000px) {
