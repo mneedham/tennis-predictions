@@ -436,7 +436,9 @@ export const Tournaments = () => {
             </div></div>
         })}
         <div className="picks">
-          Picks: {event.matches.filter(match => match.player === match.actualPlayer).length}/{event.matches.length}
+          <div className="text">Correct Picks:</div> 
+          <div className="score">{event.matches.filter(match => match.player === match.actualPlayer).length}/{event.matches.length}
+          </div>
         </div>
       </Fragment>
     }
