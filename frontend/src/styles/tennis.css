@@ -219,7 +219,7 @@ div.picks {
 
 div.picks div.text {
   font-weight: 500;
-  border-right: 1px white solid;
+  /* border-right: 1px white solid; */
   font-size: 1.1rem;
 }
 
