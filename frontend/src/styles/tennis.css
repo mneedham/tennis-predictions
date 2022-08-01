@@ -214,13 +214,17 @@ div.picks {
   background-color: #474e59;
   padding: 1.3rem 0.7rem;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
 }
 
 div.picks div.text {
   font-weight: 500;
   /* border-right: 1px white solid; */
   font-size: 1.1rem;
+}
+
+div.pick-column {
+  width: 50%;
 }
 
 

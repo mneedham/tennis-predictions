@@ -412,11 +412,11 @@ export const Tournaments = () => {
 
     event.matches = event.brackets.flatMap(bracket => {
       if(bracket.round === "Champion") {
-        return {player: bracket.player1, actualPlayer: bracket.actualPlayer1}
+        return {player: bracket.player1, actualPlayer: bracket.actualPlayer1, round: bracket.round}
       }
       return [
-        {player: bracket.player1, actualPlayer: bracket.actualPlayer1},
-        {player: bracket.player2, actualPlayer: bracket.actualPlayer2}
+        {player: bracket.player1, actualPlayer: bracket.actualPlayer1, round: bracket.round},
+        {player: bracket.player2, actualPlayer: bracket.actualPlayer2, round: bracket.round}
       ]
     })
   })
@@ -425,9 +425,30 @@ export const Tournaments = () => {
     const correct = matches.filter(match => match.actualPlayer !== null && match.player === match.actualPlayer).length
     const finished = matches.filter(match => match.actualPlayer !== null).length
 
-    return <Fragment>
-      {`${correct} / ${finished}`}
-    </Fragment>
+    return <Fragment>{`${correct} / ${finished}`}</Fragment>
+  }
+
+  const Score = ({ matches }) => {
+    console.log("Matches:", matches)
+
+    const rounds = {
+      "4th Round": 1,
+      "Quarter Finals": 2,
+      "Semi Finals": 4,
+      "Final": 8,
+      "Champion": 16
+    }
+
+    const multiplier = (round, numberOfMatches) => {
+      return numberOfMatches === 31 ?  rounds[round] : rounds[round] / 2
+    }
+
+    const score = matches
+      .filter(match => match.actualPlayer !== null)
+      .map(match => match.player === match.actualPlayer ? 1 * multiplier(match.round, matches.length) : 0)
+      .reduce((a,b) => a+b, 0)
+
+    return <Fragment>{score}</Fragment>
   }
 
   const panes = data.events.map(event => {
@@ -445,9 +466,15 @@ export const Tournaments = () => {
             </div></div>
         })}
         <div className="picks">
-          <div className="text">Correct Picks:</div> 
-          <div className="score">
-            <CorrectPicks matches={event.matches} />
+          <div className="pick-column">
+            <div className="text">Correct Picks:</div> 
+            <div className="score">
+              <CorrectPicks matches={event.matches} />
+            </div>
+          </div>
+          <div className="pick-column">
+            <div className="text">Score:</div>
+            <div className="score"><Score matches={event.matches} /></div>
           </div>
         </div>
       </Fragment>
