@@ -421,6 +421,15 @@ export const Tournaments = () => {
     })
   })
 
+  const CorrectPicks = ({ matches }) => {
+    const correct = matches.filter(match => match.actualPlayer !== null && match.player === match.actualPlayer).length
+    const finished = matches.filter(match => match.actualPlayer !== null).length
+
+    return <Fragment>
+      {`${correct} / ${finished}`}
+    </Fragment>
+  }
+
   const panes = data.events.map(event => {
     return {
       menuItem: event.name,
@@ -438,9 +447,7 @@ export const Tournaments = () => {
         <div className="picks">
           <div className="text">Correct Picks:</div> 
           <div className="score">
-            {event.matches.filter(match => match.player === match.actualPlayer).length} /
-            {"  "}
-            {event.matches.filter(match => match.actualPlayer !== null).length}
+            <CorrectPicks matches={event.matches} />
           </div>
         </div>
       </Fragment>
