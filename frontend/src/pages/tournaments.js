@@ -17,10 +17,18 @@ export const Tournaments = () => {
   const { tournamentId } = useParams();
   const { isAuthenticated } = useAuth0();
 
-  const [data, setData] = useState({ events: [] })
+  const [data, setData] = useState({ 
+    events: [],
+    editable: undefined,
+    name: undefined,
+    startDate: undefined,
+    endDate: undefined
+  })
   const [mode, setMode] = useState("view")
   const [brackets, setBrackets] = useState({})
   const [userProfile, setUserProfile] = useState({editor: false})
+
+  const [selectedEvent, setSelectedEvent] = useState()
 
   const {
     makeRequest,
@@ -35,7 +43,9 @@ export const Tournaments = () => {
           "player1": bracket.player1,
           "player2": bracket.player2, 
           "actualPlayer1": bracket.actualPlayer1,
-          "actualPlayer2": bracket.actualPlayer2
+          "actualPlayer2": bracket.actualPlayer2,
+          "event": event.name,
+          "round": bracket.round
         }
       })
     })
@@ -57,6 +67,7 @@ export const Tournaments = () => {
 
       setData(response.data);
       setBrackets(b)
+      setSelectedEvent(response.data.events[0].name)
     }
 
     const getTournamentAuthenticated = async (tournamentId) => {
@@ -73,6 +84,7 @@ export const Tournaments = () => {
       const b = getBrackets(response.data.events)
       setData(response.data);
       setBrackets(b)
+      setSelectedEvent(response.data.events[0].name)
     }
 
     const getUserProfile = async () => {
@@ -291,7 +303,6 @@ export const Tournaments = () => {
     </Fragment>
   }
 
-
   const NewRow = ({ bracket, mode }) => {
     if (!isAuthenticated) {
       return <NewUnauthenticatedBracket bracket={bracket} />
@@ -307,14 +318,14 @@ export const Tournaments = () => {
     }
   }
 
-  const refreshMatches = (event) => {
-    return event.brackets.flatMap(bracket => {
-      if(bracket.round === "Champion") {
-        return {player: bracket.player1, actualPlayer: bracket.actualPlayer1, round: bracket.round}
+  const refreshMatches = (brackets) => {
+    return brackets.flatMap(bracket => {
+      if (bracket.round === "Champion") {
+        return { player: bracket.player1, actualPlayer: bracket.actualPlayer1, round: bracket.round }
       }
       return [
-        {player: bracket.player1, actualPlayer: bracket.actualPlayer1, round: bracket.round},
-        {player: bracket.player2, actualPlayer: bracket.actualPlayer2, round: bracket.round}
+        { player: bracket.player1, actualPlayer: bracket.actualPlayer1, round: bracket.round },
+        { player: bracket.player2, actualPlayer: bracket.actualPlayer2, round: bracket.round }
       ]
     })
   }
@@ -333,7 +344,6 @@ export const Tournaments = () => {
 
   data.events.forEach(event => {
     event.newBrackets = refreshBrackets(event)
-    event.matches = refreshMatches(event)
   })
 
   const CorrectPicks = ({ matches }) => {
@@ -364,6 +374,7 @@ export const Tournaments = () => {
     return <Fragment>{score}</Fragment>
   }
 
+
   const panes = data.events.map(event => {
     return {
       menuItem: event.name,
@@ -382,12 +393,12 @@ export const Tournaments = () => {
           <div className="pick-column">
             <div className="text">Correct Picks:</div> 
             <div className="score">
-              <CorrectPicks matches={event.matches} />
+              <CorrectPicks matches={refreshMatches(Object.values(brackets).filter(e => e.event === selectedEvent))} />
             </div>
           </div>
           <div className="pick-column">
             <div className="text">Score:</div>
-            <div className="score"><Score matches={event.matches} /></div>
+            <div className="score"><Score matches={refreshMatches(Object.values(brackets).filter(e => e.event === selectedEvent))} /></div>
           </div>
         </div>
       </Fragment>
@@ -459,7 +470,9 @@ export const Tournaments = () => {
       </div>
       
       <div className="column">        
-        {panes.length > 0 && <Tab panes={panes} />}
+        {panes.length > 0 && <Tab panes={panes} onTabChange={(e, data) => {
+          setSelectedEvent(data.panes[data.activeIndex].menuItem)
+        }} />}
       </div>
     </div>
   </Fragment>
