@@ -8,7 +8,7 @@ import Skeleton from "react-loading-skeleton";
 import 'react-loading-skeleton/dist/skeleton.css'
 
 const Tournaments = () => {
-  const [tournaments, setTournaments] = useState([])
+  const [tournaments, setTournaments] = useState()
 
   const {
     makeRequest,
@@ -36,7 +36,7 @@ const Tournaments = () => {
     getTournaments()
   }, [])
 
-  if(tournaments.length === 0) {
+  if(!tournaments) {
     return <Fragment>
       <h1>Current Events</h1>
       <List relaxed >
@@ -55,6 +55,18 @@ const Tournaments = () => {
       </List>
 
       <Link to={`/tournaments`}>↗ All Tournaments</Link>
+      
+    </Fragment>    
+  }
+
+  if(tournaments.length === 0) {
+    return <Fragment>
+      <h1>Current Events</h1>
+      <div>
+        There are no current events. See <Link to={`/tournaments`}>↗ All Tournaments</Link>
+      </div>
+
+      
       
     </Fragment>
   }
