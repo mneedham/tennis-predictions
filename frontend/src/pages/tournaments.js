@@ -11,6 +11,8 @@ import 'react-semantic-toasts/styles/react-semantic-alert.css';
 import Skeleton from "react-loading-skeleton";
 import 'react-loading-skeleton/dist/skeleton.css'
 
+import {NewBracket, NewUnauthenticatedBracket} from './brackets'
+
 export const Tournaments = () => {
   const { tournamentId } = useParams();
   const { isAuthenticated } = useAuth0();
@@ -135,7 +137,6 @@ export const Tournaments = () => {
   }
 
   const updateResult = async (bracketId, player1, player2) => {
-    console.log("updateResult", player1, player2)
     setBrackets(state => ({
       ...state, [bracketId]: { ...state[bracketId], actualPlayer1: player1, actualPlayer2: player2 }
     }))
@@ -233,78 +234,6 @@ export const Tournaments = () => {
   }
 
 
-  const computeClass = (player, actualPlayer) => {
-    if(actualPlayer === null) {
-      return "none"
-    }
-    if(actualPlayer === player) {
-      return "correct"
-    } 
-    return "incorrect"
-  }
-
-  const NewComputeCell = ({player, actualPlayer}) => {
-    if(actualPlayer === null) {
-      return <Fragment><p>{player}</p></Fragment>
-    }
-
-    if(player === null) {
-      return <Fragment><p>{actualPlayer}</p></Fragment>
-    }
-
-    if(player === actualPlayer) {
-      return <Fragment><p>{player}</p></Fragment>
-    } else {
-      return <Fragment><p><strike>{player}</strike></p><p>{actualPlayer}</p></Fragment>
-    }
-  }
-
-  const NewBracket = ({bracket}) => {
-    const player1 = (brackets[bracket.id] || {}).player1
-    const actualPlayer1 = (brackets[bracket.id] || {}).actualPlayer1
-    const player2 = (brackets[bracket.id] || {}).player2
-    const actualPlayer2 = (brackets[bracket.id] || {}).actualPlayer2
-
-    if (!actualPlayer1 && !actualPlayer2 && !player1 && !player2) {
-      if(bracket.round === "Champion") {
-        return <Fragment>
-        <div className="cell">
-          <p>No predictions/No results</p>
-        </div>
-      </Fragment>
-      }
-
-      return <Fragment>
-        <div className="cell left">
-          <p>No predictions/No results</p>
-        </div>
-        <div className="cell right">
-          <p>No predictions/No results</p>
-        </div>
-      </Fragment>
-    }
-
-    const classNamePlayer1 = computeClass(player1, actualPlayer1)
-    const classNamePlayer2 = computeClass(player2, actualPlayer2)
-
-    if(bracket.round === "Champion") {
-      return <Fragment>
-      <div className={`cell ${classNamePlayer1}`}>
-        <NewComputeCell player={player1} actualPlayer={actualPlayer1} />  
-      </div>
-    </Fragment>
-    }
-
-    return <Fragment>
-      <div className={`cell left ${classNamePlayer1}`}>
-        <NewComputeCell player={player1} actualPlayer={actualPlayer1} />
-      </div>
-      <div className={`cell right ${classNamePlayer2}`}>
-        <NewComputeCell player={player2} actualPlayer={actualPlayer2} />
-      </div>
-    </Fragment>
-  }
-
   const AdminBracket = ({bracket}) => {
     const [player1, setPlayer1] = useState(brackets[bracket.id].actualPlayer1)
     const [player2, setPlayer2] = useState(brackets[bracket.id].actualPlayer2)
@@ -363,24 +292,6 @@ export const Tournaments = () => {
     </Fragment>
   }
 
-  const NewUnauthenticatedBracket = ({bracket}) => {
-    if(bracket.round === "Champion") {
-      return <Fragment>
-      <div className="cell">
-        <NewComputeCell actualPlayer={bracket.actualPlayer1 || "No predictions/No results"} />  
-      </div>
-    </Fragment>
-    }
-
-    return <Fragment>
-      <div className="cell left">
-        <NewComputeCell actualPlayer={bracket.actualPlayer1 || "No predictions/No results"} />
-      </div>
-      <div className="cell right">
-        <NewComputeCell actualPlayer={bracket.actualPlayer2 || "No predictions/No results"} />
-      </div>
-    </Fragment>
-  }
 
   const NewRow = ({ bracket, mode }) => {
     if (!isAuthenticated) {
@@ -393,7 +304,7 @@ export const Tournaments = () => {
       case "admin":
         return <AdminBracket bracket={bracket} key={bracket.id + "_adminBracket"} />
       default:
-        return <NewBracket bracket={bracket} />
+        return <NewBracket bracket={bracket} brackets={brackets} />
     }
   }
 
@@ -429,8 +340,6 @@ export const Tournaments = () => {
   }
 
   const Score = ({ matches }) => {
-    console.log("Matches:", matches)
-
     const rounds = {
       "4th Round": 1,
       "Quarter Finals": 2,
