@@ -233,7 +233,6 @@ export const Tournaments = () => {
     </Fragment>
   }
 
-
   const AdminBracket = ({bracket}) => {
     const [player1, setPlayer1] = useState(brackets[bracket.id].actualPlayer1)
     const [player2, setPlayer2] = useState(brackets[bracket.id].actualPlayer2)
@@ -308,20 +307,8 @@ export const Tournaments = () => {
     }
   }
 
-  data.events.forEach(event => {
-    const rounds = Array.from(new Set(event.brackets.map(i => i.round)));
-    const groups = rounds.map(round => {
-      return { round: round, brackets: [] };
-    });
-
-    event.brackets.forEach(d => {
-      groups.find(g => g.round === d.round).brackets.push(d);
-    });
-
-    
-    event.newBrackets = groups
-
-    event.matches = event.brackets.flatMap(bracket => {
+  const refreshMatches = (event) => {
+    return event.brackets.flatMap(bracket => {
       if(bracket.round === "Champion") {
         return {player: bracket.player1, actualPlayer: bracket.actualPlayer1, round: bracket.round}
       }
@@ -330,6 +317,23 @@ export const Tournaments = () => {
         {player: bracket.player2, actualPlayer: bracket.actualPlayer2, round: bracket.round}
       ]
     })
+  }
+
+  const refreshBrackets = (event) => {
+    const rounds = Array.from(new Set(event.brackets.map(i => i.round)));
+    const groups = rounds.map(round => {
+      return { round: round, brackets: [] };
+    });
+
+    event.brackets.forEach(d => {
+      groups.find(g => g.round === d.round).brackets.push(d);
+    });
+    return groups
+  }
+
+  data.events.forEach(event => {
+    event.newBrackets = refreshBrackets(event)
+    event.matches = refreshMatches(event)
   })
 
   const CorrectPicks = ({ matches }) => {
